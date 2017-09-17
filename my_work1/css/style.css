@@ -63,4 +63,6 @@ body{
 	margin: 0.4rem;
 	float: right;
 }
-	
+.mr{
+	margin-right: 1rem;
+}
