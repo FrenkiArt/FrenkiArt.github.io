@@ -1,68 +1,73 @@
-.floatleft{
-	float: left;
-}
-.floatright{
-	float: right;
-}
-.clearfix::after {
-	content: "";
-	display: table;
-	width: 100%;
-	clear: both;
-}
-body{
-	font-size: 1rem;
-}
-.forma1{
-	padding-top: 1rem;
-	margin-right: 0.1rem;	
-}
-.layer{
-	margin-left: 0.2rem;
-}
-.ul_none_dec{
-	text-decoration: none;
-}
-.foto_otel{
-	float: left;
-	width: 43%;
-	margin: 1%;	
-}
-.otel_descr{
-	float: right;
-	width: 53%;
-	height: 100%;
-	margin: 1%;
-}
-.width100{
-	width: 100%
-}
-.mr_block_otel{
-	margin-top: 0.5rem;
-}
-.text_90{
-	width: 90%;
-	margin-left: 0.2rem;
-}
-.phone_marg{
-	margin-bottom: 0.5rem;
-	margin-left: 1.3rem;
-	margin-top: 0.5rem;
-}
-.invisible{
-	visibility: hidden;
-}
-.bgf{
-	background-color: #e6e2e7;
-}
-.bgf2{
-	background: red;
+@media (min-width: 0px) and (max-width: 320px) {
+	.floatleft{
+		float: left;
+	}
+	.floatright{
+		float: right;
+	}
+	.clearfix::after {
+		content: "";
+		display: table;
+		width: 100%;
+		clear: both;
+	}
+	body{
+		font-size: 1rem;
+	}
+	.forma1{
+		padding-top: 1rem;
+		margin-right: 0.1rem;	
+	}
+	.layer{
+		margin-left: 0.2rem;
+	}
+	.ul_none_dec{
+		text-decoration: none;
+	}
+	.foto_otel{
+		float: left;
+		width: 43%;
+		margin: 1%;	
+	}
+	.otel_descr{
+		float: right;
+		width: 53%;
+		height: 100%;
+		margin: 1%;
+	}
+	.width100{
+		width: 100%
+	}
+	.mr_block_otel{
+		margin-top: 0.5rem;
+	}
+	.text_90{
+		width: 90%;
+		margin-left: 0.2rem;
+	}
+	.phone_marg{
+		margin-bottom: 0.5rem;
+		margin-left: 1.3rem;
+		margin-top: 0.5rem;
+	}
+	.invisible{
+		visibility: hidden;
+	}
+	.bgf{
+		background-color: #e6e2e7;
+	}
+	.bgf2{
+		background: red;
 
+	}
+	.appmgr{
+		margin: 0.4rem;
+		float: right;
+	}
+	.mr{
+		margin-right: 1rem;
+	}
 }
-.appmgr{
-	margin: 0.4rem;
-	float: right;
-}
-.mr{
-	margin-right: 1rem;
+@media (min-width: 321px) {
+	
 }
