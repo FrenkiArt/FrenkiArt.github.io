@@ -1,16 +1,22 @@
+.floatleft{
+	float: left;
+}
+.floatright{
+	float: right;
+}
+.clearfix::after {
+	content: "";
+	display: table;
+	width: 100%;
+	clear: both;
+}
+.width100{
+	width: 100%
+}
+.ul_none_dec{
+	text-decoration: none;
+}
 @media (min-width: 0px) and (max-width: 320px) {
-	.floatleft{
-		float: left;
-	}
-	.floatright{
-		float: right;
-	}
-	.clearfix::after {
-		content: "";
-		display: table;
-		width: 100%;
-		clear: both;
-	}
 	body{
 		font-size: 1rem;
 	}
@@ -20,9 +26,6 @@
 	}
 	.layer{
 		margin-left: 0.2rem;
-	}
-	.ul_none_dec{
-		text-decoration: none;
 	}
 	.foto_otel{
 		float: left;
@@ -34,9 +37,6 @@
 		width: 53%;
 		height: 100%;
 		margin: 1%;
-	}
-	.width100{
-		width: 100%
 	}
 	.mr_block_otel{
 		margin-top: 0.5rem;
@@ -58,7 +58,6 @@
 	}
 	.bgf2{
 		background: red;
-
 	}
 	.appmgr{
 		margin: 0.4rem;
@@ -67,7 +66,75 @@
 	.mr{
 		margin-right: 1rem;
 	}
+	.biginvis{
+		visibility: hidden;
+		float: left;
+		width: 0%;
+		height: 0;
+	}
 }
 @media (min-width: 321px) {
+	.smalinvis{
+		visibility: hidden;
+		float: left;
+		width: 0%;
+		height: 0;
+	}
+	.menu{
+	padding: 0;
+	margin: 0;
+	display: block;
+	box-sizing: border-box;
+    }
+    .menu li{
+	float: left;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	vertical-align: center;
+	}
+	.menu a{
+	color: #000;
+	text-decoration: none;
+	}
+	.menu a:link, a:visited{
+	text-decoration: none;
+	background-color: white;
+	color: purple;
+	display: block;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	margin: 0px;
+	/*padding: 0px;*/
+	padding-top: 12px;
+	padding-bottom: 0px;
+	}
+	.menu a:hover, a:active{
+	background-color: purple;
+	color: white;
+	}
+	body{
+		font-size: 1.2rem;
+	}
+	.shadow{
+	background-color: #efefef;
+	float: left;
+	width: 100%
+	}	
+	.left_block_width{
+		width: 31%;
+		display: block;
+		background: gray;
+		border: 1px solid blue;
+		float: left;
+	}
+	.right_block_width{
+		width: 68%;
+		display: block;
+		background: yellow;
+		border: 1px solid blue;
+		float: right;
+	}
 	
 }
