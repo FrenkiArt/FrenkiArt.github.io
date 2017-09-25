@@ -1,0 +1,124 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	font-family: Tahoma, sans-serif;
+	line-height: 1.5;
+	color: #333333;
+}
+.section{
+	padding: 0px 10%;
+	width: 100%;
+}
+.header{
+	text-align: center;
+	font-size: 24px;
+	margin-top: 110px;
+}
+.header span{
+	display: block;
+	
+	font-weight: 400px;
+}
+.header strong{
+	font-weight: 900;
+	text-transform: uppercase;	
+}
+.main{
+	margin-top: 85px;
+	text-align: center;
+}
+.video{
+	display: inline-block;
+	vertical-align: top;
+}
+.form{
+	display: inline-block;
+	text-align: center;
+	border: 5px solid #2727d9;
+	vertical-align: top;
+	padding: 20px;
+	height: 309px;
+	margin-left: 30px;
+
+}
+.form p{
+	text-align: center;
+	font-size: 20px;
+	font-weight: 900;
+	margin-bottom: 20px;
+}
+
+.form input{
+	display: block;
+	width: 300px;	
+	padding: 17px;
+	border: 1px solid #333333;
+	font-size: 18px;
+	margin-top: 10px;
+}
+.form-btn{
+	background-color: #2727d9;
+	color: white;
+	width: 300px;
+	height: 60px;
+	font-size: 18;
+	margin-top: 10px;
+	border: none;
+	padding: 17px;
+	font-weight: 500;
+}
+
+.features{
+	text-align: center;
+	margin: 85px auto;
+}
+.col{
+	display: inline-block;
+	text-align: center;
+	margin: 10px 50px;
+}
+.features-header{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin-top: 150px;
+	font-size: 24px;
+}
+.features-btn{
+	background-color: #2727d9;
+	color: white;
+	width: 300px;
+	height: 60px;
+	font-size: 18;
+	margin: 100px auto;
+	border: none;
+	padding: 17px;
+	font-weight: 500;
+	display: block;
+}
+.clients-header{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin: 95px auto;
+	font-size: 24px;
+}
+.clients-foto{
+	margin: 70px auto;
+}
+.foto{
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 35px;
+}
+
+
+
+
+
+
+
+
+
