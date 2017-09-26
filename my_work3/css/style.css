@@ -1,0 +1,32 @@
+#h1 {
+	font-size: 28px;
+	text-transform: uppercase;
+	margin-top: 140px;
+	text-align: center;
+}
+#row2{
+	margin-top: 130px;
+}
+.p-mt30{
+	margin-top: 30px;
+}
+.row{
+	text-align: center;
+	vertical-align: middle;
+}
+img{
+	height: 140px;
+}
+.center{
+	text-align: center;
+}
+@media (max-width: 460px) {
+  .container {
+    max-width: 400px;
+  }
+  #h1-1 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+  }
+}

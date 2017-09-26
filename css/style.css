@@ -170,6 +170,9 @@ a:active, a:visited, a:focus {
 	color: #fff;
 	text-decoration: none;
 }
+.my_work{
+	display: inline-block;
+}
 @media (min-width: 0px) and (max-width: 767px) {
 	html {
 		font-size: 7px;
