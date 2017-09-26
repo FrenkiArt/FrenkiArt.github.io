@@ -1,0 +1,62 @@
+.header{
+	font-size: 20px;
+	margin-top: 110px;
+}
+.header span{
+	display: block;
+	line-height: 1.5px;
+}
+#row2{
+	margin-top: 85px;
+}
+.form-header{
+	font-size: 20px;
+	font-weight: 900;
+	margin-bottom: 20px;
+}
+.form{
+	border: 5px solid #2727d9;
+	padding: 35px 20px;
+	height: 303px;
+}
+.btn-form{
+	margin: 10px auto;
+	background-color: #2727d9;
+}
+.form input{
+	margin-bottom: 12px;
+}
+#row3{
+	margin-top: 150px;
+	margin-bottom: 85px;
+}
+.section-header{
+	font-size: 20px;
+	font-weight: 900;
+}
+#row4{
+	margin-bottom: 95px;
+}
+#row5{
+	margin-bottom: 100px;
+}
+.feature{
+	margin-top: 20px;
+}
+#row6{
+	margin-bottom: 70px;
+}
+#row7{
+	margin-bottom: 30px;
+}
+#row8{
+	margin-bottom: 100px;
+}
+.foto{
+	height: 215px;
+	width: 215px;
+	margin-bottom: 15px;
+}
+.video{
+	margin-bottom: 10px;
+}
