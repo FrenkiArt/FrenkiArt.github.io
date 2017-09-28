@@ -46,9 +46,12 @@
 		margin-left: 0.2rem;
 	}
 	.phone_marg{
+		display: block;
 		margin-bottom: 0.5rem;
 		margin-left: 1.3rem;
 		margin-top: 0.5rem;
+		font-size: 0.7rem;
+		padding-top: 5px;
 	}
 	.invisible{
 		visibility: hidden;
@@ -62,6 +65,7 @@
 	.appmgr{
 		margin: 0.4rem;
 		float: right;
+
 	}
 	.mr{
 		margin-right: 1rem;
@@ -71,6 +75,11 @@
 		float: left;
 		width: 0%;
 		height: 0;
+	}
+	.masterCard{
+		visibility: none;
+		width: 0%;
+		/*не пашет*/
 	}
 }
 @media (min-width: 321px) {
@@ -150,4 +159,28 @@
 	.rigtbig{
 		float: right;
 	}
+	.leftfooter{
+		float: left;
+		width: 33%
+	}
+	.rightfooter{
+		float: right;
+		width: 33%;
+	}
+	.br{
+		word-wrap: break-word;
+	}
+	.blcenter{
+		display: table-cell;
+		text-align: center;
+		margin: auto;
+	}
+	.clear-both{
+		clear: both;
+		width: 100%;
+	}
+	.marginTop10px{
+		margin-top: 10px;
+	}
+
 }
