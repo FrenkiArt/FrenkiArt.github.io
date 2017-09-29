@@ -51,7 +51,7 @@ form input {
 	border-width: 2px;
 	border: 1px solid #cfdede;
 	margin-left: -1px;
-	background: transparent;
+	
 
 }
 #int1 {
@@ -59,18 +59,20 @@ form input {
 	margin-bottom: 13px;
 	font-style: italic;
 	height: 29px;
-	background: transparent;
+	background-image: url(bg.png);
+	
+	
 }
 #form2 {
 	margin-top: 13px;
 	margin-bottom: 13px;
 	height: 28px;
-	background: transparent;
+	background: url(bg.png);
 }
 #form3 {
 	margin-top: 12px;
 	height: 28px;
-	background: transparent;
+	background-image: url(bg.png);
 }
 button {
 	margin-top: 32px;
