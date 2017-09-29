@@ -54,7 +54,6 @@ button {
 	margin-left: 30px;
 	margin-right: 30px;
 	margin-bottom: 30px;
-	margin-top: 100px;
 	width: 260px;
 	block: 370px;
 	position: relative;
@@ -63,6 +62,7 @@ button {
 .row {
 	width: 320px;
 	height: 370px;
+	margin-top: 100px;
 }
 .container {
 	margin-left: 125px;
