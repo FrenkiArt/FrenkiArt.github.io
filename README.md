@@ -1,5 +1,6 @@
 # frenkiart.github.io
-Артур Шайдуллин
+
+<b>Артур Шайдуллин</b>
 
 домашка <a href=https://frenkiart.github.io/my_work2/index.html>lesson №7</a>
 
