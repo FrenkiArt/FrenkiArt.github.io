@@ -10,6 +10,8 @@
 
 домашка <a href=https://frenkiart.github.io/my_work5/index.html>lesson №13</a>
 
-домашка <a href=https://frenkiart.github.io/my_work6/index.html>lesson №14</a>
+домашка <a href=https://frenkiart.github.io/my_work6/index.html>lesson №14 chapter №1</a>
+
+домашка <a href=https://frenkiart.github.io/my_work7/index.html>lesson №14 chapter fonts</a>
 
 
