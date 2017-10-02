@@ -1,0 +1,30 @@
+
+.text-box{
+	padding-top: 2rem;
+}
+.result {
+	margin-bottom: 0;
+	margin-top: 3rem;
+}
+.fonts {
+	font-size: 2rem;
+	text-align: center;
+	padding: 2rem;
+}
+small {
+	font-size: 1.3rem;
+}
+
+
+.fnt1{
+	font-family: 'Open Sans', sans-serif;
+}
+.fnt2{
+	font-family: 'Bebas', arial;
+}
+.fnt3{
+	font-family: 'Lato', sans-serif;
+}
+.fnt4{
+	font-family: 'Lobster', cursive;
+}
