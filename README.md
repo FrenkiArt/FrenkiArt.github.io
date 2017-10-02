@@ -14,4 +14,6 @@
 
 домашка <a href=https://frenkiart.github.io/my_work7/index.html>lesson №14 chapter fonts (work №7)</a>
 
+домашка <a href=https://frenkiart.github.io/my_work8/index.html>lesson №14 chapter №2 (work №8)</a>
+
 
