@@ -1,0 +1,12 @@
+img{
+	display: block;
+	margin: 0 auto;
+}
+.item{
+	height: 40rem;
+}
+.fotorama{
+	display: block;
+	width: 100%;
+	margin: 2rem auto;
+}
