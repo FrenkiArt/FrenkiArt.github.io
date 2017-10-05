@@ -7,6 +7,10 @@ img{
 }
 .fotorama{
 	display: block;
-	width: 100%;
+	width: 50%;
 	margin: 2rem auto;
+	background: black;
+}
+.fotorama__fullscreen-icon{
+	border: 5px solid red;
 }
