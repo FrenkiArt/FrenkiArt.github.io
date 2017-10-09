@@ -1,0 +1,187 @@
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover{
+  border: 2px solid blue;
+}
+.h150{
+  height: 150px;
+}
+.h50{
+  height: 50px;
+}
+.h450{
+  height: 450px;
+  background-color: #03a4da;
+}
+.w860{
+  width: 500px;
+}
+.w630{
+  width: 630px;
+}
+.title-mar{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.title-ans{
+  font-size: 36px;
+  font-weight: 700;
+  color: #0bbaf0;
+  text-transform: uppercase;
+}
+.title-ans2{
+  font-size: 24px;
+  color: #0bbaf0;
+  text-transform: uppercase;
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: #0bbaf0;
+    border-color: #0bbaf0;
+}
+.panel-heading {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.bgac{
+  background-image: url(../img/bg_accardeon.png);
+  height: 100vh;
+}
+.bgform{
+  background-image: url(../img/bg_form.png);
+  background-size: cover;
+}
+.form-control{
+  background-image: url(../img/bg_input.png);
+  height: 60px;
+  background-size: 100%;
+  padding: 14px 24px;
+  width: 480px;
+  color: white;
+  font-family: 'Myriad Pro';
+  color:#ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+
+}
+input[type="text"]::-webkit-input-placeholder {
+    color: white;
+   } 
+input[type="text"]::-moz-placeholder {
+    color: white;
+}
+/*
+.tab-content{
+  width: 480px;
+}*/
+
+.tab-content > .active {
+  display: block;
+  background: black;
+  width: 580px;
+  height: 365px;
+  padding-left: 45px;
+  border-radius: 5px;
+  border: 1px solid #7dd7f4;
+  position: relative;
+}
+.hinp1{
+  height: 70px;
+  width:100%;
+}
+.hinp2{
+  height: 28px;
+  width:100%;
+}
+.hinp3{
+  height: 20px;
+  width:100%;
+}
+.hinp4{
+  height: 50px;
+  width:100%;
+}
+.forget-password{
+  color: #c51f03;
+  padding-left: 20px;
+  font-family: 'Myriad Pro';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+}
+.btn1{
+  position: absolute;
+  right: -50px;
+  bottom: 10px;
+  font-size: 24px;
+  background: -webkit-radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+  background: -moz-radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+  background: -o-radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+  background: -ms-radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+  background: radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+  width: 128px;
+  height: 41px;
+  border: none;
+}
+.voiti{
+  font-family: 'Myriad Pro';
+  color:#ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+}
+.napomnit{
+  font-family: 'Myriad Pro';
+  color:
+  #6f6d6d;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+  padding-left: 25px;
+}
+.checkbox1{
+  position:absolute;
+  bottom: 19px;
+}
+.active{
+  font-family: 'Myriad Pro';
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover {
+    border: 2px solid transparent;
+    font-family: 'Myriad Pro';
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: justify;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+    background-color: #00a7db;
+}
+.regwhite{
+  color: white;
+}
+.reg{
+  font-family: 'Myriad Pro';
+  color: #080707;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+}
+.nav-tabs {
+    border-bottom: 0px solid #ddd;
+}
