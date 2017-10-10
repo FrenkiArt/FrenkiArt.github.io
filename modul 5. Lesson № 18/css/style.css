@@ -11,7 +11,7 @@
 }
 .h450{
   height: 450px;
-  background-color: #03a4da;
+ /* background-color: #03a4da;*/
 }
 .w860{
   width: 500px;
@@ -57,7 +57,7 @@
   height: 60px;
   background-size: 100%;
   padding: 14px 24px;
-  width: 480px;
+  width: 440px;
   color: white;
   font-family: 'Myriad Pro';
   color:#ffffff;
@@ -65,7 +65,7 @@
   font-weight: 400;
   line-height: 22px;
   text-align: justify;
-
+  border: 5px solid black;
 }
 input[type="text"]::-webkit-input-placeholder {
     color: white;
@@ -73,9 +73,12 @@ input[type="text"]::-webkit-input-placeholder {
 input[type="text"]::-moz-placeholder {
     color: white;
 }
-/*
-.tab-content{
-  width: 480px;
+
+/*.tab-content{
+  border: 24px solid #03a4da ;
+  border-radius: 5px;
+  position: relative;
+
 }*/
 
 .tab-content > .active {
@@ -85,7 +88,7 @@ input[type="text"]::-moz-placeholder {
   height: 365px;
   padding-left: 45px;
   border-radius: 5px;
-  border: 1px solid #7dd7f4;
+  border: 24px solid #03a4da;
   position: relative;
 }
 .hinp1{
@@ -101,7 +104,7 @@ input[type="text"]::-moz-placeholder {
   width:100%;
 }
 .hinp4{
-  height: 50px;
+  height: 4px;
   width:100%;
 }
 .forget-password{
@@ -157,6 +160,19 @@ input[type="text"]::-moz-placeholder {
   line-height: 22px;
   text-align: justify;
   text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+  
+}
+.nav-tabs > li{
+  background-color: #ffffff!important;  
+  transform: translateX(3rem);
+  margin-right: 2rem;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none!important;
+
+}
+.nav-tabs > li > a {
+  color: #080707;
 }
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:focus, 
@@ -166,10 +182,10 @@ input[type="text"]::-moz-placeholder {
     color: #ffffff;
     font-size: 24px;
     font-weight: 400;
-    line-height: 22px;
+   /* line-height: 22px;*/
     text-align: justify;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
-    background-color: #00a7db;
+    background-color: #00a7db!important;
 }
 .regwhite{
   color: white;
@@ -184,4 +200,7 @@ input[type="text"]::-moz-placeholder {
 }
 .nav-tabs {
     border-bottom: 0px solid #ddd;
+}
+.turma{
+
 }
