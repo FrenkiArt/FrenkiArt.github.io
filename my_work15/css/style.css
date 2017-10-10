@@ -241,14 +241,15 @@ section {
   -webkit-box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
           box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
   /*min-width: 400px;*/
-  min-height: 5rem;
+  min-height: 4rem;
   text-align: center;
 }
 .price-block h4 {
-  margin: 3rem 0 4rem;
+  margin: 3rem 0 2rem;
   font-size: 1.9rem;
   font-family: 'ProximaNova_reg', sans-serif;
   font-weight: bold;
+  min-height: 150rem!important;
 }
 .price-block img {
   width: 100%;
@@ -268,7 +269,7 @@ section {
   list-style: none;
   min-height: 14rem;
   font-size: 1.6rem;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
 }
 .price-list li:before {
   content: '';
