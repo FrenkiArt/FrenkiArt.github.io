@@ -66,6 +66,10 @@
   line-height: 22px;
   text-align: justify;
   border: 5px solid black;
+  animation-delay: 2s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  
 }
 input[type="text"]::-webkit-input-placeholder {
     color: white;
@@ -129,6 +133,12 @@ input[type="text"]::-moz-placeholder {
   width: 128px;
   height: 41px;
   border: none;
+  animation-name: move;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.52,.9,0,.53);
+  animation-delay: 2s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
 }
 .voiti{
   font-family: 'Myriad Pro';
@@ -203,4 +213,28 @@ input[type="text"]::-moz-placeholder {
 }
 .turma{
 
+}
+
+/*ключевые кадры анимации*/
+@keyframes move{
+  from{
+    right:-50px;
+    bottom: 10px;
+  }
+  25%{
+    right:0px;
+    bottom: 60px;
+  }
+  50%{
+    right:-50px;
+    bottom: 110px;
+  }
+  75%{
+    right: -100px;
+    bottom: 60px;
+  }
+  to {
+    right:-50px;
+    bottom: 10px;
+  }
 }

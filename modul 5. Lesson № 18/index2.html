@@ -15,6 +15,8 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/anime.css">
+
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -49,25 +51,25 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs " role="tablist">
-          <li role="presentation" id="vhod" class="active reg"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="reg">Вход</a></li>
-          <li role="presentation" class="reg"> <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="regwhite">Регистрация</a></li>
+          <li role="presentation" id="vhod" class="active reg"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="reg animated fadeInDown">Вход</a></li>
+          <li role="presentation" class="reg"> <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="regwhite wow fadeInUp" data-wow-duration="3s">Регистрация</a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="turma">
-          <div class="tab-content ">
+          <div class="tab-content animated flipInX">
               <div role="tabpanel" class="tab-pane active " id="home">
                 <div class="hinp1"></div>
-                <input type="text" class="form-control " placeholder="Ваше имя">
+                <input type="text" class="form-control wow pulse" data-wow-duration="2s" placeholder="Ваше имя">
                 <div class="hinp2"></div>
-                <input type="text" class="form-control" placeholder="Пароль">
+                <input type="text" class="form-control wow pulse" data-wow-duration="2s" placeholder="Пароль">
                 <div class="hinp3"></div>
                 <p class="forget-password">Забыли пароль?</p>
                 <div class="hinp4"></div>
                 <div class="">
                   <label ><input class="checkbox1" type="checkbox"/> <span class="napomnit">&nbsp;Напомнить мне</span></label>
                 </div>
-                <button class=" btn1"><span class="voiti">Войти</span></button>
+                <button class=" btn1 "><span class="voiti">Войти</span></button>
               </div>
             <div role="tabpanel" class="tab-pane" id="profile">Регистрация</div>
           </div>
@@ -78,7 +80,7 @@
     </div>
 
     
-
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -87,5 +89,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      var wow = new WOW;
+      wow.init();
+    </script>
   </body>
 </html>
