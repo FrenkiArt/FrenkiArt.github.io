@@ -273,6 +273,13 @@ section {
 		&-fix-h4 {
 			height: 4rem!important;
 		}
+		button{
+			width: 200px;
+			height: 65px;
+			box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
+			font-size: 18px;
+			font-weight: 600;
+		}
 	}
 	&-tag{
 		display: block;
@@ -300,6 +307,67 @@ section {
 		}
 	}
 }
+
+/* feedback section*/
+.feedback{
+	background: url(../img/fb_bg.jpg) no-repeat center;
+	background-size: cover;
+	&-prev-btn{
+		left: -4rem;
+	}
+	&-next-btn{
+		right: -4rem;
+	}
+	&-text {
+		margin-top: 2rem;
+		padding: 1rem;
+		border: 2px solid @icons-color;
+		font-style: italic;
+		position: relative;
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: -2rem;
+			left: 4rem;
+			width: 2rem;
+			height: 2rem;
+			background-color: @light;
+			border: 2px solid @icons-color;
+			border-bottom: none;
+			border-top-right-radius: 100px;
+		}
+	}
+	&-slider{
+		padding: 5rem 6rem;
+		background-color: @light;
+		box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+		.media{
+			margin-top: 3rem;
+			font-size: 1.4rem;
+			h4{
+				.bold();
+			}
+		}
+		p{
+			font-size: 1.6rem;
+		}
+		&-btn{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 4rem;
+			height: 5rem;
+			background-color: @icons-color;
+			border: none;
+			img{
+				width: 50%;
+			}
+		}
+	}
+}
+
+
 
 
 /* оформление всплывающих окон*/
