@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 
     <title>18 lesson</title>
 
@@ -77,12 +77,12 @@
             <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2">
               <div class="main-form">
                 <h2 class="main-form-header">Для расчёта точной стоимости <br> закажите <strong>выезд замерщика</strong></h2>
-                <form action="#">
+                <form class="form" action="#">
                   <label for="#">Ваше имя</label>
-                  <input type="text" class="main-form-input">
+                  <input type="text" class="form-input">
                   <label for="#">Номер телефона</label>
-                  <input type="text" class="main-form-input">
-                  <button class="main-form-btn button" type="submit">Оставьте заявку</button>
+                  <input type="text" class="form-input">
+                  <button class="form-btn button" type="submit">Оставьте заявку</button>
                   <small>Приедем в день обращения*</small>
                 </form>
               </div>
@@ -222,7 +222,7 @@
         <div class="feedback-slider_item">
           <div class="row">
             <div class="col-md-6">
-              <div class="fotorama" data-nav="thumbs">
+              <div class="fotorama" data-nav="thumbs" data-width="100%">
                 <img src="img/fb_st_1.jpg" alt="foto_feedback">
                 <img src="img/fb_st_2.jpg" alt="foto_feedback">
                 <img src="img/fb_st_3.jpg" alt="foto_feedback">
@@ -326,14 +326,33 @@
         </div>
       </div>
 
+      <!-- feedback form -->
       <div class="row">
-        <div class="col-md-3">
-          <img src="img/feedback_hand.png" alt="hand">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="feedback-form">
+            <h3>Хотите так же? Оставьте Ваши контактные данные</h3>
+            <form action="#" class="form">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="#">Ваше имя</label>
+                  <input type="text" class="form-input">
+                </div>
+                <div class="col-md-6">
+                  <label for="#">Номер телефона</label>
+                  <input type="text" class="form-input">
+                </div>
+              </div>
+              <button class="form-btn button feedback-btn" type="submit">Оставьте заявку</button>
+            </form>
+            
+          </div>
         </div>
       </div>
+      <img src="img/feedback_hand.png" alt="hand" class="hand">
     </div>
-  </section>
 
+  </section>
+  
 
 
 
@@ -352,14 +371,14 @@
           </h4>
           <p>Оставьте свои контактные данные<br> для связи</p>
           <div class="main-form popup-form">
-            <form action="#">
+            <form action="#" class="form">
                   <label for="#">Ваше имя</label>
                   <input type="text" class="main-form-input">
                   <label for="#">Номер телефона</label>
                   <input type="text" class="main-form-input">
                   <label for="#">Сообщение</label>
                   <textarea class="main-form-input" rows="4"></textarea>
-                  <button class="main-form-btn button staycall" type="submit">Оставьте заявку</button>
+                  <button class="form-btn button staycall" type="submit">Оставьте заявку</button>
             </form>
           </div>
           

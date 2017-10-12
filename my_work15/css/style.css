@@ -38,6 +38,39 @@ textarea:focus {
   cursor: pointer;
   background-color: #e5a202;
 }
+.form {
+  /*подписи к полям*/
+  /*кнопка отправить заявку*/
+  /*подпись под кнопкой*/
+}
+.form-input {
+  display: block;
+  margin: 2rem 0rem;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 1.7rem;
+}
+.form label {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #ffffff;
+}
+.form-btn {
+  display: block;
+  height: 5.5rem;
+  width: 100%;
+  font-size: 1.6rem;
+}
+.form small {
+  display: block;
+  margin-top: 1.5rem;
+}
 /*typography*/
 section {
   padding: 10rem 0;
@@ -293,8 +326,10 @@ section {
 }
 /* feedback section*/
 .feedback {
+  position: relative;
   background: url(../img/fb_bg.jpg) no-repeat center;
   background-size: cover;
+  /*форма обратной связи*/
 }
 .feedback-prev-btn {
   left: -4rem;
@@ -352,6 +387,32 @@ section {
 .feedback-slider-btn img {
   width: 50%;
 }
+.feedback-form {
+  margin-top: 5rem;
+  padding: 4rem 10rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+.feedback-form h3 {
+  margin-bottom: 1rem;
+  font-family: 'ProximaNova_reg', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.feedback-form label {
+  -webkit-transform: translate(-50%, 7px);
+          transform: translate(-50%, 7px);
+}
+.feedback-btn {
+  max-width: 30rem;
+  margin: auto;
+}
+.hand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 30rem;
+}
 /* оформление всплывающих окон*/
 .popup {
   display: none;
@@ -399,6 +460,15 @@ section {
   font-family: 'ProximaNova_reg', sans-serif;
   font-weight: bold;
 }
+/*поле для ввода*/
+@media (max-width: 1199px) {
+  .feedback-form {
+    padding: 3rem 5rem;
+  }
+  .feedback .fotorama {
+    margin-bottom: 3rem;
+  }
+}
 @media (max-width: 991px) {
   .main {
     background-position: top right;
@@ -427,15 +497,37 @@ section {
   .section-header_light {
     margin-bottom: 0;
   }
+  .feedback-form label {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .hand {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .main {
     background-position: top left;
+  }
+  .main h1 {
+    font-size: 2.5rem;
   }
   .header {
     text-align: center;
   }
   .wrap-block {
     text-align: center;
+  }
+  .feedback {
+    padding-top: 3rem;
+  }
+  .feedback .section-header {
+    margin-bottom: 3rem;
+  }
+  .feedback-prev-btn {
+    left: 0rem;
+  }
+  .feedback-next-btn {
+    right: 0rem;
   }
 }
