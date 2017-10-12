@@ -413,6 +413,42 @@ section {
   left: 0;
   max-width: 30rem;
 }
+.service {
+  background: url(../img/service_bg.jpg) repeat center;
+  background-size: cover;
+  padding: 3rem;
+}
+.service .section-header {
+  margin: 2rem 0 4rem;
+}
+.service-button {
+  text-align: center;
+}
+.service-block {
+  padding: 2rem 3rem;
+  min-height: 4rem;
+  text-align: center;
+}
+.service-block h4 {
+  margin: 3rem 0rem;
+  font-size: 1.9rem;
+  font-family: 'ProximaNova_reg', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+.service-block img {
+  width: 100%;
+  max-width: 30rem;
+  display: inline-block;
+}
+.service-block button {
+  width: 200px;
+  height: 65px;
+  -webkit-box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
+          box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
+  font-size: 18px;
+  font-weight: 600;
+}
 /* оформление всплывающих окон*/
 .popup {
   display: none;

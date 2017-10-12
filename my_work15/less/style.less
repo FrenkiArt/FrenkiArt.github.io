@@ -115,6 +115,7 @@ section {
 	&_light{
 		color: @light;
 		margin-top: 0;
+
 	}
 }
 /*main*/
@@ -434,6 +435,40 @@ section {
 	max-width: 30rem;
 }
 
+.service{
+	background: url(../img/service_bg.jpg) repeat center;
+	background-size: cover;
+	padding: 3rem;
+	.section-header{
+		margin: 2rem 0 4rem;
+	}
+	&-button{
+		text-align: center;
+	}
+	&-block{
+		padding: 2rem 3rem;
+		min-height: 4rem;
+		text-align: center;
+		h4{
+			margin: 3rem 0rem;
+			font-size: 1.9rem;
+			.bold();
+			color: @light;
+		}
+		img{
+			width:100%;
+			max-width: 30rem;
+			display: inline-block;
+		}
+		button{
+			width: 200px;
+			height: 65px;
+			box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+}
 
 
 /* оформление всплывающих окон*/
