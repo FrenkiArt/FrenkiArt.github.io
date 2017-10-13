@@ -299,7 +299,11 @@ a.btn-cta {
   height: 560px;
   background-position: center center;
 }
-.
+.white{
+  height: 50vh;
+  background-color: #fff;
+}
+
 
 .hero-carousel  .carousel-inner .item-1 {
   /*background-image: url('../images/hero-1.jpg');
