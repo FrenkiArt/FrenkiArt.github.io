@@ -33,3 +33,5 @@
 домашка <a href=https://frenkiart.github.io/my_work15/index.html>modul 5. Practice 6(work №15)</a>
 
 домашка <a href=https://frenkiart.github.io/my_work16/index.html>modul 5 Lesson №20(work №16)</a>
+
+домашка <a href=https://frenkiart.github.io/my_work18/index.html>modul 5 Lesson №22(work №18)</a>
