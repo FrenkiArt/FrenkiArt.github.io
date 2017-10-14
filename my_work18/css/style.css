@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic');
+/*colors*/
+/*polygrafick*/
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+/**/
+.maps {
+  height: 43rem;
+  position: relative;
+}
+.maps .contacts {
+  position: absolute;
+  top: 0;
+  width: 380px;
+  height: 43rem;
+  color: white;
+  text-align: center;
+  background: #c60b0b;
+  padding: 4rem 0;
+}
+.maps .contacts .adress {
+  margin: 4rem 0;
+}
+.maps .contacts p {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+.footer {
+  color: #000000;
+  vertical-align: bottom;
+  margin: 2rem 0;
+}
+.footer img {
+  -webkit-transform: translateY(-42%);
+          transform: translateY(-42%);
+}
+.footer .logo-disc {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-align: left;
+}
+.footer span {
+  font-size: 2.2rem;
+}
+.footer .footer-mid {
+  display: inline-block;
+  color: #666666;
+  text-align: center;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+.footer .foot-right {
+  display: inline-block;
+  text-align: right;
+}
