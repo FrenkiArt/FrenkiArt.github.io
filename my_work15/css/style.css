@@ -551,6 +551,32 @@ section {
   text-align: center;
   margin: 5rem 0;
 }
+.how_we_work {
+  background: url(../img/how_we_work.jpg) center;
+  height: 66.5rem;
+}
+.how_we_work-title {
+  font-size: 4rem;
+  font-family: 'ProximaNova_reg', sans-serif;
+  font-weight: bold;
+  line-height: 5.8rem;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+.how_we_work-title2 {
+  font-size: 2.4rem;
+}
+.how_we_work .main-form {
+  margin-top: 6rem;
+  padding: 3rem;
+}
+.how_we_work .main-form button {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.how_we_work .main-form small {
+  font-size: 1.2rem;
+}
 .service {
   background: url(../img/service_bg.jpg) repeat center;
   background-size: cover;
@@ -586,6 +612,10 @@ section {
           box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
   font-size: 18px;
   font-weight: 600;
+}
+.contacts {
+  background: url(../img/contacts.jpg) center center;
+  min-height: 75rem;
 }
 /* оформление всплывающих окон*/
 .popup {
