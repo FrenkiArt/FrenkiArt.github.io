@@ -320,7 +320,8 @@ a.btn-cta {
   background: transparent;
 }
 .hero-carousel .carousel-inner .item-3 {
-  background-image: url('../images/hero-3.jpg');
+  /*background-image: url('../images/hero-3.jpg');*/
+  background: url('../images/hero-3.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
