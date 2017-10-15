@@ -614,8 +614,30 @@ section {
   font-weight: 600;
 }
 .contacts {
-  background: url(../img/contacts.jpg) center center;
+  background: url(../img/contacts.jpg) no-repeat center;
   min-height: 75rem;
+  padding: 0;
+}
+.contacts .section-header {
+  margin-top: 10rem;
+  text-align: left;
+}
+.contacts .section-header h2 {
+  margin-bottom: 4rem;
+}
+.contacts .section-header p {
+  margin: 2rem 0;
+}
+.contacts .main-form {
+  margin-top: 10rem;
+  padding: 3rem;
+}
+.contacts .main-form .form p {
+  margin-bottom: 3rem;
+}
+.contacts .main-form .form button {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 /* оформление всплывающих окон*/
 .popup {
