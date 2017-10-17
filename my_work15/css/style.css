@@ -529,7 +529,8 @@ section {
 }
 .materials {
   padding: 0;
-  background: url(../img/materials_bg.jpg);
+  background: #ffffff url(../img/materials_bg.jpg) center no-repeat;
+  background-size: cover;
 }
 .materials .section-header {
   margin: 6rem 0 5rem;
@@ -551,9 +552,25 @@ section {
   text-align: center;
   margin: 5rem 0;
 }
+.materials img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 18rem;
+}
+.materials-slider {
+  margin-top: 5rem;
+}
+.materials a {
+  color: #70c849;
+  border-bottom: 1px dotted #70c849;
+}
+.materials a:hover {
+  color: #58aa34;
+}
 .how_we_work {
-  background: url(../img/how_we_work.jpg) center;
-  height: 66.5rem;
+  background: url(../img/how_we_work.jpg) no-repeat center;
+  min-height: 66.5rem;
 }
 .how_we_work-title {
   font-size: 4rem;
@@ -580,7 +597,7 @@ section {
 .service {
   background: url(../img/service_bg.jpg) repeat center;
   background-size: cover;
-  padding: 3rem;
+  padding: 3rem 0;
 }
 .service .section-header {
   margin: 2rem 0 4rem;
@@ -714,6 +731,15 @@ section {
   .problems-list {
     min-height: 40rem;
   }
+  .how_we_work {
+    padding: 2rem 0;
+    /*&-title{
+			margin-top: 3rem;
+		}
+		.main-form{
+			margin-top: 3rem;
+		}*/
+  }
 }
 @media (max-width: 991px) {
   .main {
@@ -759,6 +785,9 @@ section {
   .problems-women {
     display: none;
   }
+  .how_we_work {
+    background: url(../img/how_we_work.jpg) no-repeat left;
+  }
 }
 @media (max-width: 767px) {
   .main {
@@ -794,5 +823,8 @@ section {
   }
   .problems-women {
     display: none;
+  }
+  .contacts .section-header {
+    margin-top: 3rem;
   }
 }
