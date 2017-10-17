@@ -589,7 +589,8 @@ section {
 }
 
 .how_we_work{
-	background: url(../img/how_we_work.jpg) no-repeat center;
+	background: url(../img/how_we_work.jpg) center no-repeat;
+	background-size: cover;
 	min-height: 66.5rem;
 	&-title{
 		font-size: 4rem;
@@ -830,8 +831,9 @@ section {
 		
 	}
 	.how_we_work{
-		background: url(../img/how_we_work.jpg) no-repeat left;
-		
+	/*	background: url(../img/how_we_work.jpg) no-repeat left;
+	*/	background: none;
+		background-color: @bg-light;
 	}
 }
 @media (max-width: 767px){
@@ -874,6 +876,8 @@ section {
 		
 	}
 	.contacts{
+		background: none;
+		background-color: @bg-light;
 		.section-header{
 			margin-top: 3rem;
 		}
