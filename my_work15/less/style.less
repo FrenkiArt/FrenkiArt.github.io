@@ -26,7 +26,6 @@
 @bg-light: #f5f5f5;
 @light: #fff;
 @border-input: #dddddd;
-@problems-color: #e8e8e8;
 
 /*basic setting*/
 html {
@@ -435,116 +434,6 @@ section {
 	left: 0;
 	max-width: 30rem;
 }
-.allin{
-	background: @bg-light;
-	.section-header_active{
-		color: @icons-color;
-	}
-	.circle{
-		display: inline-block;
-		border: 1px solid @icons-color;
-		border-radius: 50%;
-		width: 4rem; height: 4rem;
-		text-align: center;
-		background-color: @icons-color;
-		&-border{
-			display: inline-block;
-			border: 2px solid @icons-color;
-			border-radius: 50%;
-			width: 5rem; height: 5rem;
-			text-align: center;
-			line-height: 4rem;
-			padding: 0.3rem;
-			color: @light;
-			font-size: 2rem;
-			font-weight: 700;
-		}
-	}
-	.media{
-		min-height: 9rem;
-		h4{
-			.bold();
-			font-size: 1.6rem;
-		}
-		p{
-			font-size: 1.1rem;
-		}
-	}
-}
-
-/*схема работы*/
-.scheme{
-	background: #fff url(../img/shema_work_bg_self.jpg) bottom -10rem right -15rem no-repeat;
-	background-size: 60rem;
-	&-block{
-		min-height: 30rem;
-		h3{
-		font-size: 2rem;
-		.bold();
-		}
-		img{
-		height: 90px;
-		}
-	}
-}
-
-/*Мы развеем все опасения*/
-.problems{
-	&-women{
-		position: absolute;
-		bottom: 0;
-		width: 30rem;
-		left:50%;
-		margin-left: -19rem;
-	}
-	position: relative;
-	&-list{
-		border: 4px solid;
-		margin-bottom: 2rem;
-		padding: 2rem;
-		min-height: 35rem;
-		h4{
-			font-size: 2.1rem;
-			.bold();
-		}
-		ul{
-			list-style: none;
-			padding-left: 0;
-			padding-top: 2rem;
-			li{
-				position: relative;
-				margin-bottom: 3rem;
-				padding-left: 4.5rem;
-				&:before{
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				content: '';
-				width: 3rem;
-				height: 3rem;
-				}
-			}
-		}
-		&_bad{
-			border-color: @problems-color;
-			h4{
-				opacity: 0.5;
-			}
-			ul li:before{
-				background: url(../img/problems-cancel.svg) center no-repeat;
-				background-size: 70%;
-			}
-		}
-		&_goods{
-			border-color: @icons-color;
-			ul li:before{
-				background: url(../img/problems-checked.svg) center no-repeat;
-				background-size: 70%;
-			}
-		}
-	}
-}
 
 .service{
 	background: url(../img/service_bg.jpg) repeat center;
@@ -644,17 +533,6 @@ section {
 			margin-bottom: 3rem;
 		}
 	}
-	.media{
-		min-height: 11rem;
-	}
-	.section-header{
-		margin: 2rem 0rem;
-	}
-	.problems{
-		&-list{
-			min-height: 40rem;
-		}
-	}
 }
 
 
@@ -673,9 +551,6 @@ section {
 	.main-title{
 		text-align: center;
 		padding-bottom: 3rem;
-	}
-	.media{
-		min-height: 11rem;
 	}
 	.price{
 		&-button{
@@ -703,15 +578,6 @@ section {
 	.hand{
 		display: none;
 	}
-	.problems{
-		&-list{
-			min-height: auto;
-		}
-		&-women{
-			display: none;
-		}
-		
-	}
 }
 @media (max-width: 767px){
 	.main{
@@ -738,18 +604,5 @@ section {
 			right: 0rem;
 		}
 
-	}
-	.scheme{
-		background: none;
-		text-align: center;
-		&-block{
-			min-height:auto;
-		}
-	}
-	.problems{
-		&-women{
-			display: none;
-		}
-		
 	}
 }

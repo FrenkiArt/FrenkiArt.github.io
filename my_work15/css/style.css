@@ -639,6 +639,17 @@ section {
   font-size: 1.4rem;
   font-weight: 600;
 }
+.footer {
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+.footer-center {
+  text-align: center;
+}
+.footer-dev {
+  text-align: right;
+  margin-top: 2rem;
+}
 /* оформление всплывающих окон*/
 .popup {
   display: none;
