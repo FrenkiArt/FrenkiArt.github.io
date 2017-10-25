@@ -35,6 +35,9 @@ html {
 body {
 	.reg();
 }
+.map-contact{
+	width: 95%; 
+}
 a:hover{
 	text-decoration: none;
 }
@@ -89,6 +92,9 @@ button, input, a, textarea {
 	small{
 		display: block;
 		margin-top: 1.5rem;
+	}
+	input{
+		text-align: center;
 	}
 }
 
@@ -256,6 +262,8 @@ section {
 		img{
 			display: block;
 			margin: 0 auto;
+			width: 10rem;
+			height: 10rem;
 		}
 	}
 }
@@ -275,11 +283,14 @@ section {
 	left: 0;
 	background: url(../img/left_arrow.svg) center no-repeat;
 	background-size: 70%;
+	z-index: 10;
+
 }
 .next {
 	right: 0;
 	background: url(../img/right_arrow.svg) center no-repeat;
 	background-size: 70%;
+	z-index: 10;
 }
 
 
@@ -651,14 +662,23 @@ section {
 }
 
 .contacts{
-	background: url(../img/contacts.jpg) no-repeat center;
+	background: @light url(../img/contacts.jpg) center no-repeat;
+	background-size: cover;
 	min-height: 75rem;
 	padding: 0;
+	&-link{
+		display: inline-block;
+		border-bottom: 1px dotted @text-color;
+		&:hover{
+			color: darken(@text-color, 10%);
+		}
+	}
 	.section-header{
 		margin-top: 10rem;
 		text-align: left;
 		h2{
 			margin-bottom: 4rem;
+			.bold();
 		}
 		p{
 			margin: 2rem 0;
@@ -782,6 +802,9 @@ section {
 	.main{
 		background-position: top right;
 	}
+	#main-batton{
+		z-index: 1;
+	}
 	.phone-block{
 		text-align: center;
 	}
@@ -791,6 +814,7 @@ section {
 	.main-title{
 		text-align: center;
 		padding-bottom: 3rem;
+		z-index: 99;
 	}
 	.media{
 		min-height: 11rem;
@@ -834,6 +858,23 @@ section {
 	/*	background: url(../img/how_we_work.jpg) no-repeat left;
 	*/	background: none;
 		background-color: @bg-light;
+	}
+	.contacts{
+		background: none;
+		background-color: @bg-light;
+		.main-form{
+			margin-top: 3rem;
+			margin-bottom: 2rem;
+		}
+	}
+	.footer{
+		text-align: center;
+		&-dev{
+			text-align: center;
+		}
+		&-center{
+			margin-top: 2rem;	
+		}
 	}
 }
 @media (max-width: 767px){
@@ -885,5 +926,37 @@ section {
 }
 
 @media (max-width: 320px){
-	
+	.how_we_work{
+		&-title, &-title2{
+			text-align: center;
+		}
+	}
+	.main{
+		&-content{
+			h1{
+				text-transform: none;
+			}
+		}
+	}
+	.popup{
+		&-close{
+			position: absolute;
+			top: 0.5rem;
+			right: -1rem;
+			width: 6rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			font-size: 3rem;
+			color: @icons-color;
+			.bold();
+			z-index: 1;
+		}
+	}
+	.prev {
+		display: none !important;
+	}
+	.next {
+		display: none !important;
+	}
 }
