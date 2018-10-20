@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровые эмоции</title>
+    <meta name="description" content="Описание сайта">
+    <meta name="Keywords" content="ключевые, слова">
+    <link rel="apple-touch-icon" href="favicon-star.ico">
+    <link rel="shortcut icon" href="favicon-star.ico" type="image/x-icon">
+    <style>
+        #circularG {
+            position: relative;
+            width: 58px;
+            height: 58px;
+            margin: auto;
+        }
+
+        .circularG {
+            position: absolute;
+            background-color: rgb(0, 0, 0);
+            width: 14px;
+            height: 14px;
+            border-radius: 9px;
+            -o-border-radius: 9px;
+            -ms-border-radius: 9px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            animation-name: bounce_circularG;
+            -o-animation-name: bounce_circularG;
+            -ms-animation-name: bounce_circularG;
+            -webkit-animation-name: bounce_circularG;
+            -moz-animation-name: bounce_circularG;
+            animation-duration: 0.478s;
+            -o-animation-duration: 0.478s;
+            -ms-animation-duration: 0.478s;
+            -webkit-animation-duration: 0.478s;
+            -moz-animation-duration: 0.478s;
+            animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-direction: normal;
+            -o-animation-direction: normal;
+            -ms-animation-direction: normal;
+            -webkit-animation-direction: normal;
+            -moz-animation-direction: normal;
+        }
+
+        #circularG_1 {
+            left: 0;
+            top: 23px;
+            animation-delay: 0.178s;
+            -o-animation-delay: 0.178s;
+            -ms-animation-delay: 0.178s;
+            -webkit-animation-delay: 0.178s;
+            -moz-animation-delay: 0.178s;
+        }
+
+        #circularG_2 {
+            left: 6px;
+            top: 6px;
+            animation-delay: 0.244s;
+            -o-animation-delay: 0.244s;
+            -ms-animation-delay: 0.244s;
+            -webkit-animation-delay: 0.244s;
+            -moz-animation-delay: 0.244s;
+        }
+
+        #circularG_3 {
+            top: 0;
+            left: 23px;
+            animation-delay: 0.3s;
+            -o-animation-delay: 0.3s;
+            -ms-animation-delay: 0.3s;
+            -webkit-animation-delay: 0.3s;
+            -moz-animation-delay: 0.3s;
+        }
+
+        #circularG_4 {
+            right: 6px;
+            top: 6px;
+            animation-delay: 0.356s;
+            -o-animation-delay: 0.356s;
+            -ms-animation-delay: 0.356s;
+            -webkit-animation-delay: 0.356s;
+            -moz-animation-delay: 0.356s;
+        }
+
+        #circularG_5 {
+            right: 0;
+            top: 23px;
+            animation-delay: 0.422s;
+            -o-animation-delay: 0.422s;
+            -ms-animation-delay: 0.422s;
+            -webkit-animation-delay: 0.422s;
+            -moz-animation-delay: 0.422s;
+        }
+
+        #circularG_6 {
+            right: 6px;
+            bottom: 6px;
+            animation-delay: 0.478s;
+            -o-animation-delay: 0.478s;
+            -ms-animation-delay: 0.478s;
+            -webkit-animation-delay: 0.478s;
+            -moz-animation-delay: 0.478s;
+        }
+
+        #circularG_7 {
+            left: 23px;
+            bottom: 0;
+            animation-delay: 0.544s;
+            -o-animation-delay: 0.544s;
+            -ms-animation-delay: 0.544s;
+            -webkit-animation-delay: 0.544s;
+            -moz-animation-delay: 0.544s;
+        }
+
+        #circularG_8 {
+            left: 6px;
+            bottom: 6px;
+            animation-delay: 0.6s;
+            -o-animation-delay: 0.6s;
+            -ms-animation-delay: 0.6s;
+            -webkit-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+        }
+
+        @keyframes bounce_circularG {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(.3);
+            }
+        }
+
+        @-o-keyframes bounce_circularG {
+            0% {
+                -o-transform: scale(1);
+            }
+
+            100% {
+                -o-transform: scale(.3);
+            }
+        }
+
+        @-ms-keyframes bounce_circularG {
+            0% {
+                -ms-transform: scale(1);
+            }
+
+            100% {
+                -ms-transform: scale(.3);
+            }
+        }
+
+        @-webkit-keyframes bounce_circularG {
+            0% {
+                -webkit-transform: scale(1);
+            }
+
+            100% {
+                -webkit-transform: scale(.3);
+            }
+        }
+
+        @-moz-keyframes bounce_circularG {
+            0% {
+                -moz-transform: scale(1);
+            }
+
+            100% {
+                -moz-transform: scale(.3);
+            }
+        }
+
+        /* анимация для тогла */
+        @keyframes toggleAnimation {
+            0% {
+                margin-left: 0%;
+                margin-right: calc(100% - 85px);
+            }
+
+            100% {
+                margin-left: calc(100% - 85px);
+                margin-right: 0%;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <div class="preloader" id="preloader" style="transition: visibility 1s, opacity 1s; width: 100%; height: 100vh;">
+        <div id="circularG" style="margin-top: 40vh;">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var preloader = document.getElementById("preloader");
+            preloader.style.opacity = 0;
+            preloader.style.visibility = "hidden";
+            preloader.style.position = "absolute";
+        }
+    </script>
+
+    <header class="header">
+
+        <div class="container">
+            <div class="block block_1">
+                <div class="label">
+                    <div class="title row_1">
+                        <span class="before">Цифр</span>
+                        <span class="after">вые</span>
+                    </div>
+                    <div class="title row_2">
+                        <span class="before">Эм</span>
+                        <span class="after">ции</span>
+                    </div>
+                    <div class="small_text">
+                        спутник деловых маршрутов
+                    </div>
+                    <div class="toggle_anime">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block_2 phone_block">
+                <div class="title">Бесплатно по России</div>
+                <div class="phone">8 (800) 555 35 35</div>
+            </div>
+            <div class="block block_3 phone_block">
+                <div class="title">Для г. Москва</div>
+                <div class="phone">8 (800) 555 35 35</div>
+            </div>
+            <div class="block block_4">
+                <a href="#" download="#">Скачать презентацию</a>
+                <a href="">Заказать звонок</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav_circle">
+                <div class="nav_circle_img"></div>
+            </div>
+            <ul class="navigation_ul">
+                <li><a href="#main">Компания</a></li>
+                <li><a href="#our_expertise">Услуги</a></li>
+                <li><a href="#relevant_case_studies">Кейсы</a></li>
+                <li><a href="#feedbacks_slider">Отзывы</a></li>
+                <li><a href="#reached">Добились</a></li>
+                <li><a href="#answers">FAQ</a></li>
+                <li><a href="#our_comand">Наша команда</a></li>
+                <li><a href="#media_about_us">Сми</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main" id="main">
+        <div class="container">
+            <div class="slide">
+                <div class="left">
+                    <h3 class="h4_title h4_title_white">
+                        Компания цифровые эмоции
+                    </h3>
+                    <h1 class="h1"><span>IT</span> -консалтинг для крупного бизнеса</h1>
+                    <div class="number_slides">
+                        <span>01</span>
+                        <span>06</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="toggle_anime">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news">
+        <div class="container">
+            <div class="h4_title">Актуальные новости</div>
+            <div class="news__title">
+                «Цифровые Эмоции» <a href="#">в тройке лидеров</a> рейтинга системных интеграторов: <a href="#">построение
+                    ИТ-инфраструктуры</a> 2017
+            </div>
+        </div>
+    </div>
+    <div class="new_project">
+        <div class="container">
+            <div class="slide">
+                <div class="left">
+                    <div class="h4_title">Новый проект</div>
+                    <div class="h2_title">
+                        ИТ инфраструктура
+                        ВВПОД «ЮНАРМИЯ»
+                        при Мин. обороны РФ
+                    </div>
+                    <div class="text">
+                        Детско-юношеское движение в России, целью которого является патриотическое воспитание нового
+                        поколения российских граждан.
+                    </div>
+                    <a href="#" class="ancor">
+                        Подробнее
+                        <div class="ancor_img">
+                        </div>
+                    </a>
+                    <a href="#" class="ancor_float"></a>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="share_experience">
+        <div class="container">
+            <div class="h4_title">
+                Делимся опытом
+            </div>
+        </div>
+        <div class="container">
+
+            <a href="#" class="block_experience">
+                <div class="img">
+                    <img src="img/expirience_img_1.svg" alt="image">
+                </div>
+                <div class="title">
+                    Заметки
+                </div>
+                <div class="subtitle">
+                    Цифровые Эмоции
+                    о особенностях выбора ИТ-инфраструктуры для торговых предприятий
+                </div>
+                <div class="text">
+                    Парадокс знаний<br>
+                    и уверенности
+                </div>
+                <div class="date">
+                    21 августа
+                </div>
+            </a>
+            <a href="#" class="block_experience">
+                <div class="img">
+                    <img src="img/expirience_img_1.svg" alt="image">
+                </div>
+                <div class="title">
+                    Заметки
+                </div>
+                <div class="subtitle">
+                    Цифровые Эмоции
+                    о особенностях выбора ИТ-инфраструктуры для торговых предприятий
+                </div>
+                <div class="text">
+                    Парадокс знаний <br>
+                    и уверенности
+                </div>
+                <div class="date">
+                    21 августа
+                </div>
+            </a>
+            <a href="#" class="block_experience">
+                <div class="img">
+                    <img src="img/expirience_img_1.svg" alt="image">
+                </div>
+                <div class="title">
+                    Заметки
+                </div>
+                <div class="subtitle">
+                    Цифровые Эмоции
+                    о особенностях выбора ИТ-инфраструктуры для торговых предприятий
+                </div>
+                <div class="text">
+                    Парадокс знаний<br>
+                    и уверенности
+                </div>
+                <div class="date">
+                    21 августа
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="our_expertise" id="our_expertise">
+        <div class="container">
+            <div class="h4_title">
+                Наша экспертность для вашего бизнеса
+            </div>
+            <div class="h2_title">
+                Основные направления <br>
+                для комплексной оптимизации
+                бизнес процесов
+            </div>
+            <div class="taber">
+                <div class="taber_titles">
+                    <div class="title active js_title_expertise">
+                        Инфраструктурная
+                        интеграция
+                    </div>
+                    <div class="title js_title_expertise">
+                        Строительство
+                        сетей связи
+                    </div>
+                    <div class="title js_title_expertise">
+                        Банковские
+                        системы
+                    </div>
+                    <div class="title js_title_expertise">
+                        Техническое перевооружение
+                        в машиностроении
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="our_expertise_second">
+        <div class="container">
+            <div class="taber_content active js_taber_content_expertise">
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                                Консалтинг
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Бизнес-консалтинг
+                        </li>
+                        <li>
+                            ИТ-консалтинг
+                        </li>
+                        <li>
+                            Кадровый консалтинг
+                        </li>
+                        <li>
+                            ИТ-аудит
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                                Аутсорсинг ИТ
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Центр поддержки пользователей
+                        </li>
+                        <li>
+                            Техническая поддержка пользователей
+                        </li>
+                        <li>
+                            Обслуживание серверной и сетевой инфраструктуры
+                        </li>
+                        <li>
+                            Управление проектами
+                        </li>
+                        <li>
+                            Постановка проектного управления у заказчиков
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                                Телекоммуникационные
+                                решения
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Беспроводные корпоративные решения
+                        </li>
+                        <li>
+                            Корпоративные ЛВС
+                        </li>
+                        <li>
+                            Распределенные мультисервисные сети
+                        </li>
+                        <li>
+                            Сети операторов связи
+                        </li>
+                        <li>
+                            Технологические сети связи
+                        </li>
+                        <li>
+                            Системы мониторинга и управления сетями
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                            Автоматизация бизнеса
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Предпроектная подготовка
+                        </li>
+                        <li>
+                            Формирование технического задания
+                        </li>
+                        <li>
+                            Техническое (эскизное) проектирование
+                        </li>
+                        <li>
+                            Управление процессом автоматизации
+                        </li>
+                        <li>
+                            Подготовка рабочей документации
+                        </li>
+                        <li>
+                            Экспертиза технических документов и решений
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                                Инженерные решения
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Структурированные кабельные системы
+                        </li>
+                        <li>
+                            Электроснабжение зданий
+                        </li>
+                        <li>
+                            Вентиляция и кондиционирование
+                        </li>
+                        <li>
+                            Системы пожаротушения
+                        </li>
+                        <li>
+                            Оснащение диспетчерских и конференц-залов
+                        </li>
+                        <li>
+                            Техническая безопасность объектов
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+                <div class="taber_block">
+                    <div class="taber_block_title">
+                        <span>
+                                Унифицированные
+                                коммуникации
+                        </span>
+                    </div>
+                    <ul class="taber_block_list">
+                        <li>
+                            Видеоконференцсвязь
+                        </li>
+                        <li>
+                            Корпоративная телефония
+                        </li>
+                        <li>
+                            Центры обработки вызовов
+                        </li>
+                        <li>
+                            Экспертиза технических документов
+                            и решений
+                        </li>
+                    </ul>
+                    <img class="taber_block_img" src="img/taber_content_img_1.svg" width="39px" height="39px" alt="image">
+                </div>
+            </div>
+            <div class="taber_content js_taber_content_expertise">
+                я содержимое строительсвто сетей связи
+            </div>
+            <div class="taber_content js_taber_content_expertise">
+                я содержимое банковские сиситемы
+            </div>
+            <div class="taber_content js_taber_content_expertise">
+                я содержимое техническое перевооружение в машиностроении
+            </div>
+        </div>
+    </div>
+
+    <div class="save_your_time">
+        <div class="container">
+            <div class="left">
+                <div class="sect_title">
+                    <img src="img/save_your_time_title_img.png" width="54px" height="57px" alt="png">
+                    Экономте свое время!
+                </div>
+
+                <ul class="list">
+                    <li>
+                        <div class="number">01</div>
+                        <div class="text">Впишите свой телефон</div>
+                        <div class="time">7 секунд</div>
+                    </li>
+                    <li>
+                        <div class="number">02</div>
+                        <div class="text">Нажмите кнопку "Отправить"</div>
+                        <div class="time">0,5 секунд</div>
+                    </li>
+                    <li>
+                        <div class="number">03</div>
+                        <div class="text">Получите профессиональную консультацию по Вашему вопросу от экспертов</div>
+                        <div class="time">5-30 секунд</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <form action="#" method="POST" class="form_common">
+                    <div class="label">
+                        Ваш телефон
+                    </div>
+                    <label>
+                        <input class="input_phone" type="text" placeholder="+7 (___) ___-__-__">
+                    </label>
+                    <button class="button_common" type="submit">
+                        Отправить
+                        <div class="arrow"></div>
+                    </button>
+                </form>
+                <div class="small_text">
+                    Наш специалист позвонит Вам в течение
+                    пяти минут
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relevant_case_studies" id="relevant_case_studies">
+        <div class="container">
+            <div class="h2_title">
+                Актуальные кейсы
+            </div>
+            <div class="subtitle_common">
+                Каждый разработанный нами продукт не только решает задачи бизнеса, Мы создаем сервисы,
+                в которые люди влюбляются
+            </div>
+
+            <div class="cases">
+                <a href="#" class="case">
+                    <div class="left">
+                        <img src="img/cases_img_1.png" alt="image">
+                    </div>
+                    <div class="right">
+                        <div class="name">ТГК «АЛЬФА»</div>
+                        <div class="tags">
+                            <div class="tag">АУДИТ</div>
+                            <div class="tag">СЦЕНАРИИ</div>
+                            <div class="tag">МОДЕРНИЗАЦИЯ</div>
+                        </div>
+                        <div class="title">
+                            ИСТОРИЯ
+                        </div>
+                        <div class="subtitle">
+                            Крупный отель с номерным фондом 1000 номеров. Большое 30-ти этажное здание находится
+                            полностью на ИТ обслуживании нашей компании 24/7.
+                        </div>
+                        <button class="button_common">
+                            Смотреть презентацию
+                            <div class="arrow"></div>
+                        </button>
+                    </div>
+                </a>
+                <a href="#" class="case">
+                    <div class="left">
+                        <img src="img/cases_img_2.png" alt="image">
+                    </div>
+                    <div class="right">
+                        <div class="placeholder">
+                            <span>Место для вашей
+                                компании</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="think_large_scale">
+        <div class="container">
+            <div class="h2_title h2_title_white">
+                Мыслим масштабно
+            </div>
+            <div class="subtitle_common">
+                Решаем масштабные вопросы в IT, которыми каждый день пользуются миллионы людей.
+            </div>
+
+            <div class="labels">
+                <div class="labels_imgs active">
+                    <img src="img/labels_big_img.png" alt="img">
+                </div>
+                <div class="labels_imgs">
+                    <img src="img/labels_big_img.png" alt="img">
+                </div>
+                <div class="labels_imgs">
+                    <img src="img/labels_big_img.png" alt="img">
+                </div>
+                <div class="labels_titles">
+                    <div class="range_vertical">
+                        <div class="circle"></div>
+                    </div>
+                    <ul class="list_title">
+                        <li class="active js_labels_title">Финансы</li>
+                        <li class="js_labels_title">Телеком</li>
+                        <li class="js_labels_title">E-commerce</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="feedbacks_slider" class="feedbacks_slider swiper-container swiper-standart">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="avatar_img" src="img/feedback_slider_img_1.jpg" alt="avatar" class="avatar">
+                        <img class="label_img" src="img/feedback_slider_img_1_label.png" alt="label" class="label">
+                        <div class="content">
+                            <p>
+                                « Компания «Цифровые Эмоции» проведла работы и ввела
+                                в эксплуатацию новый ИТ отдела для ТГК «АЛЬФА», Заказчик сократил свои ежемесячные
+                                расходы
+                                на ИТ инфраструктуру на 60%. При этом, полностью заменив внутренний штат ИТ сотрудников
+                                с 9
+                                человек на 6 наших специалистов, передав ИТ инфраструктуру на Аутсорсинг. Не потеряв в
+                                качестве предоставляемого сервиса, за счет грамотно подобранного сценария оптимизации.
+
+                            </p>
+                            <p>
+                                Также, Заказчик сократил свои разовые вложения в модернизацию
+                                ИТ инфраструктуры компании более чем на 20%.
+                            </p>
+                            <p>
+                                Были внедрены современные ИТ сервисы и решения, позволяющие более эффективно управлять
+                                инфраструктурой, а также быть более гибкими, подотчетными и масштабируемыми для
+                                Бизнеса. »
+                            </p>
+
+                            <div class="name">
+                                Татьяна Дмитриева
+                            </div>
+                            <div class="position">
+                                Руководитель отдела управления «Альфа»
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="avatar_img" src="img/feedback_slider_img_1.jpg" alt="avatar" class="avatar">
+                        <img class="label_img" src="img/feedback_slider_img_1_label.png" alt="label" class="label">
+                        <div class="content">
+                            <p>
+                                « Компания «Цифровые Эмоции» проведла работы и ввела
+                                в эксплуатацию новый ИТ отдела для ТГК «АЛЬФА», Заказчик сократил свои ежемесячные
+                                расходы
+                                на ИТ инфраструктуру на 60%. При этом, полностью заменив внутренний штат ИТ сотрудников
+                                с 9
+                                человек на 6 наших специалистов, передав ИТ инфраструктуру на Аутсорсинг. Не потеряв в
+                                качестве предоставляемого сервиса, за счет грамотно подобранного сценария оптимизации.
+
+                            </p>
+                            <p>
+                                Также, Заказчик сократил свои разовые вложения в модернизацию
+                                ИТ инфраструктуры компании более чем на 20%.
+                            </p>
+                            <p>
+                                Были внедрены современные ИТ сервисы и решения, позволяющие более эффективно управлять
+                                инфраструктурой, а также быть более гибкими, подотчетными и масштабируемыми для
+                                Бизнеса. »
+                            </p>
+
+                            <div class="name">
+                                Маша Дмитриева
+                            </div>
+                            <div class="position">
+                                Руководитель отдела управления «Альфа»
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="reached">
+        <div class="container">
+            <div class="h2_title">
+                Добились
+            </div>
+            <div class="subtitle_common">
+                Компания Цифровые эмоции it-консалтинг с фокусом на бизнес
+            </div>
+
+            <div class="rack_records">
+                <div class="record">
+                    <div class="title">5</div>
+                    <div class="subtitle">лет опыта</div>
+                </div>
+                <div class="record">
+                    <div class="title">25</div>
+                    <div class="subtitle">специалистов</div>
+                </div>
+                <div class="record">
+                    <div class="img">
+                        <img src="img/record_img_2.png" alt="img">
+                    </div>
+                    <div class="subtitle">Награда "Деловая
+                        репутация" 2016
+                        от бизнес-клуба</div>
+                </div>
+                <div class="record">
+                    <div class="img">
+                        <img src="img/record_img_2.png" alt="img">
+                    </div>
+                    <div class="subtitle">Европейский
+                        уровень
+                        сервиса </div>
+                </div>
+                <div class="record">
+                    <div class="img">
+                        <img src="img/record_img_2.png" alt="img">
+                    </div>
+                    <div class="subtitle">Широкая сеть
+                        партнеров в России
+                        и Скандинавии</div>
+                </div>
+            </div>
+
+            <div class="swiper-container swiper-standart">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="img/record_slider_img_1.jpg" alt="img">
+                        </div>
+                        <div class="title">
+                            Награда "Деловая репутация" 2016
+                            от бизнес-клуба
+                        </div>
+                        <div class="text">
+                            Цифровые Эмоции живёт интересными проектами, достижениями в работе, творчестве, спорте,
+                            общении! Мы особенная команда.
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="img/record_slider_img_1.jpg" alt="img">
+                        </div>
+                        <div class="title">
+                            Награда "Деловая репутация" 2016
+                            от бизнес-клуба
+                        </div>
+                        <div class="text">
+                            Цифровые Эмоции живёт интересными проектами, достижениями в работе, творчестве, спорте,
+                            общении! Мы особенная команда.
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="answers">
+        <div class="container">
+            <div class="h2_title">
+                Ответы на самые популярные
+                вопросы
+            </div>
+
+            <div class="accardion">
+                <div class="left">
+                    <ul class="accardion_taber">
+                        <li class="acc_tab active js_acc_conditions_tab">
+                            Условия и порядок работы
+                        </li>
+                        <li class="acc_tab js_acc_risks_tab">
+                            Риски
+                        </li>
+                        <li class="acc_tab js_acc_guarantee_tab">
+                            Гарантия работы
+                        </li>
+                    </ul>
+
+                    <div class="write_us">
+                        <div class="media">
+                            <div class="img">?</div>
+                            <div class="content">
+                                <div class="title">Не нашли ответа на вопрос?</div>
+                                <div class="subtitle">Напишите нам!</div>
+                            </div>
+                        </div>
+                        <button class="button button_common">Задать вопрос <div class="arrow">?</div></button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="accardion_content acc_conditions">
+                        <div class="acc_block active">
+                            <div class="title">Как защищены интересы партнера?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accardion_content acc_risks">
+                        <div class="acc_block active">
+                            <div class="title">это аккардион принадлежит Риски</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accardion_content acc_guarantee">
+                        <div class="acc_block active">
+                            <div class="title">этот аккардион принадлежит Гарантия</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="acc_block">
+                            <div class="title">На какой срок рассчитаны программы сотрудничества?</div>
+                            <div class="text">
+                                За каждую мойку на твой бонусный счет мы начислим 10% от ее стоимости.
+                                <br>
+                                После десятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.За каждую мойку на твой бонусный
+                                счет мы начислим 10% от ее стоимости.<br>
+                                После девятой мойки ты сможешь рассчитаться накопленной суммой целиком, или
+                                частично, если бонусов не хватит для полной оплаты.
+                            </div>
+                            <div class="circle">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="our_comand" id="our_comand">
+        <div class="container">
+            <div class="h2_title">
+                Команда Цифровые Эмоции
+            </div>
+        </div>
+        <div class="container">
+            <div class="swiper-container swiper-standart">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="./img/our_comand_img_1.png" alt="face_img">
+                        </div>
+                        <div class="content">
+                            <div class="name">Антон Дмитриев</div>
+                            <div class="position">Руководитель отдела управления</div>
+                            <p>
+                                Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e
+                                regulari quam
+                                ti del coalescent
+                                lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan
+                                lingues.
+                                It va esser tam simplic quam Occidental: in fact, it va esser Occidental.
+                            </p>
+                            <ul>
+                                <li>Достижения</li>
+                                <li>Достижения</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="./img/our_comand_img_1.png" alt="face_img">
+                        </div>
+                        <div class="content">
+                            <div class="name">Антон Дмитриев</div>
+                            <div class="position">Руководитель отдела управления</div>
+                            <p class="text">
+                                Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e
+                                regulari quam
+                                ti del coalescent
+                                lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan
+                                lingues.
+                                It va esser tam simplic quam Occidental: in fact, it va esser Occidental.
+                            </p>
+                            <ul class="list">
+                                <li>достижения</li>
+                                <li>достижения</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="media_about_us" id="media_about_us">
+        <div class="container">
+            <div class="h2_title">
+                Сми о Цифровых эмоциях
+            </div>
+        </div>
+        <div class="container">
+            <div class="news_item">
+                <div class="top" style="background-image: url('./img/new_project_bg.jpg');">
+                    <div class="title">Что такое метод персон и как его продуктивно использовать</div>
+                    <div class="media">
+                        <img src="./img/girl_face.png" alt="avatar" class="avatar">
+                        <div class="name">Николай Геллар</div>
+                        <div class="dot">.</div>
+                        <div class="date">Март 2.2018</div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="ancor">
+                        <div class="ancor_title">
+                            Ссылка на источник:
+                        </div>
+                        <a href="#" class="ancor_url">
+                            www.site.ru/article.html
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="news_item">
+                <div class="top" style="background-image: url('./img/cases_img_1.png');">
+                    <div class="title">наименование новости наименование новости</div>
+                    <div class="media">
+                        <img src="./img/girl_face.png" alt="avatar" class="avatar">
+                        <div class="name">имя автора</div>
+                        <div class="dot">.</div>
+                        <div class="date">Март 2.2018</div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="ancor">
+                        <div class="ancor_title">
+                            Ссылка на источник:
+                        </div>
+                        <a href="#" class="ancor_url">
+                            www.site.ru/article.html
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="news_item">
+                <div class="top" style="background-image: url('./img/cases_img_2.png');">
+                    <div class="title">наименование новости наименование новости наименование новости</div>
+                    <div class="media">
+                        <img src="./img/girl_face.png" alt="avatar" class="avatar">
+                        <div class="name">имя автора</div>
+                        <div class="dot">.</div>
+                        <div class="date">Март 2.2018</div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="ancor">
+                        <div class="ancor_title">
+                            Ссылка на источник:
+                        </div>
+                        <a href="#" class="ancor_url">
+                            www.site.ru/article.html
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contacts" id="contacts">
+        <div class="container">
+            <div class="h2_title">
+                Контакты
+            </div>
+        </div>
+        <div class="container">
+            <div class="left">
+                <div class="media">
+                    <div class="img">
+                        <img src="./img/icon_contacts_phone.svg" alt="phone">
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            ТЕЛЕФОН ТЕХ. ПОДДЕРЖКИ:
+                        </div>
+                        <div class="text">
+                            8 (925) 744-33-47<br>
+                            support@zufrovueemoziii.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="img">
+                        <img src="./img/icon_contacts_garnitur.svg" alt="call_center">
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            ОТДЕЛ ПРОДАЖ:
+                        </div>
+                        <div class="text">
+                            8 (925) 744-33-47<br>
+                            support@zufrovueemoziii.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="img">
+                        <img src="./img/icon_contacts_geo.svg" alt="geo">
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            АДРЕСА ОФИСОВ:
+                        </div>
+                        <div class="text">
+                            г. Москва, ул. Верейская, д.29, стр.154,
+                            офис 6,БЦ «Верейская Плаза 1»
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="form_wrap">
+                    <div class="title_triger">
+                        Цифровые Эмоции ценят ваше
+                        время оставте контакты и ....
+                    </div>
+                    <form action="#" method="POST" class="form form_common">
+                        <div class="label">
+                            Представтесь:
+                        </div>
+                        <input class="input_name" type="text" placeholder="Имя">
+
+                        <div class="label">
+                            Ваш телефон
+                        </div>
+                        <input class="input_phone" type="text" placeholder="+7 (___) ___-__-__">
+
+                        <button class="form_submit button_common" type="submit">Отправить <div class="arrow"></div></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map" id="map">
+        <div class="custom_label">
+            <div class="triger">
+                <div class="toggle_anime">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="text">
+                БЦ «Верейская Плаза 1»
+            </div>
+            <div class="triangle"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_trigers">
+                <span><a href="#" download class="ancor download">Скачать презентацию</a></span>
+                <span><a href="№" class="ancor brif">Заполнить бриф</a></span>
+            </div>
+            <div class="footer_nav">
+                <ul class="menu">
+                    <li>
+                        <a href="#our_expertise">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="#relevant_case_studies">Кейсы</a>
+                    </li>
+                    <li>
+                        <a href="#our_comand">Команда</a>
+                    </li>
+                    <li>
+                        <a href="#">Блог</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_requisites">
+                <button class="button button_common">
+                    Отправить заявку
+                    <div class="arrow"></div>
+                </button>
+                <a href="tel:+74952152746" target="_blank" class="phone">+7 (495) 215-27-46</a>
+                <div class="media">
+                    <div class="img">
+                        <!-- <img src="./img/icon_footer_mail.png" alt="mail"> -->
+                        <img src="./img/icon_footer_mail.svg" alt="mail">
+                    </div>
+                    <div class="text">
+                        Официальная электронная почта:
+                        <a href="mailto:studio@zvet.ru">studio@zvet.ru</a>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="img">
+                        <!-- <img src="./img/icon_footer_geo.png" alt="mail"> -->
+                        <img src="./img/icon_footer_geo.svg" alt="mail">
+                    </div>
+                    <div class="text">
+                        г. Москва, ул. Верейская, д.29, стр.154, офис 6
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="policy">
+                <div class="copyright">
+                    © 2018 Цифровые эмоции. Все права защищены
+                </div>
+                <a class="confidencity" href="#">
+                    Политика конфиденциальности
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#header" class="go_to"></a>
+
+    <script src="js/libs.min.js "></script>
+    <script src="js/common.js "></script>
+</body>
+
+</html>
