@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         spaceBetween: 0,
         slidesPerView: 1,
         loop: false,
+        grabCursor: true,
 
         pagination: {
           el: '.swiper-pagination',
@@ -101,6 +102,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+
+        breakpoints: {
+          1024: {
+            
+          },
+          768: {
+            
+          },
+        }
       });
   
 
