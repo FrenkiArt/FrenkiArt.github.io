@@ -2084,6 +2084,9 @@ input[type="text"]:-moz-placeholder {
       margin-bottom: 35px; }
       .think_large_scale .feedbacks_slider .content p:last-of-type {
         margin-bottom: 48px; }
+    .think_large_scale .feedbacks_slider .content .big_letter {
+      font-size: 43px;
+      font-weight: 300; }
     .think_large_scale .feedbacks_slider .content .name {
       color: #181c28;
       font-family: "Gotham Pro";
