@@ -193,9 +193,9 @@
             }
         }
     </style>
-
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
 <body>
@@ -216,16 +216,9 @@
             <div id="circularG_8" class="circularG"></div>
         </div>
     </div>
-    <script>
-        window.onload = function () {
-            var preloader = document.getElementById("preloader");
-            preloader.style.opacity = 0;
-            preloader.style.visibility = "hidden";
-            preloader.style.position = "absolute";
-        }
-    </script>
+    
 
-    <header class="header">
+    <header class="header" id="header">
 
         <div class="container">
             <div class="block block_1">
@@ -256,7 +249,7 @@
             </div>
             <div class="block block_4">
                 <a href="#" download="#">Скачать презентацию</a>
-                <a href="">Заказать звонок</a>
+                <a href="#">Заказать звонок</a>
             </div>
         </div>
     </header>
@@ -267,39 +260,73 @@
                 <div class="nav_circle_img"></div>
             </div>
             <ul class="navigation_ul">
-                <li><a href="#main">Компания</a></li>
-                <li><a href="#our_expertise">Услуги</a></li>
-                <li><a href="#relevant_case_studies">Кейсы</a></li>
-                <li><a href="#feedbacks_slider">Отзывы</a></li>
-                <li><a href="#reached">Добились</a></li>
-                <li><a href="#answers">FAQ</a></li>
-                <li><a href="#our_comand">Наша команда</a></li>
-                <li><a href="#media_about_us">Сми</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                <li><a class="go_to" href="#main">Компания</a></li>
+                <li><a class="go_to" href="#our_expertise">Услуги</a></li>
+                <li><a class="go_to" href="#relevant_case_studies">Кейсы</a></li>
+                <li><a class="go_to" href="#feedbacks_slider">Отзывы</a></li>
+                <li><a class="go_to" href="#reached">Добились</a></li>
+                <li><a class="go_to" href="#answers">FAQ</a></li>
+                <li><a class="go_to" href="#our_comand">Наша команда</a></li>
+                <li><a class="go_to" href="#media_about_us">Сми</a></li>
+                <li><a class="go_to" href="#contacts">Контакты</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="main" id="main">
-        <div class="container">
-            <div class="slide">
-                <div class="left">
-                    <h3 class="h4_title h4_title_white">
-                        Компания цифровые эмоции
-                    </h3>
-                    <h1 class="h1"><span>IT</span> -консалтинг для крупного бизнеса</h1>
-                    <div class="number_slides">
-                        <span>01</span>
-                        <span>06</span>
+
+        <div class="swiper-container swiper-standart main_slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="slide">
+                            <div class="left">
+                                <h4 class="h4_title h4_title_white">
+                                    Компания цифровые эмоции
+                                </h4>
+                                <h1 class="h1"><span>IT</span> -консалтинг для крупного бизнеса</h1>
+                                <!-- <div class="number_slides">
+                                    <span>01</span>
+                                    <span>06</span>
+                                </div> -->
+                            </div>
+                            <div class="right">
+                                <div class="toggle_anime">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="right">
-                    <div class="toggle_anime">
-                        <div class="circle"></div>
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="slide">
+                            <div class="left">
+                                <h4 class="h4_title h4_title_white">
+                                    Компания цифровые эмоции
+                                </h4>
+                                <h1 class="h1"><span>IT</span> -консалтинг для крупного бизнеса</h1>
+                                <!-- <div class="number_slides">
+                                    <span>01</span>
+                                    <span>06</span>
+                                </div> -->
+                            </div>
+                            <div class="right">
+                                <div class="toggle_anime">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+        
     </div>
 
     <div class="news">
@@ -821,7 +848,7 @@
         </div>
     </div>
 
-    <div class="reached">
+    <div class="reached" id="reached">
         <div class="container">
             <div class="h2_title">
                 Добились
@@ -910,7 +937,7 @@
         </div>
     </div>
 
-    <div class="answers">
+    <div class="answers" id="answers">
         <div class="container">
             <div class="h2_title">
                 Ответы на самые популярные
@@ -1349,7 +1376,7 @@
     </div>
 
     <div class="map" id="map">
-        <div class="custom_label">
+        <!-- <div class="custom_label">
             <div class="triger">
                 <div class="toggle_anime">
                     <div class="circle"></div>
@@ -1359,7 +1386,7 @@
                 БЦ «Верейская Плаза 1»
             </div>
             <div class="triangle"></div>
-        </div>
+        </div> -->
     </div>
 
     <footer class="footer">
@@ -1371,16 +1398,16 @@
             <div class="footer_nav">
                 <ul class="menu">
                     <li>
-                        <a href="#our_expertise">Услуги</a>
+                        <a class="go_to" href="#our_expertise">Услуги</a>
                     </li>
                     <li>
-                        <a href="#relevant_case_studies">Кейсы</a>
+                        <a class="go_to" href="#relevant_case_studies">Кейсы</a>
                     </li>
                     <li>
-                        <a href="#our_comand">Команда</a>
+                        <a class="go_to" href="#our_comand">Команда</a>
                     </li>
                     <li>
-                        <a href="#">Блог</a>
+                        <a class="go_to" href="#">Блог</a>
                     </li>
                 </ul>
             </div>
@@ -1422,12 +1449,88 @@
                 </a>
             </div>
         </div>
+        <a href="#header" class="go_to" id="scroll_top"></a>
     </footer>
 
-    <a href="#header" class="go_to"></a>
+    
 
-    <script src="js/libs.min.js "></script>
-    <script src="js/common.js "></script>
+    
+
+    <script>
+        window.onload = function () {
+            var preloader = document.getElementById("preloader");
+            preloader.style.opacity = 0;
+            preloader.style.visibility = "hidden";
+            preloader.style.position = "absolute";
+        }
+    </script>
+    
+    <script async defer src="js/libs.min.js "></script>
+    <script async defer src="js/common.js "></script>
+
+    <!--  <script src="#" async defer></script> -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event){
+            function mapProject(){
+                ymaps.ready(init);
+                function init(){ 
+                    var myMap = new ymaps.Map("map", {
+                        center: [55.710053, 37.444263],
+                        zoom: 17,
+                        controls: [],
+                    });
+
+                    myMap.balloon.open(
+                        // Позиция балуна
+                        [55.710153, 37.442450], {
+                        contentBody: 
+                        '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
+                        }, 
+                        {
+                        // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
+                        closeButton: false,
+                        balloonContentHeader: '',
+                        balloonMaxWidth: 643,
+                        balloonMaxheight: 235,
+                        balloonMinWidth:  400,
+                        balloonMinheight: 131,
+                    });
+
+                    /* // Создание метки 
+                    var myPlacemark = new ymaps.Placemark(
+                        // Координаты метки
+                        [53.201121, 50.259698], {
+                        balloonContentHeader: '',
+                        balloonContentBody: '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
+                        balloonContentFooter: '',
+                        }, {
+                            closeButton: false
+                        }
+                        
+                    );
+                    // Добавление метки на карту
+		            myMap.geoObjects.add(myPlacemark); */
+
+                    myMap.behaviors.disable('scrollZoom');
+                    myMap.behaviors.enable('drag');
+                    var zoomControl = new ymaps.control.ZoomControl({
+                        options: {
+                            position:{
+                                left: "auto",
+                                right: 10,
+                                top: 116
+                            }
+                        }
+                    });
+                    myMap.controls.add(zoomControl);
+                    myMap.controls.add('fullscreenControl');
+                };
+            }
+            mapProject();
+        })
+    </script>
+
 </body>
 
 </html>

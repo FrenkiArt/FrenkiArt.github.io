@@ -112,6 +112,102 @@ document.addEventListener("DOMContentLoaded", function(event) {
           },
         }
       });
+    var main_slider = new Swiper('.main_slider', {
+        initialSlide: 0,
+        speed: 700,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        loop: false,
+        grabCursor: true,
+
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction',
+          formatFractionCurrent: function (number) {
+            switch(number)
+              {
+                case 1:
+                myNum='01'
+                break;
+                case 2:
+                myNum='02'
+                break;
+                case 3:
+                myNum='03'
+                break;
+                case 4:
+                myNum='04'
+                break;
+                case 5:
+                myNum='05'
+                break;
+                case 6:
+                myNum='06'
+                break;
+                case 7:
+                myNum='07'
+                break;
+                case 8:
+                myNum='08'
+                break;
+                case 9:
+                myNum='09'
+                break;
+                default:myNum= number
+              }
+            return myNum; 
+          },
+          formatFractionTotal: function (number) {
+            switch(number)
+              {
+                case 1:
+                myNum='01'
+                break;
+                case 2:
+                myNum='02'
+                break;
+                case 3:
+                myNum='03'
+                break;
+                case 4:
+                myNum='04'
+                break;
+                case 5:
+                myNum='05'
+                break;
+                case 6:
+                myNum='06'
+                break;
+                case 7:
+                myNum='07'
+                break;
+                case 8:
+                myNum='08'
+                break;
+                case 9:
+                myNum='09'
+                break;
+                default:myNum= number
+              }
+            return myNum; 
+          },
+        
+
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+          1024: {
+            
+          },
+          768: {
+            
+          },
+        }
+      });
   
 
     /* js для аккардеона и табера */
@@ -206,5 +302,81 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   }
   /* конец для табера our_expertise */
+
+  /* плавный скролл по ссылке */
+
+  var goTo = document.querySelectorAll(".go_to");
+  for (let i = 0; i < goTo.length; i++) {
+      const element = goTo[i];
+      element.addEventListener("click", function(e){
+          e.preventDefault();
+          var scrollEl = e.currentTarget.getAttribute("href");
+          if (scrollEl.length != 0) {
+              try {
+                  var ourTarget = document.querySelector(scrollEl);
+                  window.scrollTo({
+                      top: ourTarget.offsetTop,
+                      behavior: "smooth"
+                  });
+              } catch (error) {
+                  console.error(error + " проставьте верные id на которые ведёт ссылка")
+              }
+              
+          }
+      });
+  }
+  /* конец плавный скролл по ссылке */
+
+  /* события для навигации в мобильном меню */
+  var nav_circle = document.querySelector(".nav_circle");
+  var navigationUl = document.querySelector(".navigation_ul");
+  
+  nav_circle.addEventListener("click", function(e){
+    if (e.currentTarget.classList.contains("active")) {
+        e.currentTarget.classList.remove("active");
+        navigationUl.classList.remove("nav_action");
+    } else {
+        e.currentTarget.classList.add("active");
+        navigationUl.classList.add("nav_action");
+    }
+  });
+
+  /* скрипты в зависимости от размера экрана */
+
+  if (window.matchMedia("(min-width: 769px)").matches) {
+  } else {
+      /* the viewport is less than 769px pixels wide */
+      /* для навигации для мобильников */
+      navigationUl.addEventListener("click", function(){
+          navigationUl.classList.remove("nav_action");
+          nav_circle.classList.remove("active");
+      });
+  }
+
+  /* для появления кнопки скролла вверх */
+
+  var scroll_top = document.getElementById("scroll_top");
+  var footer = document.querySelector(".footer");
+  var scrollHeightDocument = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+
+  window.addEventListener("scroll", function(){
+    /* console.log(window.pageYOffset/scrollHeightDocument); */
+    if (window.pageYOffset > 1500) {
+      scroll_top.classList.add("visible");
+    } else {
+      scroll_top.classList.remove("visible");
+    }
+    if (window.pageYOffset/scrollHeightDocument > 0.82) {
+      scroll_top.classList.add("bottom");
+    } else {
+      scroll_top.classList.remove("bottom");
+    }
+    
+
+  });
 
 });
