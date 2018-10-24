@@ -1465,14 +1465,14 @@
         }
     </script>
     
-    <script async defer src="js/libs.min.js "></script>
+    <script src="js/libs.min.js "></script>
     <script async defer src="js/common.js "></script>
 
-    <!--  <script src="#" async defer></script> -->
+    
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script>
+    <script async defer>
         document.addEventListener("DOMContentLoaded", function(event){
-            function mapProject(){
+            /* function mapProject(){
                 ymaps.ready(init);
                 function init(){ 
                     var myMap = new ymaps.Map("map", {
@@ -1497,21 +1497,6 @@
                         balloonMinheight: 131,
                     });
 
-                    /* // Создание метки 
-                    var myPlacemark = new ymaps.Placemark(
-                        // Координаты метки
-                        [53.201121, 50.259698], {
-                        balloonContentHeader: '',
-                        balloonContentBody: '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
-                        balloonContentFooter: '',
-                        }, {
-                            closeButton: false
-                        }
-                        
-                    );
-                    // Добавление метки на карту
-		            myMap.geoObjects.add(myPlacemark); */
-
                     myMap.behaviors.disable('scrollZoom');
                     myMap.behaviors.enable('drag');
                     var zoomControl = new ymaps.control.ZoomControl({
@@ -1527,7 +1512,7 @@
                     myMap.controls.add('fullscreenControl');
                 };
             }
-            mapProject();
+            mapProject(); */
         })
     </script>
 
