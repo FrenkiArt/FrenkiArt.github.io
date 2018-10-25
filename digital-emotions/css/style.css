@@ -791,7 +791,7 @@ input[type="text"]:-moz-placeholder {
 .button_common {
   width: 100%;
   height: 76px;
-  border-radius: 38px;
+  border-radius: 10px;
   border: 2px solid #f06a00;
   background-color: #ffffff;
   text-align: center;
@@ -803,16 +803,29 @@ input[type="text"]:-moz-placeholder {
   font-weight: 700;
   line-height: 58.72px;
   text-transform: uppercase;
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: hidden; }
   .button_common:hover {
+    border-radius: 38px;
     cursor: url("../img/cursor_pointer.png"), pointer; }
+    .button_common:hover .arrow {
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      border-radius: 100%; }
   .button_common .arrow {
     position: absolute;
     top: -2px;
     right: -2px;
     width: 76px;
     height: 76px;
-    border-radius: 100%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    border-radius: 10px;
     background-color: #000000;
     background-image: -webkit-gradient(linear, left top, right top, from(#eb672f), to(#f6ba45));
     background-image: -webkit-linear-gradient(left, #eb672f 0%, #f6ba45 100%);
@@ -1064,7 +1077,8 @@ input[type="text"]:-moz-placeholder {
     -webkit-transition: background-position 0.3s;
     -o-transition: background-position 0.3s;
     transition: background-position 0.3s;
-    background-position: left center; }
+    background-position: left center;
+    z-index: 2; }
     .new_project .ancor_float:hover {
       background-position: right center; }
       .new_project .ancor_float:hover svg {
@@ -2535,6 +2549,8 @@ input[type="text"]:-moz-placeholder {
   .h4_title {
     font-size: 12px;
     line-height: 18px; }
+  #scroll_top.bottom {
+    bottom: 700px; }
   .header .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2582,9 +2598,16 @@ input[type="text"]:-moz-placeholder {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
+  .main .main_slider .white_block {
+    display: none; }
   .main .main_slider .swiper-pagination {
     left: -webkit-calc( 50% - 80px);
     left: calc( 50% - 80px); }
+  .main .main_slider .swiper-button-next {
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+         -o-transform: scale(0.5);
+            transform: scale(0.5); }
   .main .main_slider .swiper-slide {
     background-position: -webkit-calc(50%) center;
     background-position: calc(50%) center;
@@ -2622,7 +2645,8 @@ input[type="text"]:-moz-placeholder {
       -webkit-transform: scale(0.4);
           -ms-transform: scale(0.4);
            -o-transform: scale(0.4);
-              transform: scale(0.4); }
+              transform: scale(0.4);
+      left: 90px; }
   .share_experience {
     padding-top: 30px;
     padding-bottom: 50px; }
@@ -2655,7 +2679,7 @@ input[type="text"]:-moz-placeholder {
       line-height: 20px; }
   .our_expertise_second {
     padding-top: 10px;
-    overflow-x: hidden; }
+    overflow: hidden; }
     .our_expertise_second .taber_content {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -2715,26 +2739,30 @@ input[type="text"]:-moz-placeholder {
   .relevant_case_studies {
     padding-top: 50px;
     padding-bottom: 50px; }
-    .relevant_case_studies .cases .case {
-      -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-      margin-bottom: 20px; }
-      .relevant_case_studies .cases .case .left {
-        padding: 0px; }
-        .relevant_case_studies .cases .case .left img {
-          width: 100%; }
-      .relevant_case_studies .cases .case .right {
-        padding-left: 20px;
-        padding-right: 20px; }
-        .relevant_case_studies .cases .case .right .tags .tag {
-          margin-bottom: 5px;
-          font-size: 12px;
+    .relevant_case_studies .cases {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .relevant_case_studies .cases .case {
+        margin-bottom: 20px;
+        width: 100%; }
+        .relevant_case_studies .cases .case .left {
+          padding: 0px; }
+          .relevant_case_studies .cases .case .left img {
+            width: 100%; }
+        .relevant_case_studies .cases .case .right {
           padding-left: 20px;
           padding-right: 20px; }
-        .relevant_case_studies .cases .case .right .button_common {
-          font-size: 14px;
-          line-height: 24px; }
+          .relevant_case_studies .cases .case .right .tags .tag {
+            margin-bottom: 5px;
+            font-size: 12px;
+            padding-left: 20px;
+            padding-right: 20px; }
+          .relevant_case_studies .cases .case .right .button_common {
+            font-size: 14px;
+            line-height: 24px; }
   .think_large_scale {
     padding-top: 50px;
     padding-bottom: 50px; }
@@ -3186,7 +3214,7 @@ input[type="text"]:-moz-placeholder {
     font-size: 12px; }
   .contacts {
     overflow: hidden; }
-    .contacts .left .media {
+    .contacts .container .left .media {
       -webkit-transform-origin: left;
           -ms-transform-origin: left;
            -o-transform-origin: left;
@@ -3195,17 +3223,22 @@ input[type="text"]:-moz-placeholder {
           -ms-transform: scale(0.7);
            -o-transform: scale(0.7);
               transform: scale(0.7); }
-    .contacts .right .form_wrap {
-      -webkit-transform-origin: left;
-          -ms-transform-origin: left;
-           -o-transform-origin: left;
-              transform-origin: left;
-      -webkit-transform: scale(0.7);
-          -ms-transform: scale(0.7);
-           -o-transform: scale(0.7);
-              transform: scale(0.7);
-      margin-left: -70px;
-      padding-left: 30px; }
+    .contacts .container .right .form_wrap {
+      -webkit-transform-origin: center;
+          -ms-transform-origin: center;
+           -o-transform-origin: center;
+              transform-origin: center;
+      -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+           -o-transform: scale(0.9);
+              transform: scale(0.9);
+      padding-left: 20px;
+      padding-right: 20px; }
+      .contacts .container .right .form_wrap .title_triger {
+        font-size: 22px;
+        line-height: 26px;
+        padding-left: 10px;
+        padding-right: 10px; }
   .footer .container {
     max-width: 100%; }
   .footer_trigers .ancor {
