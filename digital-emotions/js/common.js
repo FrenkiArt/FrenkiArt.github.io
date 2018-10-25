@@ -104,11 +104,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var main_slider = new Swiper('.main_slider', {
         initialSlide: 0,
         speed: 700,
-        spaceBetween: 30,
+        spaceBetween: 0,
         slidesPerView: 1,
         loop: false,
         grabCursor: true,
-
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction',
@@ -369,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   /* маска для телефона */
 
   var inputPhone = document.querySelectorAll(".input_phone");
-  for (var i = 0; i < inputPhone.length; i++) {
+  for ( i = 0; i < inputPhone.length; i++) {
       var cleave = new Cleave(inputPhone[i], {
           phone: true,
           /* prefix: '+7',*/
@@ -417,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
         myMap.controls.add(zoomControl);
         myMap.controls.add('fullscreenControl');
-    };
+    }
 }
 mapProject();
 

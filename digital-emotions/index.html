@@ -273,11 +273,15 @@
         </div>
     </nav>
 
-    <div class="main" id="main">
+    
 
+    <div class="main" id="main">
+        
         <div class="swiper-container swiper-standart main_slider">
             <div class="swiper-wrapper">
+                
                 <div class="swiper-slide">
+                    <div class="white_block"></div>
                     <div class="container">
                         <div class="slide">
                             <div class="left">
@@ -299,6 +303,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
+                    <div class="white_block"></div>
                     <div class="container">
                         <div class="slide">
                             <div class="left">
@@ -323,7 +328,24 @@
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
             <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-next">
+                <svg version="1.1" class="next_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.7 140" style="enable-background:new 0 0 161.7 140;" xml:space="preserve">
+                <g>
+                    <path class="arrow-tail" d="M153.8,74.7H0.2v-9.6h153.6V74.7z" data-svg-origin="0.20000000298023224 65.0999984741211" transform="matrix(1,0,0,1,0,0)"></path>
+                </g>
+                <polygon class="arrow-bottom" points="161.7,70 91.7,139.8 85.3,133.3 149.2,70 " data-origin="161.7,70 161.7,70 149.2,70 149.2,70"></polygon>
+                <polygon class="arrow-top" points="149.2,70 85.6,6.7   92,0.3     161.7,70 " data-origin="85.6,6.7 85.6,6.7 92,0.3   92,0.3 "></polygon>
+                </svg>
+                <div class="pseudo">
+                    <svg version="1.1" class="pseudo_arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.7 140" style="enable-background:new 0 0 161.7 140;" xml:space="preserve">
+                        <g>
+                            <path class="arrow-tail" d="M153.8,74.7H0.2v-9.6h153.6V74.7z" data-svg-origin="0.20000000298023224 65.0999984741211" transform="matrix(1,0,0,1,0,0)"></path>
+                        </g>
+                        <polygon class="arrow-bottom" points="161.7,70 91.7,139.8 85.3,133.3 149.2,70 " data-origin="161.7,70 161.7,70 149.2,70 149.2,70"></polygon>
+                        <polygon class="arrow-top" points="149.2,70 85.6,6.7   92,0.3     161.7,70 " data-origin="85.6,6.7 85.6,6.7 92,0.3   92,0.3 "></polygon>
+                        </svg>
+                </div>
+            </div>
             <div class="swiper-button-prev"></div>
         </div>
         
@@ -357,7 +379,24 @@
                         <div class="ancor_img">
                         </div>
                     </a>
-                    <a href="#" class="ancor_float"></a>
+                    <a href="#" class="ancor_float">
+                        <svg version="1.1" class="next_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.7 140" style="enable-background:new 0 0 161.7 140;" xml:space="preserve">
+                            <g>
+                                <path class="arrow-tail" d="M153.8,74.7H0.2v-9.6h153.6V74.7z" data-svg-origin="0.20000000298023224 65.0999984741211" transform="matrix(1,0,0,1,0,0)"></path>
+                            </g>
+                            <polygon class="arrow-bottom" points="161.7,70 91.7,139.8 85.3,133.3 149.2,70 " data-origin="161.7,70 161.7,70 149.2,70 149.2,70"></polygon>
+                            <polygon class="arrow-top" points="149.2,70 85.6,6.7   92,0.3     161.7,70 " data-origin="85.6,6.7 85.6,6.7 92,0.3   92,0.3 "></polygon>
+                            </svg>
+                            <div class="pseudo">
+                                <svg version="1.1" class="pseudo_arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.7 140" style="enable-background:new 0 0 161.7 140;" xml:space="preserve">
+                                    <g>
+                                        <path class="arrow-tail" d="M153.8,74.7H0.2v-9.6h153.6V74.7z" data-svg-origin="0.20000000298023224 65.0999984741211" transform="matrix(1,0,0,1,0,0)"></path>
+                                    </g>
+                                    <polygon class="arrow-bottom" points="161.7,70 91.7,139.8 85.3,133.3 149.2,70 " data-origin="161.7,70 161.7,70 149.2,70 149.2,70"></polygon>
+                                    <polygon class="arrow-top" points="149.2,70 85.6,6.7   92,0.3     161.7,70 " data-origin="85.6,6.7 85.6,6.7 92,0.3   92,0.3 "></polygon>
+                                    </svg>
+                            </div>
+                    </a>
                 </div>
                 <div class="right"></div>
             </div>
@@ -1466,10 +1505,10 @@
     </script>
     
     <script src="js/libs.min.js "></script>
-    <script async defer src="js/common.js "></script>
+    <script src="js/common.js "></script>
 
     
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script  src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script async defer>
         document.addEventListener("DOMContentLoaded", function(event){
             /* function mapProject(){
