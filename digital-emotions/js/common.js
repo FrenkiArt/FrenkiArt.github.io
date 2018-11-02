@@ -99,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+  
+
   /* вызываем слайдеры */
 
   var swiperStandart = new Swiper('.swiper-standart', {
