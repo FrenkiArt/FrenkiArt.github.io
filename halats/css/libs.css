@@ -1,0 +1,26 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css";
+
+
+
+/*
+@import "../../node_modules/inputmask/css/inputmask.css";*/
+@import "../../node_modules/swiper/dist/css/swiper.min.css";
+@import "../../node_modules/lightgallery.js/dist/css/lightgallery.min.css";
+@import "../fonts/gothampro/stylesheet.css";
+@import "../fonts/roboto/stylesheet.css";
+@import "../fonts/robotocondensed/stylesheet.css";
+/*
+@import "../../node_modules/fancybox/dist/css/jquery.fancybox.css";
+@import "../fonts/pfencoresanspro/stylesheet.css";
+@import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css";
+@import "../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css";
+@import "../../node_modules/magnific-popup/dist/magnific-popup.css";
+*/
+@font-face {
+  font-family: 'lg';
+  src: url("../fonts/lg.eot?n1z373");
+  src: url("../fonts/lg.eot?#iefixn1z373") format("embedded-opentype"), url("../fonts/lg.woff?n1z373") format("woff"), url("../fonts/lg.ttf?n1z373") format("truetype"), url("../fonts/lg.svg?n1z373#lg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
