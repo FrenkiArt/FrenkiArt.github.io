@@ -1240,8 +1240,7 @@
             -ms-flex-align: center;
                 align-items: center; }
         .popup_cases .content .before_and_after .pre_img img {
-          width: 100%;
-          max-width: 100%; }
+          max-width: 80%; }
       .popup_cases .content .before_and_after .before {
         display: -webkit-box;
         display: -webkit-flex;
