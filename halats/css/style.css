@@ -1058,6 +1058,11 @@ a {
             transform: translate(12px, 0px); }
   .advantages .media_6 .media_text {
     width: 250px; }
+  .advantages .border_bottom {
+    -webkit-box-ordinal-group: 8;
+    -webkit-order: 7;
+        -ms-flex-order: 7;
+            order: 7; }
   .advantages .js_show_up_opacity.order_1 {
     -webkit-transition-delay: 0.1s;
          -o-transition-delay: 0.1s;
