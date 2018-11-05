@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
-  
+
 
   /* вызываем слайдеры */
 
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       },
       768: {
-
+        spaceBetween: 50,
       },
     }
   });
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var acc_block = document.querySelectorAll(".acc_block");
   for (i = 0; i < acc_block.length; i++) {
-    acc_block[i].addEventListener("click", function () {
+    acc_block[i].addEventListener("click", function() {
       for (x = 0; x < acc_block.length; x++) {
         acc_block[x].classList.remove("active");
       }
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   for (i = 0; i < acc_tab.length; i++) {
 
-    acc_tab[i].addEventListener("click", function () {
+    acc_tab[i].addEventListener("click", function() {
       for (i = 0; i < acc_tab.length; i++) {
         acc_tab[i].classList.remove("active");
       }
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var labels_imgs = document.querySelectorAll(".labels_imgs");
 
   for (i = 0; i < js_labels_title.length; i++) {
-    js_labels_title[i].addEventListener("mouseover", function () {
+    js_labels_title[i].addEventListener("mouseover", function() {
       js_labels_title.forEach(function (el) {
         el.classList.remove("active");
       });
