@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var body = document.querySelector("body");
     var navigationUl = document.querySelector(".navigation_ul");
     var soc_btn = document.querySelector(".soc_btn");
+    var header_contact_block = document.querySelector(".header_contact_block");
     var navigation = document.querySelector(".navigation");
     var overlay = document.querySelectorAll(".overlay");
     var popup_thanks = document.getElementById("popup_thanks");
@@ -89,10 +90,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e.currentTarget.classList.remove("active");
             navigationUl.classList.remove("nav_action");
             soc_btn.classList.remove("nav_action");
+            header_contact_block.classList.remove("nav_action");
         } else {
             e.currentTarget.classList.add("active");
             navigationUl.classList.add("nav_action");
             soc_btn.classList.add("nav_action");
+            header_contact_block.classList.add("nav_action");
         }
     });
 
@@ -137,6 +140,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
             picture_top_checkbox[i].classList.add("active");
         });
     }
+
+    /* микросервис Табера */
+
+    var tab = document.querySelectorAll(".tab");
+    var tab_content = document.querySelectorAll(".tab_content");
+
+    for (i = 0; i < tab.length; i++) {
+        tab[i].addEventListener("click", function(){
+            this.classList.toggle("active");
+        });
+    }
+    /* конец микросервис Табера */
 
     /* скрипт плавной прокрутки в header сайта */
     
@@ -218,6 +233,62 @@ document.addEventListener("DOMContentLoaded", function(event) {
         },
         });
     });*/
+
+    if (window.matchMedia("(min-width: 769px)").matches) {
+        
+
+
+      } else {
+       /* кнопка больше фоторгрфий */
+        
+       var btn_more_image = document.querySelector(".js_more_image");
+       var imgs_for_cikl = document.querySelectorAll("#lightgallery .img");
+       var count_imgs = 0; /* здесь точка отсчёта для фоток */
+       var count_for_show_imgs = 2; /* сколько фотографий показывать */
+       var how_mach = 2; /* переменная регулирует на сколько больше фоток показывать каждый раз при клике на кнопку тригер */
+
+       /* цикл который при старте страницы скрывает лишние фотки */
+       for (var i = 0; i < imgs_for_cikl.length; i++) {
+           
+           count_imgs += 1;
+           if (count_imgs <= count_for_show_imgs) {
+               imgs_for_cikl[i].style.display = "block";
+           } else {
+               imgs_for_cikl[i].style.display = "none";
+           }
+       }
+       
+       /* при нажатии на кнопку тригер, цикл заново проходит по фотографиям и показывает их больше на количество */
+       if (btn_more_image) {
+            btn_more_image.addEventListener("click", function(){
+                count_for_show_imgs += how_mach;
+                var count_imgs = 0;
+                for (var i = 0; i < imgs_for_cikl.length; i++) {
+                    count_imgs += 1;
+                    if (count_imgs <= count_for_show_imgs) {
+                        imgs_for_cikl[i].style.display = "block";
+    
+                        if (count_imgs  >= imgs_for_cikl.length) {
+                            //btn_more_image.innerHTML = "Фотографий больше нет";
+                            btn_more_image.setAttribute("disabled", true);
+                            btn_more_image.style.opacity = 0.5;
+                        }
+    
+                    } else {
+                        imgs_for_cikl[i].style.display = "none";
+                    }
+                    //console.log(count_imgs, imgs_for_cikl.length);
+                    
+                }
+            });
+       }
+       
+
+       /* конец кнопка больше фоторгрфий */
+      }
+
+
+    
 
     /* кастомный селект */
 
@@ -309,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         } 
     }
 
-    console.log("111");
+    
 });
 
 /*
