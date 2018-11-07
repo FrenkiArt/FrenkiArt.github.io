@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     /* скрипт для появления и исчезновения кнопки скролла вверх */
 
-    window.onscroll = function() {function_for_scroll_top()};
+    window.onscroll = function() {function_for_scroll_top();};
     function function_for_scroll_top() {
         var ancor_to_top = document.querySelector(".ancor_to_top");
         if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         } else {
             ancor_to_top.setAttribute("style", "transform: scale(0)");
         }
-    };
+    }
 
     /* слайдер swipper */
 
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             slidesPerColumn: 2,
             slidesPerView: 2,
             autoHeight: false,
-            spaceBetween: 30,
             spaceBetween: 15,
         },
 
@@ -62,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* плавный скролл по ссылке */
 
     var goTo = document.querySelectorAll(".go_to");
-    for (let i = 0; i < goTo.length; i++) {
-        const element = goTo[i];
+    for (var i = 0; i < goTo.length; i++) {
+        var element = goTo[i];
         element.addEventListener("click", function(e){
             e.preventDefault();
             var scrollEl = e.currentTarget.getAttribute("href");
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         behavior: "smooth"
                     });
                 } catch (error) {
-                    console.error(error + " проставьте верные id на которые ведёт ссылка")
+                    console.error(error + " проставьте верные id на которые ведёт ссылка");
                 }
                 
             }
@@ -110,31 +109,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     /* поведение при клике на радиокнопки */
-
-    var size_halat_checkbox = document.getElementsByClassName("size_halat_checkbox");
-    for (let i = 0; i < size_halat_checkbox.length; i++) {
+    
+    var size_halat_checkbox = document.querySelectorAll(".size_halat_checkbox");
+    
+    for (var i = 0; i < size_halat_checkbox.length; i++) {
         size_halat_checkbox[i].addEventListener("click", function(){
-            for (let i = 0; i < size_halat_checkbox.length; i++) {
-                size_halat_checkbox[i].classList.remove("active");
-            }
-
-            size_halat_checkbox[i].classList.add("active");
+            size_halat_checkbox.forEach(function(e) {
+                e.classList.remove("active");
+            });
+            this.classList.add("active");
         });
     }
-    var color_halat_checkbox = document.getElementsByClassName("color_halat_checkbox");
-    for (let i = 0; i < color_halat_checkbox.length; i++) {
+    
+    var color_halat_checkbox = document.querySelectorAll(".color_halat_checkbox");
+    for (var i = 0; i < color_halat_checkbox.length; i++) {
         color_halat_checkbox[i].addEventListener("click", function(){
-            for (let i = 0; i < color_halat_checkbox.length; i++) {
-                color_halat_checkbox[i].classList.remove("active");
-            }
-
-            color_halat_checkbox[i].classList.add("active");
+            color_halat_checkbox.forEach(function(e) {
+                e.classList.remove("active");
+            });
+            this.classList.add("active");
         });
     }
     var picture_top_checkbox = document.getElementsByClassName("picture_top_checkbox");
-    for (let i = 0; i < picture_top_checkbox.length; i++) {
+    for (var i = 0; i < picture_top_checkbox.length; i++) {
         picture_top_checkbox[i].addEventListener("click", function(){
-            for (let i = 0; i < picture_top_checkbox.length; i++) {
+            for (var i = 0; i < picture_top_checkbox.length; i++) {
                 picture_top_checkbox[i].classList.remove("active");
             }
             picture_top_checkbox[i].classList.add("active");
@@ -156,13 +155,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* скрипт плавной прокрутки в header сайта */
     
     var ancorToTopArray = document.getElementsByClassName("ancor_to_top");
-    for (let i = 0; i < ancorToTopArray.length; i++) {
+    for (var i = 0; i < ancorToTopArray.length; i++) {
         ancorToTopArray[i].addEventListener("click", function(e){
             e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
-            })
+            });
         });
     }
 
@@ -194,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     /* поворот коретки при клике на селектор 
     var select_wrap = document.querySelectorAll(".select_wrap");
-    for (let i = 0; i < select_wrap.length; i++) {
+    for (var i = 0; i < select_wrap.length; i++) {
         const element = select_wrap[i];
         element.addEventListener("click", function(e){
             e.preventDefault();
@@ -209,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* маска для телефона */
     /*
     var inputPhone = document.querySelectorAll(".input_phone");
-    for (let i = 0; i < inputPhone.length; i++) {
+    for (var i = 0; i < inputPhone.length; i++) {
         var cleave = new Cleave(inputPhone[i], {
             phone: true,
             // prefix: '+7',
@@ -350,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     y = document.getElementsByClassName("select-selected");
     for (i = 0; i < y.length; i++) {
         if (elmnt == y[i]) {
-        arrNo.push(i)
+        arrNo.push(i);
         } else {
         y[i].classList.remove("select-arrow-active");
         }
@@ -377,7 +376,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
             output.innerHTML = this.value;
-        } 
+        };
+    }
+
+    /* js для конструктора */
+
+    var preview_img = document.querySelector(".preview_img");
+    var img_preview_for_halat = document.querySelector("#img_preview_for_halat");
+
+    var color_halat = document.querySelectorAll("input[name='color_halat_checkbox'");
+    for (var i = 0; i < color_halat.length; i++) {
+        color_halat[i].addEventListener("click", function(e){
+            if (e.target.value == "white") {
+                img_preview_for_halat.setAttribute("src", "img/constuctor_img_preview_polotence_white.png");
+            }
+            if (e.target.value == "blue") {
+                img_preview_for_halat.setAttribute("src", "img/constuctor_img_preview_polotence_blue.png");
+            } 
+        });
+    }
+
+    var input_size_halat_checkbox = document.querySelectorAll("input[name='size_halat_checkbox'");
+
+    var trashSize = document.createElement("div");
+    preview_img.appendChild(trashSize);
+    trashSize.style.position = "absolute";
+    trashSize.style.bottom = 10 + "px";
+    trashSize.style.left = 40 + "%";
+
+    for (var i = 0; i < input_size_halat_checkbox.length; i++) {
+        input_size_halat_checkbox[i].addEventListener("click", function(e){
+            if (e.target.value == "size70Х140") {
+                trashSize.innerHTML = e.target.value;
+            }
+            if (e.target.value == "size50Х100") {
+                trashSize.innerHTML = e.target.value;
+            }
+        });
     }
 
     
