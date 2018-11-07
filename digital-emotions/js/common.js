@@ -484,6 +484,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   });
 
+
+  /* Плавное появление элементов на странице */
+
+  var js_anime = document.querySelectorAll(".js_anime");
+
+  window.addEventListener("scroll", function(){
+    for_js_anime();
+  });
+
+  function for_js_anime(){
+    for (i = 0; i < js_anime.length; i++) {
+      if (js_anime[i].offsetTop + js_anime[i].offsetHeight/2 < window.pageYOffset + window.innerHeight) {
+          js_anime[i].classList.add("animated");
+      } else {
+          js_anime[i].classList.remove("animated");
+      }
+    }
+  }
+  
+
   /* маска для телефона */
 
   var inputPhone = document.querySelectorAll(".input_phone");
@@ -536,6 +556,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       myMap.controls.add('fullscreenControl');
     }
   }
+
+  for_js_anime();
   mapProject();
 
 });
