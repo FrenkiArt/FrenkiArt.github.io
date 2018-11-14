@@ -1,180 +1,170 @@
+document.addEventListener("DOMContentLoaded", function(event) {
 
-$('#btn_popup, #btn_popup_2, #btn_popup_3, #btn_popup_4, #btn_popup_5').on('click', function(event) {
-    event.preventDefault();
-    $('.popup_1').show('500');
-});
+/* скролл в топ */
+var scroll_top = document.createElement("a");
+var scroll_top__arrow = document.createElement("div");
+var scroll_top__text = document.createElement("div");
+var footer = document.querySelector(".footer");
 
-$('.popup_close').on('click', function(event) {
-    $('.overlay').hide('slow');
-});
-$('.overlay').mouseup(function(e) { // событие клика по веб-документу 
-    var div = $(".popup"); // тут указываем ID элемента 
-    if (!div.is(e.target) // если клик был не по нашему блоку 
-        &&
-        div.has(e.target).length === 0) { // и не по его дочерним элементам 
-        //div.hide(); // скрываем его 
-        $('.overlay').hide('slow');
-    }
-});
-/*
-    $('.owl-main').owlCarousel({
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        loop: false,
-        margin: 10,
-        items: 1,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        nav: true,
-        margin: 30,
-        stagePadding: 30,
-        smartSpeed: 700,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-*/
+scroll_top.setAttribute("id", "scroll_top");
+scroll_top.setAttribute("href", "#header");
+scroll_top.classList.add("go_to");
+scroll_top.style.position = "fixed";
+scroll_top.style.left = 80 + "%";
+scroll_top.style.bottom = -100 + "px";
+scroll_top.style.opacity = 0.5;
+scroll_top.style.textDecoration = "none";
+scroll_top.style.width = 80 + "px";
+scroll_top.style.height = 80 + "px";
+scroll_top.style.borderRadius = 100 + "%";
+scroll_top.style.backgroundColor = "white";
+scroll_top.style.boxShadow = "0px 3px 15px -3px rgba(0,0,0, 0.6)";
+scroll_top.style.textAlign = "center";
+scroll_top.style.transition = "transform 0.5s linear, top 0.3s linear, bottom 0.7s linear, left 0.7s linear, opacity 0.3s linear";
+scroll_top.style.transform = "scale(0)";
+scroll_top.appendChild(scroll_top__arrow);
+scroll_top__arrow.setAttribute("class", "scroll_top__arrow");
+scroll_top__arrow.style.width = 50 + "%";
+scroll_top__arrow.style.height = 50 + "%";
+scroll_top__arrow.style.borderRight = "3px solid #000000";
+scroll_top__arrow.style.borderTop = "3px solid #000000";
+scroll_top__arrow.style.position = "absolute";
+scroll_top__arrow.style.top = 40 + "%";
+scroll_top__arrow.style.left = 25 + "%";
+scroll_top__arrow.style.transform = "rotate(-45deg)";
+scroll_top.appendChild(scroll_top__text);
+scroll_top__text.setAttribute("class", "scroll_top__text");
+scroll_top__text.innerHTML = "вверх";
+scroll_top__text.style.color = "#000000";
+scroll_top__text.style.marginTop = 67 + "%";
+scroll_top__text.style.textShadow = "0px 3px 10px rgba(0,0,0, 0.8)";
 
-
-
-/*
-    $('.more_shorten').shorten({
-        ellipsesText: '...',
-        moreText: '>>',
-        lessText: '<<',
-        showChars: 300,
-    });*/
-
-$('.navigation_callback').on('click', function(event) {
-    $(this).toggleClass('active');
-    $('#callback_inner').toggleClass('active');
-});
-
-$('.nav_circle').on('click', function(event) {
-    $(this).toggleClass('active');
-    $('.header__contacts').toggleClass('active');
-});
-
-
-
-$('.show_big_a').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-    image: {
-        verticalFit: true
-    },
-    zoom: {
-        enabled: true,
-        duration: 300 // don't foget to change the duration also in CSS
-    }
-});
-/*
-    $('.certificates_sheet_content').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        mainClass: 'mfp-img-mobile',
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function(item) {
-                return item.el.attr('title') + '<small></small>';
-            }
-        }
-    });
-*/
-/*
-$(".tel").mask("+7 (999) 999-99-99", {
-    placeholder: " "
-}), {
-    autoclear: false
+var show_scroll_top = function(){
+    scroll_top.style.transform = "translate(0px, 0px) scale(1)";
 };
-*/
+var hide_scroll_top = function(){
+    scroll_top.style.transform = "translate(0px, 200px) scale(0)";
+};
+var footer_join_scroll_top = function(){
+    scroll_top.style.bottom = footer.offsetHeight - 50 + "px";
+};
+var footer_disconnect_scroll_top = function(){
+    scroll_top.style.bottom = 100 + "px";
+};
 
-/* скрипт который определяет есть ли текст внутри элемента, если нет то скрывает */
-var if_empty;
+document.body.appendChild(scroll_top);
 
-if_empty = $('.js_if_empty');
+window.addEventListener("scroll", function(){
+    /* появление и исчезновение scroll_top в зависимости от прокрутки экрана от верха*/
+    if (window.pageYOffset > screen.height - 300) {
+        show_scroll_top();
+    } else {
+        hide_scroll_top();
+    }
 
-if_empty.each(function() {
-    var x = $(this).text();
-    x = $.trim(x).length;
-    /* если длина больше 0 значит не пусто*/
-    console.log(x);
-    if (x < 1) {
-        $(this).hide();
-        console.log('пусто, скрываю элемент .js_if_empty');
-    };
-    if (x > 1) {
-        $(this).closest('.shadow').removeClass('shadow'); /* скрываю тень элемента "хит" */
-    };
-});
-
-$(".link_youtube:not([href^='http'])").hide();
-
-/*
-$('.link_youtube').fancybox({
-    openEffect: 'none',
-    closeEffect: 'none',
-    helpers: {
-        media: {}
+    /* прикрепить scroll_top к высоте футера когда доскролил почти до конца страницы */
+    if (footer.offsetTop + footer.offsetHeight/2 <= window.pageYOffset + window.innerHeight) {
+        footer_join_scroll_top();
+    } else {
+        footer_disconnect_scroll_top();
     }
 });
-*/
 
-
-/* скрипт плавной прокруткипо сайту */
-$('.go_to').click(function() { // ловим клик по ссылке с классом go_to
-    var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
-    if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
-        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 700); // анимируем скроолинг к элементу scroll_el
-    }
-    return false; // выключаем стандартное действие
+scroll_top.addEventListener("mouseover", function(){
+    scroll_top.style.opacity = 1;
+});
+scroll_top.addEventListener("mouseout", function(){
+    scroll_top.style.opacity = 0.5;
 });
 
+/* конец скролл в топ */
 
-/* если отправляется форма */
-/*
-    $("form").submit(function(event) {
-        console.log('попытка отправки формы');
-        event.preventDefault();
-        $('#popup_1').hide('500');
-        $('#popup_thanks').show('500');
-        $('.form_bottom, .form_main').css('display', 'none');
-        $('.form_thanks').css('display', 'flex');
-    });*/
+/* маска для телефона */
 
-/* скрипт отправки почты
-$('form').submit(function(event) {
-    event.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: "<?php bloginfo('template_url') ?>/mailer/smart.php",
-        data: $(this).serialize()
-    }).done(function() {
-        $(this).find("input").val("");
-        //alert("Сообщение успешно отправлено");
-        $('#popup_1').hide('500');
-        $('#popup_thanks').show('500');
-        $("form").trigger("reset");
-    });
-    return false;
-});*/
+var inputPhone = document.querySelectorAll(".input_phone");
+for (i = 0; i < inputPhone.length; i++) {
+  var cleave = new Cleave(inputPhone[i], {
+    phone: true,
+    /* prefix: '+7',*/
+    delimiter: '-',
+    phoneRegionCode: 'RU'
+  });
+}
+/* конец маски для телефона */
 
+/* плавный скролл по ссылке */
 
+var goTo = document.querySelectorAll(".go_to");
+for (i = 0; i < goTo.length; i++) {
+var element = goTo[i];
+element.addEventListener("click", function (e) {
+    e.preventDefault();
+    var scrollEl = e.currentTarget.getAttribute("href");
+    if (scrollEl.length != 0) {
+    try {
+        var ourTarget = document.querySelector(scrollEl);
+        window.scrollTo({
+        top: ourTarget.offsetTop,
+        behavior: "smooth"
+        });
+    } catch (error) {
+        console.error(error + " проставьте верные id на которые ведёт ссылка");
+    }
+
+    }
+});
+}
+/* конец плавный скролл по ссылке */
+
+function mapProject() {
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map("map", {
+        center: [55.830417, 49.067122],
+        zoom: 17,
+        controls: ["geolocationControl", "fullscreenControl"],
+        });
+
+        /* myMap.balloon.open(
+        // Позиция балуна
+        [55.710153, 37.442450], {
+            contentBody: '<!--<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>-->',
+        }, {
+            // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
+            closeButton: false,
+            balloonContentHeader: '',
+            balloonMaxWidth: 643,
+            balloonMaxheight: 235,
+            balloonMinWidth: 400,
+            balloonMinheight: 131,
+        }); */
+
+        // Создание метки 
+        var myPlacemark = new ymaps.Placemark(
+            // Координаты метки
+            [55.830417, 49.067122], {
+            balloonContentHeader: '<strong>promoLike</strong>',
+            balloonContentBody: 'Улица Шамиля Усманова, 27',
+            //balloonContentFooter: 'Подвал'
+            }	
+        );
+        myMap.geoObjects.add(myPlacemark);
+
+        myMap.behaviors.disable('scrollZoom');
+        myMap.behaviors.enable('drag');
+        var zoomControl = new ymaps.control.ZoomControl({
+        options: {
+            position: {
+            left: "auto",
+            right: 10,
+            top: 116
+            }
+        }
+        });
+        myMap.controls.add(zoomControl);
+    }
+}
+mapProject();
+
+});
