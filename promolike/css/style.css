@@ -360,6 +360,11 @@ h1, h2, h3, h4, h5, h6, hr, p, label {
     width: 42px;
     height: 42px;
     background-color: #000000; }
+    .soc_btns a svg {
+      background-color: #ffffff;
+      border-radius: 5px; }
+      .soc_btns a svg path {
+        fill: #000000; }
 
 .label {
   display: -webkit-box;
@@ -670,7 +675,8 @@ h1, h2, h3, h4, h5, h6, hr, p, label {
             justify-content: space-between;
     margin-bottom: 50px; }
   .our_works .img {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .our_works .img img {
       position: absolute;
       top: 50%;
@@ -771,6 +777,11 @@ h1, h2, h3, h4, h5, h6, hr, p, label {
         background-image: -o-linear-gradient(left bottom, #f7234b 0%, #ff6a4c 100%);
         background-image: linear-gradient(to right top, #f7234b 0%, #ff6a4c 100%); }
         .why_we .content .triger_img img {
+          -webkit-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+               -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+        .why_we .content .triger_img svg {
           -webkit-transform: rotate(-45deg);
               -ms-transform: rotate(-45deg);
                -o-transform: rotate(-45deg);
@@ -1029,6 +1040,141 @@ h1, h2, h3, h4, h5, h6, hr, p, label {
         -ms-transform: translate(-50%, 0px);
          -o-transform: translate(-50%, 0px);
             transform: translate(-50%, 0px); }
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .title_pseudo {
+    right: 0px;
+    font-size: 40px; }
+  .container {
+    max-width: 80%; }
+  .main {
+    overflow: hidden; }
+    .main .imgs img {
+      right: -350px; }
+  .services {
+    padding-top: 70px; }
+    .services .subtitle {
+      margin-bottom: 50px; }
+    .services .content .service {
+      min-width: auto;
+      width: 48%;
+      max-width: 48%;
+      margin-right: 0px; }
+      .services .content .service .text {
+        font-size: 16px; }
+  .our_works {
+    padding-top: 70px; }
+    .our_works .subtitle {
+      margin-bottom: 50px; }
+    .our_works .content .img_wrap_1_1 {
+      width: 48%; }
+    .our_works .content .img_wrap_1_05 {
+      width: 100%; }
+    .our_works .content .img_wrap_05_05 {
+      width: 48%; }
+  .why_we {
+    padding-top: 70px;
+    padding-bottom: 50px; }
+    .why_we .subtitle {
+      margin-bottom: 70px; }
+    .why_we .content {
+      margin-bottom: 0px; }
+      .why_we .content .triger {
+        width: 23%;
+        height: 235px; }
+        .why_we .content .triger_img {
+          -webkit-transform: translate(-50%, 0px) rotate(45deg) scale(0.7);
+              -ms-transform: translate(-50%, 0px) rotate(45deg) scale(0.7);
+               -o-transform: translate(-50%, 0px) rotate(45deg) scale(0.7);
+                  transform: translate(-50%, 0px) rotate(45deg) scale(0.7); }
+        .why_we .content .triger_title {
+          font-size: 26px;
+          margin-top: 85px; }
+        .why_we .content .triger_subtitle {
+          font-size: 12px; }
+  .about_company {
+    padding-top: 70px;
+    background-size: contain; }
+    .about_company .subtitle {
+      margin-bottom: 70px; }
+    .about_company .content {
+      margin-bottom: 70px; }
+      .about_company .content .img_map img {
+        right: -500px;
+        -webkit-transform: scale(0.5);
+            -ms-transform: scale(0.5);
+             -o-transform: scale(0.5);
+                transform: scale(0.5); }
+  .take_count .container {
+    max-width: 90%; }
+  .take_count .title_h2 {
+    max-width: 320px; }
+  .take_count .text {
+    max-width: 320px;
+    margin-bottom: 40px; }
+  .take_count .img_form_before {
+    display: none; }
+  .clients {
+    padding-top: 70px; }
+    .clients .subtitle {
+      margin-bottom: 60px; }
+    .clients .content {
+      margin-bottom: 70px; }
+    .clients .img {
+      width: 30%; }
+      .clients .img img {
+        max-width: 90%; }
+  .how_we_work {
+    padding-top: 70px;
+    padding-bottom: 50px; }
+    .how_we_work .subtitle {
+      margin-bottom: 40px; }
+    .how_we_work .content {
+      margin-bottom: 30px; }
+      .how_we_work .content .step .title {
+        font-size: 18px; }
+  .contacts .media {
+    max-width: 48%; }
+  .contacts .map {
+    width: 50%; } }
+
+@media (min-width: 993px) and (max-width: 1199px) {
+  .title_pseudo {
+    right: 0px;
+    font-size: 50px; }
+  .container {
+    max-width: 80%; }
+  .main {
+    overflow: hidden; }
+    .main .imgs img {
+      right: -200px; }
+  .services .content .service {
+    min-width: auto;
+    width: 30%; }
+    .services .content .service .text {
+      font-size: 16px; }
+  .our_works .content .img_wrap_1_1 {
+    width: 48%; }
+  .our_works .content .img_wrap_1_05 {
+    width: 100%; }
+  .our_works .content .img_wrap_05_05 {
+    width: 48%; }
+  .why_we .content .triger {
+    width: 23%; }
+  .about_company {
+    background-size: contain; }
+    .about_company .content .img_map img {
+      right: -500px;
+      -webkit-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+           -o-transform: scale(0.7);
+              transform: scale(0.7); }
+  .take_count .img_form_before {
+    right: 7%; }
+  .clients .img img {
+    max-width: 90%; }
+  .contacts .map {
+    width: 440px; } }
 
 html body {
   font-family: sans-serif; }
