@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promo Like</title>
+    <meta name="description" content="Описание сайта">
+    <meta name="Keywords" content="ключевые, слова">
+    <link rel="apple-touch-icon" href="favicon-star.ico">
+    <link rel="shortcut icon" href="favicon-star.ico" type="image/x-icon">
+    <style>
+        #circularG {
+            position: relative;
+            width: 58px;
+            height: 58px;
+            margin: auto;
+        }
+
+        .circularG {
+            position: absolute;
+            background-color: rgb(0, 0, 0);
+            width: 14px;
+            height: 14px;
+            border-radius: 9px;
+            -o-border-radius: 9px;
+            -ms-border-radius: 9px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            animation-name: bounce_circularG;
+            -o-animation-name: bounce_circularG;
+            -ms-animation-name: bounce_circularG;
+            -webkit-animation-name: bounce_circularG;
+            -moz-animation-name: bounce_circularG;
+            animation-duration: 0.478s;
+            -o-animation-duration: 0.478s;
+            -ms-animation-duration: 0.478s;
+            -webkit-animation-duration: 0.478s;
+            -moz-animation-duration: 0.478s;
+            animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-direction: normal;
+            -o-animation-direction: normal;
+            -ms-animation-direction: normal;
+            -webkit-animation-direction: normal;
+            -moz-animation-direction: normal;
+        }
+
+        #circularG_1 {
+            left: 0;
+            top: 23px;
+            animation-delay: 0.178s;
+            -o-animation-delay: 0.178s;
+            -ms-animation-delay: 0.178s;
+            -webkit-animation-delay: 0.178s;
+            -moz-animation-delay: 0.178s;
+        }
+
+        #circularG_2 {
+            left: 6px;
+            top: 6px;
+            animation-delay: 0.244s;
+            -o-animation-delay: 0.244s;
+            -ms-animation-delay: 0.244s;
+            -webkit-animation-delay: 0.244s;
+            -moz-animation-delay: 0.244s;
+        }
+
+        #circularG_3 {
+            top: 0;
+            left: 23px;
+            animation-delay: 0.3s;
+            -o-animation-delay: 0.3s;
+            -ms-animation-delay: 0.3s;
+            -webkit-animation-delay: 0.3s;
+            -moz-animation-delay: 0.3s;
+        }
+
+        #circularG_4 {
+            right: 6px;
+            top: 6px;
+            animation-delay: 0.356s;
+            -o-animation-delay: 0.356s;
+            -ms-animation-delay: 0.356s;
+            -webkit-animation-delay: 0.356s;
+            -moz-animation-delay: 0.356s;
+        }
+
+        #circularG_5 {
+            right: 0;
+            top: 23px;
+            animation-delay: 0.422s;
+            -o-animation-delay: 0.422s;
+            -ms-animation-delay: 0.422s;
+            -webkit-animation-delay: 0.422s;
+            -moz-animation-delay: 0.422s;
+        }
+
+        #circularG_6 {
+            right: 6px;
+            bottom: 6px;
+            animation-delay: 0.478s;
+            -o-animation-delay: 0.478s;
+            -ms-animation-delay: 0.478s;
+            -webkit-animation-delay: 0.478s;
+            -moz-animation-delay: 0.478s;
+        }
+
+        #circularG_7 {
+            left: 23px;
+            bottom: 0;
+            animation-delay: 0.544s;
+            -o-animation-delay: 0.544s;
+            -ms-animation-delay: 0.544s;
+            -webkit-animation-delay: 0.544s;
+            -moz-animation-delay: 0.544s;
+        }
+
+        #circularG_8 {
+            left: 6px;
+            bottom: 6px;
+            animation-delay: 0.6s;
+            -o-animation-delay: 0.6s;
+            -ms-animation-delay: 0.6s;
+            -webkit-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+        }
+
+        @keyframes bounce_circularG {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(.3);
+            }
+        }
+
+        @-o-keyframes bounce_circularG {
+            0% {
+                -o-transform: scale(1);
+            }
+
+            100% {
+                -o-transform: scale(.3);
+            }
+        }
+
+        @-ms-keyframes bounce_circularG {
+            0% {
+                -ms-transform: scale(1);
+            }
+
+            100% {
+                -ms-transform: scale(.3);
+            }
+        }
+
+        @-webkit-keyframes bounce_circularG {
+            0% {
+                -webkit-transform: scale(1);
+            }
+
+            100% {
+                -webkit-transform: scale(.3);
+            }
+        }
+
+        @-moz-keyframes bounce_circularG {
+            0% {
+                -moz-transform: scale(1);
+            }
+
+            100% {
+                -moz-transform: scale(.3);
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <div class="preloader" id="preloader" style="transition: visibility 1s, opacity 1s; width: 100%; height: 100vh;">
+        <div id="circularG" style="margin-top: 40vh;">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var preloader = document.getElementById("preloader");
+            preloader.style.opacity = 0;
+            preloader.style.visibility = "hidden";
+            preloader.style.position = "absolute";
+        }
+    </script>
+    <header class="header">
+
+        <div class="container">
+            <div class="label">
+                <div class="img">
+                    <img src="./img/logo_img.svg" alt="logo">
+                </div>
+                <div class="text">
+                    Рекламное
+                    <br>
+                    агентство
+                </div>
+            </div>
+            <div class="soc_btns">
+                <a href="#">
+                    <img src="./img/btn_vk.svg" alt="social">
+                </a>
+                <a href="#">
+                    <img src="./img/btn_insta.svg" alt="social">
+                </a>
+                <a href="#">
+                    <img src="./img/btn_fb.svg" alt="social">
+                </a>
+            </div>
+            <div class="phones">
+                <div class="phones_img">
+                    <img src="./img/phone_white.svg" alt="phone">
+                </div>
+                <div class="phone">
+                    +7 (950) 947-27-88
+                    <br>
+                    +7 (8552) 315-61-88
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <div class="navigation">
+            <div class="nav_circle">
+                <div class="nav_circle_img"></div>
+            </div>
+            <ul class="navigation_ul ">
+                <li class="navigation_ul_li">
+                    <a class="navigation_ul_li_a" href="#">Главная</a>
+                </li>
+                <li class="navigation_ul_li">
+                    <a class="navigation_ul_li_a" href="#">Каталог</a>
+                </li>
+                <li class="navigation_ul_li">
+                    <a class="navigation_ul_li_a" href="#">Доставка и оплата</a>
+                </li>
+                <li class="navigation_ul_li">
+                    <a class="navigation_ul_li_a" href="#">Отзывы</a>
+                </li>
+                <li class="navigation_ul_li">
+                    <a class="navigation_ul_li_a" href="#">Контакт</a>
+                </li>
+            </ul>
+        </div> -->
+
+    <section class="main">
+        <div class="container">
+            <div class="texts">
+                <h1 class="title_h1">
+                    Комплексные услуги рекламы для бизнеса
+                    <span>по всему Татарстану</span>
+                </h1>
+                <div class="subtitle">
+                    <span>
+                        Набережные Челны, Казань, Нижнекамск, Альметьевск, Елабуга, Мензелинск, Менделеевск, Бугульма,
+                        Лениногорск, Заинск, Азнакаево, Чистополь, Зеленодольск, Арск, Буинск, Бавлы, Нурлат.
+                    </span>
+                </div>
+                <button class="btn">
+                    Все услуги
+                </button>
+            </div>
+            <div class="imgs">
+                <img src="./img/main_hands.png" alt="hands">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="title_h2">
+                Услуги
+            </div>
+            <div class="subtitle">
+                Что мы предлагаем
+            </div>
+            <div class="content">
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_1.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Дизайн
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_2.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Согласование
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_3.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Полиграфия
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_4.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Комплексные рекламные кампании
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_5.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Интерьерная и широкоформатная печать
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_6.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Производство рекламных конструкций
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_7.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Аудио реклама, продакшн
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_8.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Медиапланирование
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_9.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        BTL промо-акции
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_10.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Сувенирная продукция
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_11.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Наружная реклама
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="img">
+                        <img src="./img/service_img_12.svg" alt="img">
+                    </div>
+                    <div class="text">
+                        Креативные решения
+                    </div>
+                </div>
+            </div>
+            <div class="title_pseudo">
+                Услуги
+            </div>
+        </div>
+    </section>
+
+    <section class="our_works">
+        <div class="container">
+            <div class="title_h2">
+                Наши работы
+            </div>
+            <div class="subtitle">
+                Результат нашей деятельности
+            </div>
+            <div class="content">
+                <div class="img_wrap_1_1 img">
+
+                    <div class="img_wrap_1_05 img">
+                        <img src="./img/our_works_img_1_05_1.png" alt="image">
+                    </div>
+                    <div class="img_wrap_1_05 img">
+                        <div class="img_wrap_05_05 img">
+                            <img src="./img/our_works_img_05_05_1.png" alt="image">
+                        </div>
+                        <div class="img_wrap_05_05 img">
+                            <img src="./img/our_works_img_05_05_2.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="img_wrap_1_1 img">
+                    <img src="./img/our_works_img_1_1_1.png" alt="image">
+                </div>
+                <div class="img_wrap_1_1 img">
+                    <img src="./img/our_works_img_1_1_2.png" alt="image">
+                </div>
+                <div class="img_wrap_1_1 img">
+                    <div class="img_wrap_1_05 img">
+                        <img src="./img/our_works_img_1_05_2.png" alt="image">
+                    </div>
+                    <div class="img_wrap_1_05 img">
+                        <div class="img_wrap_05_05 img">
+                            <img src="./img/our_works_img_05_05_3.png" alt="image">
+                        </div>
+                        <div class="img_wrap_05_05 img">
+                            <img src="./img/our_works_img_05_05_4.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title_pseudo">
+                Портфолио
+            </div>
+        </div>
+    </section>
+
+    <section class="why_we">
+        <div class="container">
+            <div class="title_h2">
+                Почему мы
+            </div>
+            <div class="subtitle">
+                Преимущества
+            </div>
+            <div class="content">
+                <div class="triger">
+                    <div class="triger_img">
+                        <img src="./img/why_we_triger_img_1.png" alt="image">
+                    </div>
+                    <div class="triger_title">
+                        География
+                    </div>
+                    <div class="triger_subtitle">
+                        Описание смысла данного блока
+                    </div>
+                </div>
+                <div class="triger">
+                    <div class="triger_img">
+                        <img src="./img/why_we_triger_img_2.png" alt="image">
+                    </div>
+                    <div class="triger_title">
+                        Сервис
+                    </div>
+                    <div class="triger_subtitle">
+                        Описание смысла данного блока
+                    </div>
+                </div>
+                <div class="triger">
+                    <div class="triger_img">
+                        <img src="./img/why_we_triger_img_3.png" alt="image">
+                    </div>
+                    <div class="triger_title">
+                        Качество
+                    </div>
+                    <div class="triger_subtitle">
+                        Описание смысла данного блока
+                    </div>
+                </div>
+                <div class="triger">
+                    <div class="triger_img">
+                        <img src="./img/why_we_triger_img_4.png" alt="image">
+                    </div>
+                    <div class="triger_title">
+                        Точно в срок
+                    </div>
+                    <div class="triger_subtitle">
+                        Описание смысла данного блока
+                    </div>
+                </div>
+            </div>
+            <div class="title_pseudo">
+                Сервис
+            </div>
+        </div>
+    </section>
+
+    <section class="about_company">
+        <div class="container">
+            <div class="title_h2">
+                О компании
+            </div>
+            <div class="content">
+                <div class="text">
+                    <p>
+                        Рекламное агентство PromoLIKE оказывает услуги по разработке и реализации рекламных кампаний.
+                    </p>
+
+                    <p>
+                        <strong>Мы работаем с городами:</strong>
+                    </p>
+
+                    <p>
+                        Набережные Челны, Казань, Нижнекамск, Альметьевск, Елабуга, Мензелинск, Менделеевск, Бугульма,
+                        Лениногорск, Заинск, Азнакаево, Чистополь, Зеленодольск, Арск, Буинск, Бавлы, Нурлат, Дюртюли,
+                        Нефтекамск, Октябрьский,
+                        Салават, Туймазы, Янаул, Сарапул
+                    </p>
+
+                    <p>
+                        Главная, «победная» цель – это повышение прибыли. Для ее достижения агентство разрабатывает
+                        целый
+                        план действий и берет на себя его реализацию. В распоряжении рекламного агентства есть
+                        множество
+                        каналов воздействия на целевую аудиторию: реклама на радио и в печатных СМИ, наружная реклама,
+                        проведение промоакций, презентаций и выставок, организация флэшмобов, директ-маркетинг и многое
+                        другое. Рекламная кампания в союзе с PromoLike – ваша гарантированная победа над конкурентами!
+                    </p>
+                </div>
+                <div class="img_map">
+                    <img src="./img/about_company_map.png" alt="map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="take_count">
+        <div class="container">
+            <div class="title_h2">
+                Получить индивидуальный расчет стоимости
+            </div>
+            <div class="text">
+                Заполните форму, специалист компании «PromoLIKE» свяжется с Вами и проконсультирует по всем вопросам
+            </div>
+            <div class="media">
+                <div class="img">
+                    <img src="./img/avatar.jpg" alt="avatar">
+                </div>
+                <div class="title">
+                    Сергей Смирнов
+                </div>
+                <div class="subtitle">
+                    Основатель компании
+                </div>
+            </div>
+
+            <div class="img_form_before"></div>
+
+            <div class="form_common">
+                <form action="#">
+                    <label>Введите Ваше имя:</label>
+                    <input type="text" class="input_name" placeholder="Как Вас зовут?">
+                    <label>Введите контактный телефон:</label>
+                    <input type="text" class="input_phone" placeholder="+7 (___) ___ - __ - __">
+                    <input type="submit" class="input_submit btn" value="Перезвоните мне">
+                    <label class="take_policy">
+                        <input type="checkbox" name="i_take" checked>
+                        <span>
+                            Я принимаю условия <a href="#">передачи информации</a>
+                        </span>
+                    </label>
+                </form>
+                <div class="recall">
+                    <span>Или позвоните нам: <strong>+7 (8552) 315-61-88</strong></span>
+                    <span>Работаем ежедневно с 10.00 до 19.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="container">
+            <div class="title_h2">
+                Клиенты
+            </div>
+            <div class="subtitle">
+                Которые выбрали Нас
+            </div>
+            <div class="content">
+                <div class="img">
+                    <img src="./img/logo_client_1.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_2.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_3.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_4.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_5.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_11.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_7.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_8.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_9.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_10.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_6.png" alt="logo">
+                </div>
+                <div class="img">
+                    <img src="./img/logo_client_12.png" alt="logo">
+                </div>
+            </div>
+            <div class="title_pseudo">
+                Партнеры
+            </div>
+        </div>
+    </section>
+
+    <section class="how_we_work">
+        <div class="container">
+            <div class="title_h2">
+                Как мы работаем
+            </div>
+            <div class="subtitle">
+                Схема работы
+            </div>
+            <div class="content">
+                <div class="step step_1">
+                    <div class="number">
+                        1
+                    </div>
+                    <div class="title">
+                        Вы оставляете заявку на сайте
+                    </div>
+                </div>
+                <div class="step step_2">
+                    <div class="number">
+                        2
+                    </div>
+                    <div class="title">
+                        ОБСУЖДАЕМ задачи
+                        и заключаем договор
+                    </div>
+                </div>
+                <div class="step step_3">
+                    <div class="number">
+                        3
+                    </div>
+                    <div class="title">
+                        Выполняем работу на высшем уровне
+                    </div>
+                </div>
+            </div>
+            <div class="title_pseudo">
+                3 шага
+            </div>
+
+        </div>
+        <button class="btn">
+            Оставить заявку
+        </button>
+    </section>
+
+    <section class="contacts">
+        <div class="container">
+            <div class="title_h2">
+                Контакты
+            </div>
+            <div class="media">
+                <div class="title">
+                    Адрес офиса:
+                </div>
+                <div class="subtitle">
+                    423800, РФ, РТ, г. Набережные Челны, ул. Ш.Усманова, 40/9 "в" 4 этаж, 402, офис "PromoLIKE"
+                </div>
+            </div>
+            <div class="media">
+                <div class="title">
+                    Контактный телефон:
+                </div>
+                <div class="subtitle">
+                    +7 (8552) 315-618
+
+                </div>
+            </div>
+            <div class="media">
+                <div class="title">
+                    Электронная почта:
+                </div>
+                <div class="subtitle">
+                    32@promolike.ru
+                </div>
+            </div>
+            <div class="media">
+                <div class="title">
+                    Режим работы:
+                </div>
+                <div class="subtitle">
+                    8:00 - 17:00
+                </div>
+                <div class="subtitle last">
+                    Сб, Вскр - выходной <br>
+                    Обед: 12:00 - 13:00
+                </div>
+            </div>
+            <div class="title_pseudo">
+                связь
+            </div>
+            <div class="soc_btns">
+                <a href="#">
+                    <img src="./img/btn_vk.svg" alt="social">
+                </a>
+                <a href="#">
+                    <img src="./img/btn_insta.svg" alt="social">
+                </a>
+                <a href="#">
+                    <img src="./img/btn_fb.svg" alt="social">
+                </a>
+            </div>
+            <div class="map">
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="label">
+                <div class="img">
+                    <img src="./img/logo_img.svg" alt="logo">
+                </div>
+                <div class="text">
+                    Рекламное
+                    <br>
+                    агентство
+                </div>
+            </div>
+            <div class="promo_text">
+                Комплексные услуги рекламы для бизнеса по всему Татарстану
+            </div>
+        </div>
+        <div class="container">
+            <a href="#" class="policy">
+                Политика конфеденциальности
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/libs.min.js "></script>
+    <script src="js/common.js "></script>
+</body>
+
+</html>
