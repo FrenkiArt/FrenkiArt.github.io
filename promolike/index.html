@@ -830,8 +830,24 @@
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            $('form').submit(function(event) {
+                event.preventDefault();
+                var form_data = $(this).serialize(); //собераем все данные из формы
+                $.ajax({
+                    type: "POST", //Метод отправки
+                    url: "./mailer/smart.php", //путь до php фаила отправителя
+                    data: form_data,
+                    success: function() {
+                        hideAllPopup();
+                        showPopup_thanks();
+                        $("form").trigger("reset");
+                    },
+                    });
+            });
+        });
+    </script>
 
 </body>
 

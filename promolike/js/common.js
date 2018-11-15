@@ -230,7 +230,7 @@ mapProject();
 
 /* аяксовая отправка формы через mailer.php */
 $('.form_send').submit(function(event) {
-    event.preventDefault();
+    /*event.preventDefault();
     var form_data = $(this).serialize(); //собераем все данные из формы
     $.ajax({
     type: "POST", //Метод отправки
@@ -242,7 +242,7 @@ $('.form_send').submit(function(event) {
         $("form").trigger("reset");
     },
     });
-    /* $.ajax({
+     $.ajax({
         type: "POST",
         url: "mailer/smart.php",
         data: $(this).serialize()
