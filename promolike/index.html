@@ -581,11 +581,11 @@
             <div class="img_form_before"></div>
 
             <div class="form_common">
-                <form action="#">
+                <form action="mailer/smart.php" method="POST" class="form_send">
                     <label>Введите Ваше имя:</label>
-                    <input type="text" class="input_name" placeholder="Как Вас зовут?">
+                    <input name="name" type="text" class="input_name" placeholder="Как Вас зовут?" required>
                     <label>Введите контактный телефон:</label>
-                    <input type="text" class="input_phone" placeholder="+7 (___) ___ - __ - __">
+                    <input name="phone" type="text" class="input_phone" placeholder="+7 (___) ___ - __ - __" required>
                     <input type="submit" class="input_submit btn" value="Перезвоните мне">
                     <label class="take_policy">
                         <input type="checkbox" name="i_take" checked>
@@ -791,7 +791,7 @@
     <div class="popup popup_form">
         <div class="close_this_popup">+</div>
         <div class="form_common">
-            <form action="#" method="POST">
+            <form action="mailer/smart.php" method="POST">
                 <label>Введите Ваше имя:</label>
                 <input name="name" type="text" class="input_name" placeholder="Как Вас зовут?" required>
                 <label>Введите контактный телефон:</label>

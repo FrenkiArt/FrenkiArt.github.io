@@ -229,7 +229,7 @@ function mapProject() {
 mapProject();
 
 /* аяксовая отправка формы через mailer.php */
-$('form').submit(function(event) {
+$('.form_send').submit(function(event) {
     event.preventDefault();
     var form_data = $(this).serialize(); //собераем все данные из формы
     $.ajax({
