@@ -3465,6 +3465,10 @@ input[type="text"]:-moz-placeholder {
       background-image: -o-linear-gradient(right, #eb4926 0%, #e94a26 20%, #f0a443 80%, #f0a443 100%);
       background-image: linear-gradient(to left, #eb4926 0%, #e94a26 20%, #f0a443 80%, #f0a443 100%); }
 
+@media (min-width: 1px) and (max-width: 347px) {
+  body {
+    overflow-x: hidden; } }
+
 @media (min-width: 1px) and (max-width: 768px) {
   .container {
     max-width: 300px; }
@@ -3550,10 +3554,10 @@ input[type="text"]:-moz-placeholder {
       -o-transition: -o-transform 1s;
       transition: transform 1s;
       transition: transform 1s, -webkit-transform 1s, -o-transform 1s;
-      -webkit-transform: translate(-100vw, 0px);
-          -ms-transform: translate(-100vw, 0px);
-           -o-transform: translate(-100vw, 0px);
-              transform: translate(-100vw, 0px);
+      -webkit-transform: translate(-150vw, 0px);
+          -ms-transform: translate(-150vw, 0px);
+           -o-transform: translate(-150vw, 0px);
+              transform: translate(-150vw, 0px);
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4559,7 +4563,8 @@ input[type="text"]:-moz-placeholder {
           margin: 0px; }
   .contacts {
     padding-top: 63px;
-    padding-bottom: 35px; }
+    padding-bottom: 35px;
+    overflow: hidden; }
     .contacts .h2_title {
       max-width: 290px;
       margin: 0px auto;
