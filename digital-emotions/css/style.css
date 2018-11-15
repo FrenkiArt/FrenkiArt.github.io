@@ -1575,17 +1575,17 @@ input[type="text"]:-moz-placeholder {
 .swiper-button-next:hover, .swiper-button-prev:hover {
   cursor: url("../img/cursor_pointer.png"), pointer; }
 
-.ymaps-2-1-69-balloon__content {
+.ymaps-2-1-71-balloon__content {
   padding: 0px !important;
   min-width: 375px !important;
   min-height: 114px !important; }
-  .ymaps-2-1-69-balloon__content ymaps:nth-of-type(1) {
+  .ymaps-2-1-71-balloon__content ymaps:nth-of-type(1) {
     overflow: visible !important; }
-  .ymaps-2-1-69-balloon__content .custom_label {
+  .ymaps-2-1-71-balloon__content .custom_label {
     width: 375px !important;
     height: 110px !important; }
 
-.ymaps-2-1-69-balloon__tail {
+.ymaps-2-1-71-balloon__tail {
   position: absolute !important;
   bottom: -25px !important;
   left: 0px !important;
@@ -1601,7 +1601,7 @@ input[type="text"]:-moz-placeholder {
           transform: rotate(0deg) !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
-  .ymaps-2-1-69-balloon__tail:after {
+  .ymaps-2-1-71-balloon__tail:after {
     display: none; }
 
 .contacts {
