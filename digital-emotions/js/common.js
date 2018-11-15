@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var triger_inner_popup_top = document.querySelector(".triger_inner_popup_top");
   var inner_top_popup = document.querySelector(".inner_top_popup");
 
-  triger_inner_popup_top.addEventListener("click", function(){
+  triger_inner_popup_top.addEventListener("click", function () {
     overlay.classList.add("visible");
     inner_top_popup.classList.add("visible");
     console.log(overlay);
   });
 
-  document.body.addEventListener("click", function(e){
+  document.body.addEventListener("click", function (e) {
     if (e.target.classList.contains("popup_close")) {
       closePopup();
     }
   });
 
-  var closePopup = function(){
+  var closePopup = function () {
     overlay.classList.remove("visible");
     for (i = 0; i < popup.length; i++) {
       popup[i].classList.remove("visible");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.body.style.overflow = "auto";
   };
 
-  var openPopup = function(){
+  var openPopup = function () {
     document.body.style.overflow = "hidden";
     overlay.classList.add("visible");
   };
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
   });
 
-  
+
 
   var footer_btn_order = document.getElementById("footer_btn_order");
   var popup_send_order = document.querySelector(".popup_send_order");
@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var popup_send_question = document.querySelector(".popup_send_question");
   var popup_cases = document.querySelector(".popup_cases");
 
-  footer_btn_order.addEventListener("click", function(){
+  footer_btn_order.addEventListener("click", function () {
     openPopup();
     popup_send_order.classList.add("visible");
   });
-  
-  send_question.addEventListener("click", function(){
+
+  send_question.addEventListener("click", function () {
     openPopup();
     popup_send_question.classList.add("visible");
   });
 
   var btn_watch_presentation = document.querySelectorAll(".btn_watch_presentation");
   for (i = 0; i < btn_watch_presentation.length; i++) {
-    btn_watch_presentation[i].addEventListener("click", function(e){
+    btn_watch_presentation[i].addEventListener("click", function (e) {
       openPopup();
       popup_cases.classList.add("visible");
       for (h = 0; h < btn_watch_presentation.length; h++) {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     slidesPerView: 1,
     loop: false,
     grabCursor: true,
-
+    /* centeredSlides: true, */
     pagination: {
       el: '.swiper-pagination',
       type: 'fraction',
@@ -316,13 +316,110 @@ document.addEventListener("DOMContentLoaded", function (event) {
       },
     }
   });
+  var share_exp = new Swiper('.share_exp_slider', {
+    initialSlide: 0,
+    speed: 700,
+    spaceBetween: 0,
+    slidesPerView: 3,
+    loop: false,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      formatFractionCurrent: function (number) {
+        switch (number) {
+          case 1:
+            myNum = '01';
+            break;
+          case 2:
+            myNum = '02';
+            break;
+          case 3:
+            myNum = '03';
+            break;
+          case 4:
+            myNum = '04';
+            break;
+          case 5:
+            myNum = '05';
+            break;
+          case 6:
+            myNum = '06';
+            break;
+          case 7:
+            myNum = '07';
+            break;
+          case 8:
+            myNum = '08';
+            break;
+          case 9:
+            myNum = '09';
+            break;
+          default:
+            myNum = number;
+        }
+        return myNum;
+      },
+      formatFractionTotal: function (number) {
+        switch (number) {
+          case 1:
+            myNum = '01';
+            break;
+          case 2:
+            myNum = '02';
+            break;
+          case 3:
+            myNum = '03';
+            break;
+          case 4:
+            myNum = '04';
+            break;
+          case 5:
+            myNum = '05';
+            break;
+          case 6:
+            myNum = '06';
+            break;
+          case 7:
+            myNum = '07';
+            break;
+          case 8:
+            myNum = '08';
+            break;
+          case 9:
+            myNum = '09';
+            break;
+          default:
+            myNum = number;
+        }
+        return myNum;
+      },
+
+
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+    }
+  });
+  
+  
 
 
   /* js для аккардеона и табера */
 
   var acc_block = document.querySelectorAll(".acc_block");
   for (i = 0; i < acc_block.length; i++) {
-    acc_block[i].addEventListener("click", function() {
+    acc_block[i].addEventListener("click", function () {
       for (x = 0; x < acc_block.length; x++) {
         acc_block[x].classList.remove("active");
       }
@@ -337,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   for (i = 0; i < acc_tab.length; i++) {
 
-    acc_tab[i].addEventListener("click", function() {
+    acc_tab[i].addEventListener("click", function () {
       for (i = 0; i < acc_tab.length; i++) {
         acc_tab[i].classList.remove("active");
       }
@@ -367,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var labels_imgs = document.querySelectorAll(".labels_imgs");
 
   for (i = 0; i < js_labels_title.length; i++) {
-    js_labels_title[i].addEventListener("mouseover", function() {
+    js_labels_title[i].addEventListener("mouseover", function () {
       js_labels_title.forEach(function (el) {
         el.classList.remove("active");
       });
@@ -434,6 +531,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   /* конец плавный скролл по ссылке */
 
+  /* для кнопки "показать ещё" */
+  var show_more = document.querySelectorAll(".show_more");
+  for (var i = 0; i < show_more.length; i++) {
+    show_more[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      e.target.closest(".content").classList.add("more");
+    });
+  }
+  /* конец для кнопки "показать ещё" */
+
   /* события для навигации в мобильном меню */
   var nav_circle = document.querySelector(".nav_circle");
   var navigationUl = document.querySelector(".navigation_ul");
@@ -457,6 +564,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       navigationUl.classList.remove("nav_action");
       nav_circle.classList.remove("active");
     });
+    /* перемещение блок write_us */
+    var write_us = document.querySelector("#write_us");
+    var answers = document.querySelector("#answers");
+    answers.children[0].appendChild(write_us);
+
+    /* слайдеры для мобильников */
+    
+
   }
 
   /* для появления кнопки скролла вверх */
@@ -489,20 +604,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var js_anime = document.querySelectorAll(".js_anime");
 
-  window.addEventListener("scroll", function(){
+  window.addEventListener("scroll", function () {
     for_js_anime();
   });
 
-  function for_js_anime(){
+  function for_js_anime() {
     for (i = 0; i < js_anime.length; i++) {
-      if (js_anime[i].offsetTop + js_anime[i].offsetHeight/2 < window.pageYOffset + window.innerHeight) {
-          js_anime[i].classList.add("animated");
+      if (js_anime[i].offsetTop + js_anime[i].offsetHeight / 2 < window.pageYOffset + window.innerHeight) {
+        js_anime[i].classList.add("animated");
       } else {
-          js_anime[i].classList.remove("animated");
+        js_anime[i].classList.remove("animated");
       }
     }
   }
-  
+
+  /* слайдер основные направления */
+  var our_expertise_slider = new Swiper('.our_expertise_slider', {
+    /* initialSlide: 0,
+    spaceBetween: 0,
+    slidesPerView: 0, */
+    speed: 700,
+    slidesPerColumnFill: 'row',
+    slidesPerColumn: 3,
+    spaceBetween: 4,
+    slidesPerView: 2,
+    slidesPerGroup: 6,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      formatFractionCurrent: function (number) {
+        switch (number) {
+          case 1:
+            myNum = '01';
+            break;
+          case 2:
+            myNum = '02';
+            break;
+          case 3:
+            myNum = '03';
+            break;
+          case 4:
+            myNum = '04';
+            break;
+          case 5:
+            myNum = '05';
+            break;
+          case 6:
+            myNum = '06';
+            break;
+          case 7:
+            myNum = '07';
+            break;
+          case 8:
+            myNum = '08';
+            break;
+          case 9:
+            myNum = '09';
+            break;
+          default:
+            myNum = number;
+        }
+        return myNum;
+      },
+      formatFractionTotal: function (number) {
+        switch (number) {
+          case 1:
+            myNum = '01';
+            break;
+          case 2:
+            myNum = '02';
+            break;
+          case 3:
+            myNum = '03';
+            break;
+          case 4:
+            myNum = '04';
+            break;
+          case 5:
+            myNum = '05';
+            break;
+          case 6:
+            myNum = '06';
+            break;
+          case 7:
+            myNum = '07';
+            break;
+          case 8:
+            myNum = '08';
+            break;
+          case 9:
+            myNum = '09';
+            break;
+          default:
+            myNum = number;
+        }
+        return myNum;
+      },
+
+
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      1024: {
+        
+      },
+      768: {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        spaceBetween: 0,
+        slidesPerColumnFill: 'column',
+        slidesPerGroup: 1,
+      },
+    }
+  }); 
 
   /* маска для телефона */
 
