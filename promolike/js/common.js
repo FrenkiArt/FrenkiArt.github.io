@@ -13,6 +13,7 @@ scroll_top.style.position = "fixed";
 scroll_top.style.left = 80 + "%";
 scroll_top.style.bottom = -100 + "px";
 scroll_top.style.opacity = 0.5;
+scroll_top.style.zIndex = 5;
 scroll_top.style.textDecoration = "none";
 scroll_top.style.width = 80 + "px";
 scroll_top.style.height = 80 + "px";
@@ -116,6 +117,66 @@ element.addEventListener("click", function (e) {
 }
 /* конец плавный скролл по ссылке */
 
+/* всплывающие окна */
+
+var overlay = document.querySelector("#overlay");
+var popup = document.querySelectorAll(".popup");
+var body = document.querySelector("body");
+var popup_form = document.querySelector(".popup_form");
+var close_this_popup = document.querySelectorAll(".close_this_popup");
+var popup_thanks = document.querySelector(".popup_thanks");
+
+var showOverlay = function funcShowOverlay(){
+    overlay.classList.add("visible");
+    body.style.overflow = "hidden";
+};
+var hideOverlay = function funcHideOverlay(){
+    overlay.classList.remove("visible");
+    body.style.overflow = "auto";
+};
+
+var showPopup_form = function funcShowPopup_form(){
+    popup_form.classList.add("visible");
+};
+var hidePopup_form = function funcHidePopup_form(){
+    popup_form.classList.remove("visible");
+};
+var hideAllPopup = function funcHideAllPopup(){
+    for (var i = 0; i < popup.length; i++) {
+        popup[i].classList.remove("visible");
+    }
+};
+
+var js_triger_popup_form = document.querySelectorAll(".js_triger_popup_form");
+for (var i = 0; i < js_triger_popup_form.length; i++) {
+    js_triger_popup_form[i].addEventListener("click", function(){
+        showOverlay();
+        showPopup_form();
+    });
+}
+
+for (var i = 0; i < close_this_popup.length; i++) {
+    close_this_popup[i].addEventListener("click", function(){
+        this.closest(".popup").classList.remove("visible");
+        hideOverlay();
+    });
+}
+
+overlay.addEventListener("click", function(){
+    hideAllPopup();
+    hidePopup_thanks();
+    this.classList.remove("visible");
+});
+
+var showPopup_thanks = function funcShowPopup_thanks(){
+    popup_thanks.classList.add("visible");
+};
+var hidePopup_thanks = function funcHidePopup_thanks(){
+    popup_thanks.classList.remove("visible");
+};
+
+/* конец всплывающих окон */
+
 function mapProject() {
     ymaps.ready(init);
 
@@ -166,5 +227,34 @@ function mapProject() {
     }
 }
 mapProject();
+
+/* аяксовая отправка формы через mailer.php */
+$('form').submit(function(event) {
+    event.preventDefault();
+    var form_data = $(this).serialize(); //собераем все данные из формы
+    $.ajax({
+    type: "POST", //Метод отправки
+    url: "mailer/smart.php", //путь до php фаила отправителя
+    data: form_data,
+    success: function() {
+        hideAllPopup();
+        showPopup_thanks();
+        $("form").trigger("reset");
+    },
+    });
+    /* $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+    }).done(function() {
+        $(this).find("input").val("");
+        //alert("Сообщение успешно отправлено");
+        hideAllPopup();
+        showPopup_thanks();
+        $("form").trigger("reset");
+    });
+    return false; */
+});
+/* конец аяксовая отправка формы через mailer.php */
 
 });
