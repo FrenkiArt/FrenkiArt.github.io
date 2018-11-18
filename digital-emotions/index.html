@@ -10,6 +10,10 @@
     <meta name="Keywords" content="ключевые, слова">
     <link rel="apple-touch-icon" href="favicon-star.ico">
     <link rel="shortcut icon" href="favicon-star.ico" type="image/x-icon">
+
+    
+    
+
     <style>
         #circularG {
             position: relative;
@@ -3311,71 +3315,57 @@
                 <div class="swiper-button-next">Слудющий</div>
                 <div class="swiper-button-prev">Предыдущий</div>
             </div>
-
         </div>
     </div>
-
-
-
-
-    <script>
-        window.onload = function () {
-            var preloader = document.getElementById("preloader");
-            preloader.style.opacity = 0;
-            preloader.style.visibility = "hidden";
-            preloader.style.position = "absolute";
-        }
-    </script>
-
+    
     <script src="js/libs.min.js "></script>
     <script src="js/common.js "></script>
 
-
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script async defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    
     <script async defer>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            /* function mapProject(){
+        window.onload = function(){
+            function mapProject() {
                 ymaps.ready(init);
-                function init(){ 
-                    var myMap = new ymaps.Map("map", {
-                        center: [55.710053, 37.444263],
-                        zoom: 17,
-                        controls: [],
+
+                function init() {
+                var myMap = new ymaps.Map("map", {
+                    center: [55.710053, 37.444263],
+                    zoom: 17,
+                    controls: [],
+                });
+
+                myMap.balloon.open(
+                    // Позиция балуна
+                    [55.710153, 37.442450], {
+                    contentBody: '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
+                    }, {
+                    // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
+                    closeButton: false,
+                    balloonContentHeader: '',
+                    balloonMaxWidth: 643,
+                    balloonMaxheight: 235,
+                    balloonMinWidth: 400,
+                    balloonMinheight: 131,
                     });
 
-                    myMap.balloon.open(
-                        // Позиция балуна
-                        [55.710153, 37.442450], {
-                        contentBody: 
-                        '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
-                        }, 
-                        {
-                        // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
-                        closeButton: false,
-                        balloonContentHeader: '',
-                        balloonMaxWidth: 643,
-                        balloonMaxheight: 235,
-                        balloonMinWidth:  400,
-                        balloonMinheight: 131,
-                    });
-
-                    myMap.behaviors.disable('scrollZoom');
-                    myMap.behaviors.enable('drag');
-                    var zoomControl = new ymaps.control.ZoomControl({
-                        options: {
-                            position:{
-                                left: "auto",
-                                right: 10,
-                                top: 116
-                            }
-                        }
-                    });
-                    myMap.controls.add(zoomControl);
-                    myMap.controls.add('fullscreenControl');
-                };
+                myMap.behaviors.disable('scrollZoom');
+                myMap.behaviors.enable('drag');
+                var zoomControl = new ymaps.control.ZoomControl({
+                    options: {
+                    position: {
+                        left: "auto",
+                        right: 10,
+                        top: 116
+                    }
+                    }
+                });
+                myMap.controls.add(zoomControl);
+                myMap.controls.add('fullscreenControl');
+                }
             }
-            mapProject(); */
-        })
+            mapProject();
+        }
     </script>
 
 </body>

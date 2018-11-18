@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
-
+  var preloader = document.getElementById("preloader");
+  preloader.style.opacity = 0;
+  preloader.style.visibility = "hidden";
+  preloader.style.position = "absolute";
+  
   /* наши попапы */
   var overlay = document.querySelector("#overlay");
   var popup = document.querySelectorAll(".popup");
@@ -735,48 +739,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   /* конец маски для телефона */
-
-  function mapProject() {
-    ymaps.ready(init);
-
-    function init() {
-      var myMap = new ymaps.Map("map", {
-        center: [55.710053, 37.444263],
-        zoom: 17,
-        controls: [],
-      });
-
-      myMap.balloon.open(
-        // Позиция балуна
-        [55.710153, 37.442450], {
-          contentBody: '<div class="custom_label"><div class="triger"><div class="toggle_anime"><div class="circle"></div></div></div><div class="text">БЦ «Верейская Плаза 1»</div><div class="triangle"></div></div>',
-        }, {
-          // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
-          closeButton: false,
-          balloonContentHeader: '',
-          balloonMaxWidth: 643,
-          balloonMaxheight: 235,
-          balloonMinWidth: 400,
-          balloonMinheight: 131,
-        });
-
-      myMap.behaviors.disable('scrollZoom');
-      myMap.behaviors.enable('drag');
-      var zoomControl = new ymaps.control.ZoomControl({
-        options: {
-          position: {
-            left: "auto",
-            right: 10,
-            top: 116
-          }
-        }
-      });
-      myMap.controls.add(zoomControl);
-      myMap.controls.add('fullscreenControl');
-    }
-  }
-
+  
   for_js_anime();
-  mapProject();
+  
 
 });
