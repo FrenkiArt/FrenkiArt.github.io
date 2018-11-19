@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (e.target.classList.contains("overlay")) {
       closePopup();
     }
-  });
+  }, {passive: true});
 
   var triger_inner_popup_top = document.querySelector(".triger_inner_popup_top");
   var inner_top_popup = document.querySelector(".inner_top_popup");
@@ -21,14 +21,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   triger_inner_popup_top.addEventListener("click", function () {
     overlay.classList.add("visible");
     inner_top_popup.classList.add("visible");
-    console.log(overlay);
-  });
+  }, {passive: true});
 
   document.body.addEventListener("click", function (e) {
     if (e.target.classList.contains("popup_close")) {
       closePopup();
     }
-  });
+  }, {passive: true});
 
   var closePopup = function () {
     overlay.classList.remove("visible");
@@ -47,27 +46,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
   form_header.addEventListener("submit", function (e) {
     e.target.closest(".popup_content").classList.add("hidden");
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
-  });
+  }, {passive: true});
   var form_case = document.getElementById("form_case");
   form_case.addEventListener("submit", function (e) {
     e.target.closest(".popup_content").classList.add("hidden");
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
-  });
+  }, {passive: true});
   var form_contacts = document.getElementById("form_contacts");
   form_contacts.addEventListener("submit", function (e) {
     e.target.closest(".popup_content").classList.add("hidden");
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
-  });
+  }, {passive: true});
   var form_send_order = document.getElementById("form_send_order");
   form_send_order.addEventListener("submit", function (e) {
     e.target.closest(".popup_content").classList.add("hidden");
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
-  });
+  }, {passive: true});
   var form_send_question = document.getElementById("form_send_question");
   form_send_question.addEventListener("submit", function (e) {
     e.target.closest(".popup_content").classList.add("hidden");
     e.target.closest(".popup_content").nextElementSibling.classList.add("visible");
-  });
+  }, {passive: true});
 
 
 
@@ -80,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   footer_btn_order.addEventListener("click", function () {
     openPopup();
     popup_send_order.classList.add("visible");
-  });
+  }, {passive: true});
 
   send_question.addEventListener("click", function () {
     openPopup();
     popup_send_question.classList.add("visible");
-  });
+  }, {passive: true});
 
   var btn_watch_presentation = document.querySelectorAll(".btn_watch_presentation");
   for (i = 0; i < btn_watch_presentation.length; i++) {
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           swiperCaseSlider.slideTo(currentNumber);
         }
       }
-    });
+    }, {passive: true});
   }
 
 
@@ -428,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         acc_block[x].classList.remove("active");
       }
       this.classList.add("active");
-    });
+    }, {passive: true});
   }
 
   var acc_tab = document.querySelectorAll(".acc_tab");
@@ -458,7 +457,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         acc_risks.style.display = "none";
         acc_guarantee.style.display = "block";
       }
-    });
+    }, {passive: true});
 
   }
   /* конец для аккардеона и табера */
@@ -483,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           labels_imgs[i].classList.add("active");
         }
       }
-    });
+    }, {passive: true});
   }
   /* конец для табера Мыслим масштабно */
 
@@ -507,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           js_taber_content_expertise[i].classList.add("active");
         }
       }
-    });
+    }, {passive: true});
   }
   /* конец для табера our_expertise */
 
@@ -557,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       e.currentTarget.classList.add("active");
       navigationUl.classList.add("nav_action");
     }
-  });
+  }, {passive: true});
 
   /* скрипты в зависимости от размера экрана */
 
@@ -567,7 +566,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     navigationUl.addEventListener("click", function () {
       navigationUl.classList.remove("nav_action");
       nav_circle.classList.remove("active");
-    });
+    }, {passive: true});
     /* перемещение блок write_us */
     var write_us = document.querySelector("#write_us");
     var answers = document.querySelector("#answers");
@@ -601,16 +600,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
 
-  });
+  },{passive: true});
 
 
   /* Плавное появление элементов на странице */
 
   var js_anime = document.querySelectorAll(".js_anime");
+  var custom_io = document.querySelectorAll(".custom_io");
 
   window.addEventListener("scroll", function () {
     for_js_anime();
-  });
+    funcCustomIO();
+  }, 
+  {passive: true}
+  );
 
   function for_js_anime() {
     for (i = 0; i < js_anime.length; i++) {
@@ -621,6 +624,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+
+  var funcCustomIO = function() {
+    for (var i = 0; i < custom_io.length; i++) {
+      if (custom_io[i].offsetTop / 2 < window.pageYOffset + window.innerHeight) {
+        custom_io[i].classList.add("show_img");
+      } else {
+      }
+    }
+  };
 
   /* слайдер основные направления */
   var our_expertise_slider = new Swiper('.our_expertise_slider', {
@@ -741,6 +753,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
   /* конец маски для телефона */
   
   for_js_anime();
+  
+
+  var io = new IntersectionObserver(
+    entries => {
+      console.log(entries);
+    },
+    {
+      /* Using default options. Details below */
+    }
+  );
+  // Start observing an element
+  io.observe(element);
+  
+  // Stop observing an element
+  // io.unobserve(element);
+  
+  // Disable entire IntersectionObserver
+  // io.disconnect();
+  
   
 
 });
