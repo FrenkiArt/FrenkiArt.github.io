@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -118,7 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-5">
-                    <div class="preview_img">
+                    <div class="preview_img polotence">
                         <img id="img_preview_for_halat" src="img/constuctor_img_preview_polotence_white.png" alt="image">
                     </div>
 
@@ -161,12 +164,164 @@
                             </div>
                         </div>
 
-                        <label class="size_halat_checkbox s70_140 active">
+                        <div class="block_size_polotence">
+                            
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size70Х140" id="size70Х140" checked>
+                            <label for="size70Х140" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">70X140 <span></span></span>
+                            </label>
+
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size50Х100" id="size50Х100" hidden>
+                            <label for="size50Х100" class="size_halat_checkbox" hidden>
+                                <span class="size_halat_checkbox_description">50X100 <span></span></span>
+                            </label>
+
+                            <!-- <label class="size_halat_checkbox s70_140 active">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size70Х140" checked>
+                                <span class="size_halat_checkbox_description">70X140 <span></span></span>
+                            </label>
+                            <label class="size_halat_checkbox s50_100" hidden>
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size50Х100">
+                                <span class="size_halat_checkbox_description">50X100 <span></span></span>
+                            </label> -->
+                        </div>
+
+                        <div class="block_size_halat hide">
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size44" id="size44">
+                            <label for="size44" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">44 <span>(Рост:176)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size46" id="size46">
+                            <label for="size46" class="size_halat_checkbox" hidden>
+                                <span class="size_halat_checkbox_description">46 <span>(Рост:176)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size48" id="size48">
+                            <label for="size48" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">48 <span>(Рост:176)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size50" id="size50">
+                            <label for="size50" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">50 <span>(Рост:182)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size52" id="size52">
+                            <label for="size52" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">52 <span>(Рост:182)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size54" id="size54">
+                            <label for="size54" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">54 <span>(Рост:182)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size56" id="size56">
+                            <label for="size56" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">56 <span>(Рост:182)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size58" id="size58">
+                            <label for="size58" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">58 <span>(Рост:182)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size60" id="size60">
+                            <label for="size60" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">60 <span>(Рост:182)</span></span>
+                            </label>
+
+                            <!-- <label class="size_halat_checkbox s44 active">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size44" checked>
+                                <span class="size_halat_checkbox_description">44 <span>(Рост:176)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s46 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size46" >
+                                <span class="size_halat_checkbox_description">46 <span>(Рост:176)</span></span>
+                            </label> 
+                            <label class="size_halat_checkbox s48 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size48" >
+                                <span class="size_halat_checkbox_description">48 <span>(Рост:176)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s50 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size50" >
+                                <span class="size_halat_checkbox_description">50 <span>(Рост:182)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s52 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size52" >
+                                <span class="size_halat_checkbox_description">52 <span>(Рост:182)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s54 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size54" >
+                                <span class="size_halat_checkbox_description">54 <span>(Рост:182)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s56 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size56" >
+                                <span class="size_halat_checkbox_description">56 <span>(Рост:182)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s58 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size58" >
+                                <span class="size_halat_checkbox_description">58 <span>(Рост:182)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s60 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size60" >
+                                <span class="size_halat_checkbox_description">60 <span>(Рост:182)</span></span>
+                            </label>-->
+                            
+                        </div>
+                        
+                        <div class="block_size_halat_child hide">
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size24" id="size24">
+                            <label for="size24" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">24 <span>(Рост:92-98)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size26" id="size26">
+                            <label for="size26" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">26 <span>(Рост:98-104)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size28" id="size28">
+                            <label for="size28" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">28 <span>(Рост:104-110)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size30" id="size30">
+                            <label for="size30" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">30 <span>(Рост:116-122)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size32" id="size32">
+                            <label for="size32" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">32 <span>(Рост:128-134)</span></span>
+                            </label>
+                            <input type="radio" name="size_halat_checkbox" form="polotence" value="size34" id="size34">
+                            <label for="size34" class="size_halat_checkbox">
+                                <span class="size_halat_checkbox_description">34 <span>(Рост:140)</span></span>
+                            </label>
+                            <!--  
+                            <label class="size_halat_checkbox s24 active">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size24" checked>
+                                <span class="size_halat_checkbox_description">24 <span>(Рост:92-98)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s26 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size26">
+                                <span class="size_halat_checkbox_description">26 <span>(Рост:98-104)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s28 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size28">
+                                <span class="size_halat_checkbox_description"></span></span>
+                            </label>
+                            <label class="size_halat_checkbox s30 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size30">
+                                <span class="size_halat_checkbox_description">30 <span>(Рост:116-122)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s32 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size32">
+                                <span class="size_halat_checkbox_description">32 <span>(Рост:128-134)</span></span>
+                            </label>
+                            <label class="size_halat_checkbox s34 ">
+                                <input type="radio" name="size_halat_checkbox" form="polotence" value="size34">
+                                <span class="size_halat_checkbox_description">34 <span>(Рост:140)</span></span>
+                            </label>-->
+                            
+                        </div>
+
+                        <!-- <label class="size_halat_checkbox s70_140 active">
                             <input type="radio" name="size_halat_checkbox" form="polotence" value="size70Х140" checked>
                         </label>
-                        <label class="size_halat_checkbox s50_100">
+                        <label class="size_halat_checkbox s50_100" hidden>
                             <input type="radio" name="size_halat_checkbox" form="polotence" value="size50Х100">
-                        </label>
+                        </label> -->
                     </div>
 
                     <div class="color_halat">
@@ -179,12 +334,17 @@
                             </div>
                         </div>
 
+                        <input type="radio" name="color_halat_checkbox" form="polotence" value="white" id="color_halat_checkbox_white" checked>
+                        <label for="color_halat_checkbox_white" class="color_halat_checkbox white"></label>
+                        <input type="radio" name="color_halat_checkbox" form="polotence" value="blue" id="color_halat_checkbox_blue">
+                        <label for="color_halat_checkbox_blue" class="color_halat_checkbox darkblue"></label>
+                        <!--  
                         <label class="color_halat_checkbox white active">
                             <input type="radio" name="color_halat_checkbox" form="polotence" value="white" checked>
                         </label>
                         <label class="color_halat_checkbox darkblue">
                             <input type="radio" name="color_halat_checkbox" form="polotence" value="blue">
-                        </label>
+                        </label>-->
                     </div>
 
                     <div class="picture_bottom_and_picture_top_wrap">
@@ -198,125 +358,332 @@
                                 </div>
                             </div>
                             <div class="custom-select">
-                                <select form="polotence" name="picture_top">
-                                    <option value="Без рисунка">Нет</option>
-                                    <option value="Без рисунка">Нет</option>
+                                <select form="polotence" name="picture_top" class="select_picture_top">
+                                    <option value="Нет">Нет</option>
+                                    <option value="Нет">Нет</option>
                                     <option value="Короны">Короны</option>
                                     <option value="Животные">Животные</option>
-                                    <option value="Всякое">Всякое</option>
-                                    <option value="С рамкой и инициалами">С рамкой и инициалами</option>
-                                    <option value="Детские">Детские</option>
-                                    <option value="Рамка">Рамка</option>
-                                    <option value="Знаки зодиака">Знаки зодиака</option>
-                                    <option value="Кресты">Кресты</option>
-                                    <option value="Вензиля">Вензиля</option>
+                                    <option value="Популярное">Популярное</option>
+                                    <option value="Профессии">Профессии</option>
+                                    <option value="Разное">Разное</option>
+                                    <option value="Рамки">Рамки</option>
+                                    <option value="Рамки на грудь">Рамки на грудь</option>
+                                    <option value="Розы">Розы</option>
+                                    <option value="Спорт">Спорт</option>
                                 </select>
                             </div>
                             <div class="picture_top_images">
                                 <div class="picture_top_images__block korona">
                                     <label>
-                                        <img src="img/korona_1.png" alt="korona_1">
+                                        <img src="img/korona_1.svg" alt="korona_1">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/korona_2.png" alt="korona_2">
+                                        <img src="img/korona_2.svg" alt="korona_2">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/korona_3.png" alt="korona_3">
+                                        <img src="img/korona_3.svg" alt="korona_3">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/korona_4.png" alt="korona_4">
+                                        <img src="img/korona_4.svg" alt="korona_4">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/korona_5.png" alt="korona_5">
+                                        <img src="img/korona_5.svg" alt="korona_5">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/korona_6.png" alt="korona_6">
+                                        <img src="img/korona_6.svg" alt="korona_6">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/korona_7.svg" alt="korona_7">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/korona_8.svg" alt="korona_8">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                 </div>
                                 <div class="picture_top_images__block animal">
                                     <label>
-                                        <img src="img/animal_1.png" alt="animal_1">
+                                        <img src="img/animal_1.svg" alt="animal_1">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/animal_2.png" alt="animal_2">
+                                        <img src="img/animal_2.svg" alt="animal_2">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/animal_3.png" alt="animal_3">
+                                        <img src="img/animal_3.svg" alt="animal_3">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/animal_4.png" alt="animal_4">
+                                        <img src="img/animal_4.svg" alt="animal_4">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/animal_5.png" alt="animal_5">
+                                        <img src="img/animal_5.svg" alt="animal_5">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/animal_6.png" alt="animal_6">
+                                        <img src="img/animal_7.svg" alt="animal_7">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_8.svg" alt="animal_8">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_9.svg" alt="animal_9">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_10.svg" alt="animal_10">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_11.svg" alt="animal_11">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_12.svg" alt="animal_12">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_13.svg" alt="animal_13">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_14.svg" alt="animal_14">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_15.svg" alt="animal_15">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_16.svg" alt="animal_16">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_17.svg" alt="animal_17">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_18.svg" alt="animal_18">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_19.svg" alt="animal_19">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_20.svg" alt="animal_20">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_21.svg" alt="animal_21">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/animal_22.svg" alt="animal_22">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                 </div>
                                 <div class="picture_top_images__block frame_and_name">
                                     <label>
-                                        <img src="img/frame_and_name_1.png" alt="frame_and_name_1">
+                                        <img src="img/frame_and_name_1.svg" alt="frame_and_name_1">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/frame_and_name_2.png" alt="frame_and_name_2">
+                                        <img src="img/frame_and_name_2.svg" alt="frame_and_name_2">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/frame_and_name_3.png" alt="frame_and_name_3">
+                                        <img src="img/frame_and_name_3.svg" alt="frame_and_name_3">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/frame_and_name_4.png" alt="frame_and_name_4">
+                                        <img src="img/frame_and_name_4.svg" alt="frame_and_name_4">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                 </div>
-                                <div class="picture_top_images__block venzilja">
+                                <div class="picture_top_images__block frame_on_chest">
                                     <label>
-                                        <img src="img/venzilja_1.png" alt="venzilja_1">
+                                        <img src="img/frame_on_chest_1.svg" alt="frame_on_chest_1">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/venzilja_2.png" alt="venzilja_2">
+                                        <img src="img/frame_on_chest_2.svg" alt="frame_on_chest_2">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/venzilja_3.png" alt="venzilja_3">
+                                        <img src="img/frame_on_chest_3.svg" alt="frame_on_chest_3">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/venzilja_4.png" alt="venzilja_4">
+                                        <img src="img/frame_on_chest_4.svg" alt="frame_on_chest_4">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                     <label>
-                                        <img src="img/venzilja_5.png" alt="venzilja_5">
+                                        <img src="img/frame_on_chest_5.svg" alt="frame_on_chest_5">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                </div>
+                                <div class="picture_top_images__block popular">
+                                    <label>
+                                        <img src="img/popular_1.svg" alt="popular_1">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_2.svg" alt="popular_2">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_3.svg" alt="popular_3">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_4.svg" alt="popular_4">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_5.svg" alt="popular_5">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_6.svg" alt="popular_6">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_7.svg" alt="popular_7">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_8.svg" alt="popular_8">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/popular_9.svg" alt="popular_9">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                </div>
+                                <div class="picture_top_images__block profession">
+                                    <label>
+                                        <img src="img/profession_1.svg" alt="profession_1">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/profession_2.svg" alt="profession_2">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/profession_3.svg" alt="profession_3">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/profession_4.svg" alt="profession_4">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/profession_5.svg" alt="profession_5">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                </div>
+                                <div class="picture_top_images__block raznoe">
+                                    <label>
+                                        <img src="img/raznoe_1.svg" alt="raznoe_1">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/raznoe_2.svg" alt="raznoe_2">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/raznoe_3.svg" alt="raznoe_3">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/raznoe_4.svg" alt="raznoe_4">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/raznoe_5.svg" alt="raznoe_5">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/raznoe_6.svg" alt="raznoe_6">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                </div>
+                                <div class="picture_top_images__block roses">
+                                    <label>
+                                        <img src="img/roses_1.svg" alt="roses_1">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/roses_2.svg" alt="roses_2">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                </div>
+                                <div class="picture_top_images__block sport">
+                                    <label>
+                                        <img src="img/sport_1.svg" alt="sport_1">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_2.svg" alt="sport_2">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_3.svg" alt="sport_3">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_4.svg" alt="sport_4">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_5.svg" alt="sport_5">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_6.svg" alt="sport_6">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_7.svg" alt="sport_7">
+                                        <input type="radio" name="picture_top_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/sport_8.svg" alt="sport_8">
                                         <input type="radio" name="picture_top_image" form="polotence">
                                     </label>
                                 </div>
                             </div>
 
+                            <div class="block_picture_top_size">
+                                <input type="radio" name="picture_top_checkbox" form="polotence" value="big" id="picture_top_checkbox_big" >
+                                <label for="picture_top_checkbox_big" class="picture_top_checkbox big"></label>
+                                <input type="radio" name="picture_top_checkbox" form="polotence" value="medium" id="picture_top_checkbox_medium" checked>
+                                <label for="picture_top_checkbox_medium" class="picture_top_checkbox middle"></label>
+                                <input type="radio" name="picture_top_checkbox" form="polotence" value="small" id="picture_top_checkbox_small" >
+                                <label for="picture_top_checkbox_small" class="picture_top_checkbox small"></label>
 
-                            <label class="picture_top_checkbox big">
-                                <input type="radio" name="picture_top_checkbox" form="polotence" value="Верхний рисунок Большой">
-                            </label>
-                            <label class="picture_top_checkbox middle">
-                                <input type="radio" name="picture_top_checkbox" form="polotence" value="Верхний рисунок Средний">
-                            </label>
-                            <label class="picture_top_checkbox small">
-                                <input type="radio" name="picture_top_checkbox" form="polotence" value="Верхний рисунок Маленький">
-                            </label>
+                                <!-- <label class="picture_top_checkbox big">
+                                    <input type="radio" name="picture_top_checkbox" form="polotence" value="big">
+                                </label>
+                                <label class="picture_top_checkbox middle">
+                                    <input type="radio" name="picture_top_checkbox" form="polotence" value="medium">
+                                </label>
+                                <label class="picture_top_checkbox small">
+                                    <input type="radio" name="picture_top_checkbox" form="polotence" value="small">
+                                </label> -->
+                            </div>
+                            
                         </div>
                         <div class="picture_bottom">
                             <div class="constructor_media">
@@ -328,15 +695,44 @@
                                 </div>
                             </div>
                             <div class="custom-select">
-                                <select form="polotence" name="picture_bottom">
+                                <select form="polotence" name="picture_bottom" class="select_picture_bottom">
+                                    <option value="Без рисунка" checked>Без рисунка</option>
                                     <option value="Без рисунка">Без рисунка</option>
-                                    <option value="Без рисунка">Без рисунка</option>
-                                    <option value="Основные">Основные</option>
+                                    <option value="Вензеля">Вензеля</option>
                                 </select>
                             </div>
-                            <label class="picture_top_checkbox big" style="visibility: hidden;">
+                            <div class="picture_bottom_images">
+                                <div class="picture_bottom_images__block venzelja">
+                                    <label>
+                                        <img src="img/venzelja_1.svg" alt="venzelja_1">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/venzelja_2.svg" alt="venzelja_2">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/venzelja_3.svg" alt="venzelja_3">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/venzelja_4.svg" alt="venzelja_4">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/venzelja_5.svg" alt="venzelja_5">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                    <label>
+                                        <img src="img/venzelja_6.svg" alt="venzelja_6">
+                                        <input type="radio" name="picture_bottom_image" form="polotence">
+                                    </label>
+                                </div>
+
+                            </div>
+                            <!-- <label class="picture_top_checkbox big" style="visibility: hidden;">
                                 <input type="radio" name="просто занимает место" value="просто занимает место">
-                            </label>
+                            </label> -->
 
                         </div>
                     </div>
@@ -365,8 +761,8 @@
                         <div class="custom-select">
                             <select form="polotence" name="font_halat">
                                 <option value="Выберите шрифт">Выберите шрифт</option>
-                                <option value="Arial" style="font-family: arial;">Arial</option>
-                                <option value="Ariston">Ariston</option>
+                                <option value="Arial">Arial</option>
+                                <option value="Ariston" >Ariston</option>
                                 <option value="AGCENB">AGCENB</option>
                                 <option value="Ciyrillic">Ciyrillic</option>
                                 <option value="Majestic">Majestic</option>
@@ -388,138 +784,182 @@
                         </div>
 
                         <div class="color_box">
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_1">
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_1">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Золото металлизированное <span>(Используется для вышивки на халате, не рекомендуется для использования на полотенце) </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_2">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_2">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Золотые неметаллизированные <span>(Рекомендуется для вышивки на полотенце) </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_3">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_3">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Серебряные металлизированные <span>(Используется для вышивки на халате, не рекомендуется для использования на полотенце) </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_4">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_4">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Темно-серый (цвет асфальта) <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_5">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_5">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Синий  <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_6">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_6">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Темно-синий <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_7">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_7">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Красный <span> </span>
                                 </div>
-                            </label>
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_8">
 
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_8">
-
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Бордовый <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_9">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_9">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Белый  <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_10">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_10">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Черный <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_11">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_11">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Розовый <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_12">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_12">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Бирюзовый <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_13">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_13">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Фиолетовый <span> </span>
                                 </div>
-                            </label>
-                            <label class="color_box_label">
-                                <input type="radio" name="#">
-                                <div class="box box_14">
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_14">
 
-                                </div>
+                                    </div>
+                                </label>
                                 <div class="box_popup">
-                                    Золотой неметалли-зирован <span>(используется для вышивки на полотенцах) </span>
+                                    Коричневый <span> </span>
                                 </div>
-                            </label>
+                            </div>
+                            <div class="color_box_label_wrap">
+                                <label class="color_box_label">
+                                    <input type="radio" name="#">
+                                    <div class="box box_15">
+
+                                    </div>
+                                </label>
+                                <div class="box_popup">
+                                    Фукси <span> </span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <label id="myRangeLabel" for="myRange"></label>
+                        <input type="range" min="50" max="150" value="100" class="slider" id="myRange">
+                        <div class="title">
+                            Размер шрифта
+                        </div>
+                        <!-- <input type="text" id="custom_range" name="custom_range" value="" /> -->
                     </div>
                 </div>
             </div>
@@ -649,7 +1089,7 @@
                     © 2018 Halat Original. Все права защищены.
                 </span>
                 <span class="policy_wrapper">
-                    <a href="#" class="offer">
+                    <a href="./dogovor-oferti.html" class="offer">
                         Договор оферты
                     </a>
                     <a href="#" class="policy_conf">

@@ -1,12 +1,10 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 @import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css";
-
-
-
-/*
-@import "../../node_modules/inputmask/css/inputmask.css";*/
 @import "../../node_modules/swiper/dist/css/swiper.min.css";
+@import "../../node_modules/ion-rangeslider/css/ion.rangeSlider.css";
+@import "../../node_modules/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css";
 @import "../../node_modules/lightgallery.js/dist/css/lightgallery.min.css";
+
 @import "../fonts/gothampro/stylesheet.css";
 @import "../fonts/roboto/stylesheet.css";
 @import "../fonts/robotocondensed/stylesheet.css";
@@ -21,6 +19,62 @@
   font-family: 'lg';
   src: url("../fonts/lg.eot?n1z373");
   src: url("../fonts/lg.eot?#iefixn1z373") format("embedded-opentype"), url("../fonts/lg.woff?n1z373") format("woff"), url("../fonts/lg.ttf?n1z373") format("truetype"), url("../fonts/lg.svg?n1z373#lg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* шрифты для вышивки */
+@font-face {
+  font-family: 'AGCENB';
+  src: url("../fonts/AGCENB.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Arial';
+  src: url("../fonts/arial.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ariston';
+  src: url("../fonts/Ariston.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ciyrillic';
+  src: url("../fonts/CyrillicOld.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Majestic';
+  src: url("../fonts/Majestic-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mon-Amour';
+  src: url("../fonts/mon-amour-one-medium_[allfont.ru].ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mtcorsva';
+  src: url("../fonts/MTCORSVA.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pompadur';
+  src: url("../fonts/Pompadur.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Vivaldid';
+  src: url("../fonts/VIVADCL_.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }

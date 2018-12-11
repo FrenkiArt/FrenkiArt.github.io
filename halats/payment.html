@@ -10,7 +10,10 @@
         <link rel="stylesheet" href="css/libs.min.css">
         <link rel="stylesheet" href="css/style.css">
         
-        
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
     </head>
     <body>
         
@@ -403,7 +406,13 @@
                                 <div class="text">
                                         производится по звонку за час по тел : 
                                         + 7 922 005 67 69 с 9-00 утра до 19-00 вечера Адрес: г. Тюмень, ул. Пархоменко, 54  
-                                        <a class="show_on_map" href="#">Показать на карте</a>     
+                                        <a class="show_on_map" href="#">
+                                            <span class="show_on_map_show">Показать на карте</span>
+                                            <span class="show_on_map_hide hide">Скрыть карту</span>
+                                        </a>    
+                                        <div class="wrap_for_map hide">
+                                            <a class="dg-widget-link" href="http://2gis.ru/tyumen/firm/70000001023392725/center/65.52052974700929,57.13020730738803/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Тюмени</a><div class="dg-widget-link"><a href="http://2gis.ru/tyumen/firm/70000001023392725/photos/70000001023392725/center/65.52052974700929,57.13020730738803/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.ru/tyumen/center/65.520537,57.129767/zoom/16/routeTab/rsType/bus/to/65.520537,57.129767╎HALATORIGINAL, студия по производству индивидуальных халатов с вышивкой?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до HALATORIGINAL, студия по производству индивидуальных халатов с вышивкой</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":57.13020730738803,"lon":65.52052974700929,"zoom":16},"opt":{"city":"tyumen"},"org":[{"id":"70000001023392725"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript> 
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -421,7 +430,7 @@
                                 
                                 <div class="text postRus">
                                     - доставка до Почты России — бесплатно. <br>
-                                    <a href="#">+ тариф Почты России.</a>  <br>
+                                    <a href="https://www.pochta.ru/parcels" target="_blank">+ тариф Почты России.</a>  <br>
                                     <span>
                                         ( Вес махрового халата 1.5 кг, велюрового 
                                     1,8 кг, детского 1,2 кг, полотенца 0,5 кг) 
@@ -614,7 +623,7 @@
                         © 2018 Halat Original. Все права защищены.
                     </span>
                     <span class="policy_wrapper">
-                        <a href="#" class="offer">
+                        <a href="./dogovor-oferti.html" class="offer">
                             Договор оферты
                         </a>
                         <a href="#" class="policy_conf">
