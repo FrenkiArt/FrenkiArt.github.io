@@ -622,10 +622,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var block_size_halat_child = document.querySelector(".block_size_halat_child");
         var color_halat_checkbox = document.querySelectorAll(".color_halat_checkbox");
         var changeTitle = document.querySelector(".size_halat .constructor_media .title");
+        var changeTitleColor = document.querySelector(".color_halat .constructor_media .title");
+        var changeTitleTextOn = document.querySelector(".text_on_halat .constructor_media .title");
         var color_halat_block = document.querySelector(".color_halat");
 
         var halat_mahrovi_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
+            changeTitleColor.innerHTML = "ЦВЕТ ХАЛАТА";
+            changeTitleTextOn.innerHTML = "ТЕКСТ НА ХАЛАТЕ";
             preview_img.classList.remove("velur", "child", "polotence");
             preview_img.classList.add("mahrovi");
             for (var i = 0; i < color_halat_checkbox.length; i++) {
@@ -645,11 +649,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             halat_velur.classList.remove("active");
             halat_child_mahr.classList.remove("active");
             halat_polotence.classList.remove("active");
+            document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
         };
         var halat_velur_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
+            changeTitleColor.innerHTML = "ЦВЕТ ХАЛАТА";
+            changeTitleTextOn.innerHTML = "ТЕКСТ НА ХАЛАТЕ";
             preview_img.classList.remove("mahrovi", "child", "polotence");
             preview_img.classList.add("velur");
             for (var i = 0; i < color_halat_checkbox.length; i++) {
@@ -669,11 +676,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             halat_velur.classList.add("active");
             halat_child_mahr.classList.remove("active");
             halat_polotence.classList.remove("active");
+            document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
         };
         var halat_child_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
+            changeTitleColor.innerHTML = "ЦВЕТ ХАЛАТА";
+            changeTitleTextOn.innerHTML = "ТЕКСТ НА ХАЛАТЕ";
             preview_img.classList.remove("mahrovi", "velur", "polotence");
             preview_img.classList.add("child");
 
@@ -687,11 +697,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             halat_velur.classList.remove("active");
             halat_child_mahr.classList.add("active");
             halat_polotence.classList.remove("active");
+            document.querySelector(".notation").style.display = "flex";
 
             color_halat_block.classList.add("hide");
         };
         var halat_polotence_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ПОЛОТЕНЦА";
+            changeTitleColor.innerHTML = "ЦВЕТ ПОЛОТЕНЦА";
+            changeTitleTextOn.innerHTML = "ТЕКСТ НА ПОЛОТЕНЦЕ";
             preview_img.classList.remove("mahrovi", "child", "velur");
             preview_img.classList.add("polotence");
             for (var i = 0; i < color_halat_checkbox.length; i++) {
@@ -711,6 +724,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             halat_velur.classList.remove("active");
             halat_child_mahr.classList.remove("active");
             halat_polotence.classList.add("active");
+            document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
         };
@@ -764,6 +778,67 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         /* халат который изначально будет видно */
         halat_child_func();
+
+        /* события нотификации в окне просмотра халата */
+        document.querySelector(".close_notation").addEventListener("click", function () {
+            this.closest(".notation").style.display = "none";
+        });
+
+        /* события зума для окна просмотра */
+        /* document.querySelector(".preview_img ").addEventListener("click", function (e) {
+            if (this.classList.contains("zoomed")) {
+                funcCloseZoom();
+            } else {
+                funcOpenZoom();
+            }
+
+
+        });
+
+        function funcOpenZoom() {
+            document.querySelector(".preview_img ").classList.add("zoomed");
+            document.querySelector(".zoom_popup").style.display = "block";
+            var imgForZoom = document.querySelector("#img_preview_for_halat").getAttribute("src");
+            document.querySelector(".zoom_popup img").setAttribute("src", imgForZoom);
+            document.querySelector(".close_zoom_popup ").addEventListener("click", function () {
+                funcCloseZoom();
+            });
+            document.querySelector(".preview_img").addEventListener("mousemove", function(e){
+                var mouseX = e.offsetX;
+                var mouseY = e.offsetY;
+                //console.log(e.offsetX, e.offsetY);
+                var previewWidth = document.querySelector(".preview_img").clientWidth;
+                var previewHeight = document.querySelector(".preview_img").clientHeight;
+                var percentWidth = Math.round(e.offsetX/previewWidth*100);
+                var percentHeight = Math.round(e.offsetY/previewHeight*100);
+                //document.querySelector(".zoom_popup img").style.top = percentHeight+"%";
+                //document.querySelector(".zoom_popup img").style.left = -percentWidth+"%";
+                //document.querySelector(".zoom_popup img").style.transform = "translate("+e.offsetX+"px,"+e.offsetY+"px) scale(1)";
+            });
+        }
+        function funcCloseZoom(){
+            document.querySelector(".preview_img ").classList.remove("zoomed");
+            document.querySelector(".zoom_popup").style.display = "none";
+        } */
+        //new Loupe(document.getElementById('img_preview_for_halat'));
+
+
+        /* события для вышивки инициалов на груди */
+        var input_name_on_chest = document.querySelector(".input_name_on_chest");
+        var input_name_on_chest_text = document.querySelector("#text_for_name_on_chest");
+        var for_name_on_chest = document.querySelector(".for_name_on_chest");
+
+        input_name_on_chest.addEventListener("input", function () {
+            input_name_on_chest_text.innerHTML = this.value;
+        });
+        var input_frame_on_chest = document.querySelectorAll("input[name='frame_on_chest']");
+        for (var i = 0; i < input_frame_on_chest.length; i++) {
+            input_frame_on_chest[i].addEventListener("click", function(){
+                var imgSrc = this.previousElementSibling.getAttribute("src");
+                for_name_on_chest.style.backgroundImage = "url('./"+imgSrc+"')";
+            });
+            
+        }
     }
     /* конец для if (document.querySelector(".constructor")) */
 
@@ -778,7 +853,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             e.preventDefault();
             show_on_map_show.classList.toggle("hide");
             show_on_map_hide.classList.toggle("hide");
-            wrap_for_map.classList.toggle("hide");
+            wrap_for_map.classList.toggle("hidden");
         });
     }
 
