@@ -542,19 +542,25 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 10px 10px; }
-  .main_gallery .gallery .img_1 {
-    width: 28%; }
-  .main_gallery .gallery .img_2 {
-    width: 44%; }
-  .main_gallery .gallery .img_3 {
-    width: 23%; }
-  .main_gallery .gallery .img_4 {
-    width: 23%; }
-  .main_gallery .gallery .img_5 {
-    width: 44%; }
-  .main_gallery .gallery .img_6 {
-    width: 28%; }
+    width: 30%;
+    margin: 10px 10px;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .main_gallery .gallery .img img {
+      min-width: 100%;
+      max-width: auto; }
 
 .main_gallery .js_more_image {
   display: none;
@@ -1574,9 +1580,9 @@ a {
   .shiping .wrap_for_map {
     margin-top: 5px;
     max-height: 600px;
-    -webkit-transition: max-height 0.3s, opacity 0.5s;
-    -o-transition: max-height 0.3s, opacity 0.5s;
-    transition: max-height 0.3s, opacity 0.5s;
+    -webkit-transition: max-height 0.4s, opacity 0.5s;
+    -o-transition: max-height 0.4s, opacity 0.5s;
+    transition: max-height 0.4s, opacity 0.5s;
     opacity: 1;
     overflow: hidden; }
     .shiping .wrap_for_map.hidden {
@@ -2350,15 +2356,15 @@ a {
         .constructor .font_color_halat .color_box_label .box_3 {
           background-color: #c3b264; }
         .constructor .font_color_halat .color_box_label .box_4 {
-          background-color: #757576; }
+          background-color: #283139; }
         .constructor .font_color_halat .color_box_label .box_5 {
-          background-color: #3e5999; }
+          background-color: #1864E1; }
         .constructor .font_color_halat .color_box_label .box_6 {
-          background-color: #16306e; }
+          background-color: #000789; }
         .constructor .font_color_halat .color_box_label .box_7 {
-          background-color: #d93431; }
+          background-color: #C30029; }
         .constructor .font_color_halat .color_box_label .box_8 {
-          background-color: #9f2637; }
+          background-color: #A80A53; }
         .constructor .font_color_halat .color_box_label .box_9 {
           background-color: #ffffff; }
         .constructor .font_color_halat .color_box_label .box_10 {
@@ -2366,13 +2372,13 @@ a {
         .constructor .font_color_halat .color_box_label .box_11 {
           background-color: #ee7aa6; }
         .constructor .font_color_halat .color_box_label .box_12 {
-          background-color: #85bbc8; }
+          background-color: #46B696; }
         .constructor .font_color_halat .color_box_label .box_13 {
-          background-color: #3d2311; }
+          background-color: #4115E1; }
         .constructor .font_color_halat .color_box_label .box_14 {
-          background-color: #930566; }
+          background-color: #351E5F; }
         .constructor .font_color_halat .color_box_label .box_15 {
-          background-color: #930566; }
+          background-color: #D613F1; }
       .constructor .font_color_halat .color_box .box_popup {
         display: none;
         z-index: 4;
@@ -2385,7 +2391,7 @@ a {
              -o-transform: translate(-50%, 0px);
                 transform: translate(-50%, 0px);
         width: 168px;
-        height: 67px;
+        min-height: 67px;
         background-color: #ffffff;
         padding: 12px 15px;
         color: #000000;
@@ -2410,11 +2416,16 @@ a {
           background: white;
           border-top: 1px solid #cecece;
           border-left: 1px solid #cecece; }
+        .constructor .font_color_halat .color_box .box_popup_title {
+          height: 30px; }
         .constructor .font_color_halat .color_box .box_popup span {
           font-family: "Roboto";
           font-weight: 300;
           color: #939393;
           font-size: 10px; }
+        .constructor .font_color_halat .color_box .box_popup img {
+          max-width: 100%;
+          margin-bottom: 5px; }
   .constructor .constructor_media {
     width: 100%;
     height: 55px;

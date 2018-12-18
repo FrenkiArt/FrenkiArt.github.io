@@ -1,0 +1,130 @@
+.header
+    background: #1e2741
+    min-height: 118px
+    padding-top: 7px
+    
+    .container
+        max-width: 1200px
+    .logo.logo__header
+        display: flex
+        text-decoration: none
+        .logo_img
+            //border: 1px solid white
+            padding-top: 19px
+            z-index: 2
+            img
+        .logo_content
+            .text_as_img
+                //border: 1px solid white
+                transform: translate(-48px, 8px)
+            .text
+                //border: 1px solid white
+                color: #ffffff
+                font-family: "Roboto Condensed"
+                font-size: 17px
+                font-weight: 400
+                letter-spacing: 3.1px
+                padding-left: 18px
+                padding-top: 0px
+                z-index: 3
+                transform: translate(0px, 0px)
+    .header_right_block
+        padding-left: 60px
+    .header_contact_block
+        border-bottom: 1px solid rgba(255, 255,255, 0.17)
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        padding-right: 32px
+        margin-top: -2px
+        height: 43px
+        .phone
+            opacity: 0.8
+            color: #ffffff
+            font-family: Roboto
+            font-size: 14px
+            font-weight: 500
+            text-decoration: none
+            transition: opacity 0.3s
+            margin-right: 88px
+            position: relative
+            &:hover
+                opacity: 1
+            &::before
+                content: ''
+                position: absolute
+                opacity: 1
+                left: -13px
+                top: 2px
+                width: 7px
+                height: 17px
+                background-image: url('../img/icon_phone_header.svg')
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat
+        .mail
+            opacity: 0.8
+            color: #ffffff
+            font-family: Roboto
+            font-size: 14px
+            font-weight: 300
+            text-decoration: underline
+            letter-spacing: 0.7px
+            transition: opacity 0.3s
+            position: relative
+            &:hover
+                opacity: 1
+            &::before
+                content: ''
+                position: absolute
+                opacity: 1
+                left: -26px
+                top: 4px
+                width: 22px
+                height: 13px
+                background-image: url('../img/icon_mail_header.svg')
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat
+
+    .header_nav_block
+        display: flex
+        justify-content: space-between
+        min-height: 53px
+        padding-top: 5px
+    .soc_btn
+        width: 140px
+        height: 53px
+        display: flex
+        align-items: center
+        justify-content: space-around
+        //border: 1px solid white
+        a
+            text-decoration: 
+            color: #ffffff
+            svg
+                fill: #b09867
+        .icon
+            &_instagram
+                width: 23px
+                height: 23px
+                //background-image: url('../img/insta.svg')
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat
+            &_facebook
+                width: 13px
+                height: 24px
+                //background-image: url('../img/fb.svg')
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat
+                
+
+            &_vk
+                width: 27px
+                height: 21px
+                //background-image: url('../img/vk.svg')
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat

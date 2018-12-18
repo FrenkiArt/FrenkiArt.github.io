@@ -644,6 +644,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             block_size_halat_child.classList.add("hide");
             block_size_halat.classList.remove("hide");
             trashSize.innerHTML = "";
+            document.querySelector(".name_on_chest").style.display = "block";
+            /* наличие размера верхнего рисунка */
+            document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
+
+            /* наличие в превью картинки блока с инициалами */
+            document.querySelector(".for_name_on_chest").style.display = "flex";
 
             halat_mahr.classList.add("active");
             halat_velur.classList.remove("active");
@@ -652,6 +662,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
+            funcCheckColor();
         };
         var halat_velur_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -671,6 +682,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             block_size_halat_child.classList.add("hide");
             block_size_halat.classList.remove("hide");
             trashSize.innerHTML = "";
+            document.querySelector(".name_on_chest").style.display = "block";
+            /* наличие размера верхнего рисунка */
+            document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
+
+            /* наличие в превью картинки блока с инициалами */
+            document.querySelector(".for_name_on_chest").style.display = "flex";
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.add("active");
@@ -679,6 +700,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
+            funcCheckColor();
         };
         var halat_child_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -692,6 +714,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             block_size_halat.classList.add("hide");
             block_size_halat_child.classList.remove("hide");
             trashSize.innerHTML = "";
+            document.querySelector(".name_on_chest").style.display = "block";
+            /* наличие размера верхнего рисунка */
+            document.querySelector(".block_picture_top_size").children[0].style.display = "none";
+            document.querySelector(".block_picture_top_size").children[1].style.display = "none";
+            document.querySelector(".block_picture_top_size").children[2].style.display = "none";
+            document.querySelector(".block_picture_top_size").children[3].style.display = "none";
+            document.querySelector(".block_picture_top_size").children[4].checked = true;
+
+            /* наличие в превью картинки блока с инициалами */
+            document.querySelector(".for_name_on_chest").style.display = "flex";
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.remove("active");
@@ -700,6 +732,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "flex";
 
             color_halat_block.classList.add("hide");
+            funcCheckColor();
         };
         var halat_polotence_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ПОЛОТЕНЦА";
@@ -719,6 +752,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             block_size_halat_child.classList.add("hide");
             block_size_halat.classList.add("hide");
             trashSize.innerHTML = "";
+            document.querySelector(".name_on_chest").style.display = "none";
+            /* наличие размера верхнего рисунка */
+            document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
+            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
+
+            /* наличие в превью картинки блока с инициалами */
+            document.querySelector(".for_name_on_chest").style.display = "none";
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.remove("active");
@@ -727,6 +770,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
+            funcCheckColor();
         };
 
 
@@ -833,11 +877,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
         var input_frame_on_chest = document.querySelectorAll("input[name='frame_on_chest']");
         for (var i = 0; i < input_frame_on_chest.length; i++) {
-            input_frame_on_chest[i].addEventListener("click", function(){
+            input_frame_on_chest[i].addEventListener("click", function () {
                 var imgSrc = this.previousElementSibling.getAttribute("src");
-                for_name_on_chest.style.backgroundImage = "url('./"+imgSrc+"')";
+                for_name_on_chest.style.backgroundImage = "url('./" + imgSrc + "')";
             });
-            
+
         }
     }
     /* конец для if (document.querySelector(".constructor")) */
@@ -857,6 +901,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
     }
 
+
+    
+    /* функция которая проверяет какой цвет выбран и вешает его обертке .active, а у других снимает .active */
+    var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box'");
+        for (var i = 0; i < input_radio_color_box.length; i++) {
+            if (input_radio_color_box[i].checked == true) {
+                input_radio_color_box[i].closest(".color_box_label").classList.add("active");
+            } else {
+                input_radio_color_box[i].closest(".color_box_label").classList.remove("active");
+            }
+        }
+    var funcCheckColor = function () {
+        
+    };
+    var color_box_label = document.querySelectorAll(".color_box_label");
+    for (var i = 0; i < color_box_label.length; i++) {
+        color_box_label[i].addEventListener("click", function(){
+            
+        });
+    }
 
 
 });

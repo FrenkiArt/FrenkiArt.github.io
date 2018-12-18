@@ -1,0 +1,797 @@
+.constructor
+    
+    padding-top: 55px
+    .container
+        position: relative
+        max-width: 1200px
+    .parametrs
+        padding-left: 65px
+    .h2_title
+        color: #302f2f
+        font-family: "Roboto Condensed"
+        font-size: 55px
+        font-weight: 400
+        text-transform: uppercase
+        //margin-left: 29px
+        padding-left: 29px
+        letter-spacing: 0px
+        margin-bottom: 40px
+    .zoom_popup
+        border: 1px solid gold
+        border-radius: 100%
+        width: 300px
+        height: 300px
+        position: absolute
+        //right: -310px
+        left: 80%
+        top: 70px
+        overflow: hidden
+        background-color: #fff
+        z-index: 20
+        //display: flex
+        display: none
+        
+        img
+            position: absolute
+            top: 0%
+            left: 0%
+            transform: translate(0px, 0px) scale(2.5)
+            max-width: 300px
+
+        .close_zoom_popup
+            position: absolute
+            top: 15px
+            right: 5px
+            transform: translate(0px,-50%) 
+            background-color: transparent
+            
+            height: 20px
+            width: 20px
+            font-family: Arial, Helvetica, sans-serif
+            //border: 1px solid green
+            &:hover
+                cursor: url('../img/cursor_pointer.png'), pointer
+            span
+                color: #000
+                font-size: 30px
+                line-height: 0px
+                display: block
+                transform: translate(-5px,-5px) rotate(45deg)
+    .preview_img
+        margin-bottom: 50px
+        width: 100%
+        height: 584px
+        background-color: #f3f4f7
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        &:hover
+            cursor: zoom-in
+        &.zoomed
+            &:hover
+                cursor: zoom-out
+        img
+        
+        .picture_top_in_preview
+            //display: none
+            max-width: 190px
+            position: absolute
+            top: 45%
+            left: 50%
+            transform: translate(-50%, 0%)
+            border: 1px solid green
+            &:last-of-type
+                //display: block
+            &.small
+                
+                transform: translate(-50%, 20%) scale(0.7)
+            &.medium
+                transform: translate(-50%, 0%) scale(1.10)
+            &.big
+                transform: translate(-50%, 0%) scale(1.5)
+        .picture_bottom_in_preview
+            //display: none
+            max-width: 190px
+            position: absolute
+            width: 210px
+            top: 75%
+            left: 50%
+            transform: translate(-50%, 0%)
+            border: 1px solid green
+            &:last-of-type
+                //display: block
+        .for_name_on_chest
+            position: absolute
+            bottom: 60px 
+            right: 10px
+            border-radius: 20px
+            background-color: #ffffff
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: center
+            width: 80px
+            height: 80px
+            max-height: 130px
+            overflow: hidden
+            font-size: 20px
+            text-transform: uppercase
+            display: flex
+            justify-content: center
+            align-items: center
+            &.hidden
+                max-height: 0px
+            
+        .text_on_img
+            position: absolute
+            top: 65%
+            max-width: 240px
+            text-align: center
+            height: auto
+            color: #b09867
+            border: 1px solid green
+        &.polotence
+            .picture_top_in_preview
+                top: 50%
+            .picture_bottom_in_preview
+                top: 75%
+            .text_on_img
+                font-size: 30px
+                top: 67%
+        &.mahrovi
+            .picture_top_in_preview
+                top: 10%
+                &.small
+                    transform: translate(-50%, 20%) scale(0.5)
+                &.medium
+                    transform: translate(-50%, 7%) scale(0.75)
+                &.big
+                    transform: translate(-50%, 0%) scale(0.80)
+            .picture_bottom_in_preview
+                top: 29%
+                transform: translate(-50%, 0%) scale(0.6)
+            .text_on_img
+                font-size: 20px
+                top: 23%
+        &.velur
+            .picture_top_in_preview
+                top: 10%
+                &.small
+                    transform: translate(-50%, 20%) scale(0.5)
+                &.medium
+                    transform: translate(-50%, 7%) scale(0.75)
+                &.big
+                    transform: translate(-50%, 0%) scale(0.80)
+            .picture_bottom_in_preview
+                top: 29%
+                transform: translate(-50%, 0%) scale(0.6)
+            .text_on_img
+                font-size: 20px
+                top: 23%
+        &.child
+            .picture_top_in_preview
+                top: 28%
+                &.small
+                    transform: translate(-50%, 20%) scale(0.5)
+                &.medium
+                    transform: translate(-50%, 7%) scale(0.75)
+                &.big
+                    transform: translate(-50%, 0%) scale(0.80)
+            .picture_bottom_in_preview
+                top: 47%
+                transform: translate(-50%, 0%) scale(0.6)
+            .text_on_img
+                font-size: 20px
+                top: 43%
+    &_form
+        width: 100%
+        min-height: 472px
+        box-shadow: 0 9px 57px rgba(0, 0, 0, 0.10)
+        transition: box-shadow 0.3s
+        border: 1px solid #b09867
+        background-color: #ffffff
+        padding: 50px 100px
+        margin-bottom: 130px
+        &_title
+            text-align: center
+            color: #000000
+            font-family: Roboto
+            font-size: 18px
+            font-weight: 500
+            margin-bottom: 16px
+            text-transform: uppercase
+        &:hover
+            box-shadow: 0 9px 57px rgba(0, 0, 0, 0.31)
+        .form
+            input[type="text"], textarea
+                width: 100%
+                height: 44px
+                background-color: #f3f4f7
+                color: #939393
+                font-family: Roboto
+                font-size: 14px
+                //line-height: 44px
+                font-weight: bold
+                padding-left: 20px
+                padding-right: 20px
+                margin-bottom: 25px
+            textarea
+                border: none
+                margin-bottom: 23px
+                height: 97px
+                padding-top: 6px
+                //line-height: 20px
+            input[type="submit"]
+                width: 100%
+                height: 44px
+                line-height: 44px
+                border: 2px solid #b09867
+                background-color: #ffffff
+                color: #b09867
+                font-family: Roboto
+                font-size: 18px
+                text-align: center
+                font-weight: 500
+                transition: background-color 0.3s, color 0.3s, box-shadow 0.3s
+                box-shadow: 0px 0px 15px 3px rgba(176,152,103, 0.5)
+                &:hover
+                    cursor: url('../img/cursor_pointer.png'), pointer
+                    background-color: #b09867
+                    color: #ffffff
+                    box-shadow: 0px 4px 5px 0px rgba(176,152,103, 0.7)
+    .kind_halat
+        width: 100%
+        height: 60px
+        display: flex
+        justify-content: space-between
+        margin-bottom: 30px
+        .halat
+            font-family: Roboto
+            font-size: 16px
+            font-weight: 400
+            text-transform: uppercase
+            color: #878787
+            //color: #302f2f
+            border-top: 3px solid rgba(183,183,183, 0.4)
+            border-bottom: 3px solid rgba(183,183,183, 0.4)
+            display: flex
+            justify-content: center
+            align-items: center
+            padding-left: 20px
+            padding-right: 20px
+            &:hover
+                cursor: url('../img/cursor_pointer.png'), pointer
+                color: #000000
+                font-family: "Roboto"
+                font-weight: 400
+                border-top: 3px solid #b09867
+                border-bottom: 3px solid #b09867
+            &.active
+                color: #000000
+                font-family: "Roboto"
+                font-weight: 400
+                border-top: 3px solid #b09867
+                border-bottom: 3px solid #b09867
+    .block_size_halat, .block_size_halat_child, .block_size_polotence
+        display: flex
+        flex-wrap: wrap
+        &.hide
+            display: none
+    .block_size_halat_child
+        .size_halat_checkbox
+            margin-right: 150px
+
+    /* замена input:radio */
+    input[type="radio"]
+        width: 0px
+        height: 0px
+        position: absolute
+        opacity: 0
+    input[type="radio"]+label
+        
+        &:hover
+            cursor: url('../img/cursor_pointer.png'), pointer
+    input[type="radio"]:checked+label
+        
+    
+    .size_halat
+        margin-bottom: 18px
+        input[type="radio"]:checked+label
+            &:before
+                position: absolute
+                content: ''
+                width: 10px
+                height: 10px
+                background-color: #b09867
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+        &_checkbox
+            width: 24px
+            height: 24px
+            border: 1px solid #cacaca
+            background-color: #ffffff
+            position: relative
+            margin-right: 130px
+            &_description
+                position: absolute
+                color: #302f2f
+                font-family: Roboto
+                font-size: 16px
+                font-weight: bold
+                text-transform: uppercase
+                top: 0px
+                left: 30px
+                white-space: nowrap
+                span
+                    color: #939393
+                    font-family: Roboto
+                    font-size: 14px
+                    font-weight: 400
+
+    .color_halat
+        margin-bottom: 18px
+        input[type="radio"]:checked+label
+            border: 1px solid #b09867
+        &_checkbox
+            width: 60px
+            height: 60px
+            margin-right: 15px
+            border: 1px solid transparent
+            position: relative
+            &:after
+                position: absolute
+                content: ''
+                width: 50px
+                height: 50px
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+            &.white
+                &:after
+                    border: 1px solid #cacaca
+                    background-color: #ffffff
+            &.darkblue
+                &:after
+                    background-color: #05112d
+
+    .custom-select
+        width: 300px
+        height: 46px
+        position: relative
+        
+        
+        & select
+            display: none
+    .select-selected
+        background-color: #f3f4f7
+        color: #939393
+        font-family: Roboto
+        font-size: 16px
+        line-height: 46px
+        font-weight: bold
+        padding-left: 16px
+        border-bottom: none
+        &:hover
+            cursor: url('../img/cursor_pointer.png'), pointer
+    .select-selected:after 
+        position: absolute
+        content: ""
+        top: 18px
+        right: 16px
+        width: 0
+        height: 0
+        border: 8px solid transparent
+        border-color: #b09867 transparent transparent transparent
+        transition: transform 0.3s, border 0.3s
+    .select-selected.select-arrow-active:after 
+        //border-color: transparent transparent #b09867 transparent
+        top: 10px
+        transform: rotate(-180deg)
+    .select-items div,.select-selected 
+        color: #000000
+        border: 1px solid transparent
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent
+        cursor: url('../img/cursor_pointer.png'), pointer
+    .select-items 
+        position: absolute
+        background-color: #f3f4f7
+        font-size: 16px
+        line-height: 26px
+        //font-weight: bold
+        top: 100%
+        left: 0
+        right: 0
+        z-index: 99
+        & div
+            padding: 3px 16px
+            &:nth-of-type(1)
+                border-top: 1px solid rgba(0, 0, 0, 0.1)
+    .select-hide 
+        display: none
+    .select-items div:hover, .same-as-selected
+        background-color: rgba(0, 0, 0, 0.1)
+    
+    /* custom input range */
+    .slidecontainer 
+        width: 100%
+        margin-top: 40px
+        z-index: 0
+        position: relative
+        .title
+            width: 119px
+            height: 13px
+            color: #939393
+            font-family: "Gotham Pro"
+            font-size: 14px
+            font-weight: bold
+    #myRangeLabel
+        height: 8px
+        background-color: #b09867
+        //width: 50%
+        border-top-left-radius: 4px
+        border-bottom-left-radius: 4px
+        position: absolute
+        margin: 0px
+        top: 10px
+        z-index: 0
+        opacity: 1
+        
+    .slider
+        -webkit-appearance: none
+        appearance: none
+        border-radius: 4px
+        
+        background-color: #f3f4f7
+        z-index: 3
+        width: 100%
+        //height: 28px
+        height: 8px
+        overflow: auto
+        // background: #d3d3d3
+        //background: transparent
+        outline: none
+        //opacity: 0.7
+        -webkit-transition: .2s
+        transition: opacity .2s
+        
+    .slider:hover 
+        z-index: 3
+        opacity: 1
+        cursor: url('../img/cursor_pointer.png'), pointer
+    .slider::-webkit-slider-thumb 
+        z-index: 3
+        transform: scale(1)
+        -webkit-appearance: none
+        appearance: none
+        width: 28px
+        height: 28px
+        background: #b09867
+        //border: 5px solid #ffffff
+        border-radius: 50%
+        cursor: url('../img/cursor_pointer.png'), pointer
+        background-image: url("../img/input_range_thumb.svg")
+    .slider::-moz-range-thumb 
+        z-index: 3
+        transform: scale(1)
+        width: 28px
+        height: 28px
+        background: #b09867
+        //border: 5px solid #ffffff
+        border-radius: 50%
+        cursor: url('../img/cursor_pointer.png'), pointer
+        background-image: url("../img/input_range_thumb.svg")
+
+
+    .picture_bottom_and_picture_top_wrap
+        display: flex
+        input[type="radio"]:checked+label
+            &:before
+                position: absolute
+                content: ''
+                width: 10px
+                height: 10px
+                background-color: #b09867
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+    .name_on_chest
+        margin-top: 20px
+        .input_name_on_chest
+            text-transform: uppercase
+            width: 50px
+            margin-bottom: 20px
+            background-color: #f3f4f7
+            padding-left: 16px
+        .wrap_for_img
+            img
+                max-width: 60px
+    .picture_top,.picture_bottom
+        width: 50%
+        display: inline-block
+        //min-height: 280px
+        &_checkbox
+            width: 24px
+            height: 24px
+            border: 1px solid #cacaca
+            background-color: #ffffff
+            position: relative
+            margin-right: 70px
+            margin-top: 30px
+            &:after
+                position: absolute
+                color: #302f2f
+                font-family: Roboto
+                font-size: 14px
+                font-weight: bold
+                top: 0px
+                left: 28px
+            
+            &.big
+                &:after
+                    content: 'Большой'
+            &.middle
+                &:after
+                    content: 'Средний'
+            &.small
+                &:after
+                    content: 'Маленький'
+        .picture_top_images,.picture_bottom_images
+            //visibility: hidden
+            //height: 0
+            &__block
+                width: 300px
+                min-height: 105px
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-around
+                align-items: center
+                padding: 5px 20px
+                display: none
+                
+                label
+                    position: relative
+                    &:hover
+                        cursor: url('../img/cursor_pointer.png'), pointer
+                    input[type="radio"]
+                        position: absolute
+                        opacity: 0
+                    img
+                        position: relative
+                        //width: 20%
+                        max-width: 64px
+                        margin: 5px 5px
+                        opacity: 0.5
+                        &:hover
+                            //outline: 3px dashed #b09867
+                            opacity: 1
+    .picture_bottom
+        width: 50%
+        display: inline-block
+        //min-height: 280px
+        margin-left: -1%
+    .text_on_halat
+        margin-bottom: 18px
+        .textarea
+            width: 100%
+            //min-height: 82px
+            background-color: #f3f4f7
+            padding-left: 30px
+            padding-top: 12px
+            color: #939393
+            font-family: Roboto
+            font-size: 16px
+            font-weight: bold
+            border: none
+    .font_halat
+        display: inline-block
+        width: 55%
+        select
+            option
+        .select-items
+            div:nth-child(1)
+                font-family: "Arial"
+            div:nth-child(2)
+                font-family: "Ariston"
+            div:nth-child(3)
+                font-family: "AGCENB"
+            div:nth-child(4)
+                font-family: "Ciyrillic"
+            div:nth-child(5)
+                font-family: "Majestic"
+            div:nth-child(6)
+                font-family: "Mon-Amour"
+            div:nth-child(7)
+                font-family: "Mtcorsva"
+            div:nth-child(8)
+                font-family: "Pompadur"
+            div:nth-child(9)
+                font-family: "Vivaldid"
+    .font_color_halat
+        display: inline-block
+        width: 45%
+        margin-left: -1%
+        transform: translate(0px, 2px)
+        z-index: 1
+        .color_box
+            //width: 244px
+            height: 67px
+            display: flex
+            flex-wrap: wrap
+            justify-content: flex-start
+            align-content: space-between
+            position: relative
+            &_label
+                width: 32px
+                height: 32px
+                border: 1px solid transparent
+                margin-bottom: 0px
+                display: flex
+                justify-content: center
+                align-items: center
+                position: relative
+                z-index: 0
+                &:hover
+                    border: 1px solid #cecece
+                    cursor: url('../img/cursor_pointer.png'), pointer
+                &_wrap
+                    position: relative
+                    display: flex
+                    &:hover
+                        
+                        .box_popup
+                            display: block
+                            z-index: 1
+                            height: auto
+                
+                &.active
+                    border: 1px solid #cecece
+                &:before
+                input[type="radio"]
+                    opacity: 0
+                .box
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    z-index: 1
+                    width: 26px
+                    height: 26px
+                    border: 1px solid #cecece
+                .box_1
+                    background-image: url("../img/color_box_box_1.jpg")
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                .box_2
+                    background-image: url("../img/color_box_box_2.jpg")
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                .box_3
+                    background-color: #c3b264
+                .box_4
+                    background-color: #283139
+                .box_5
+                    background-color: #1864E1
+                .box_6
+                    background-color: #000789
+                .box_7
+                    //background-color: #FF0000
+                    background-color: #C30029
+                .box_8
+                    //background-color: #800000
+                    background-color: #A80A53
+                .box_9
+                    background-color: #ffffff
+                .box_10
+                    background-color: #000000
+                .box_11
+                    background-color: #ee7aa6
+                .box_12
+                    background-color: #46B696
+                .box_13
+                    background-color: #4115E1
+                .box_14
+                    background-color: #351E5F
+                .box_15
+                    //background-color: #FF00FF
+                    background-color: #D613F1
+            .box_popup
+                display: none
+                z-index: 4
+                opacity: 1
+                position: absolute
+                top: 38px
+                left: 50%
+                transform: translate(-50%, 0px)
+                width: 168px
+                min-height: 67px
+                background-color: #ffffff
+                padding: 12px 15px
+                color: #000000
+                font-family: "Roboto"
+                font-size: 12px
+                line-height: 14px
+                font-weight: 600
+                box-shadow: 0px 3px 15px 0px rgba(0,0,0, 0.1) 
+                &:before
+                    content: ''
+                    position: absolute
+                    left: 50%
+                    top: -6px
+                    transform: translate(-50%, 0px) rotate(45deg)
+                    width: 10px
+                    height: 10px
+                    z-index: 3
+                    background: white
+                    border-top: 1px solid #cecece
+                    border-left: 1px solid #cecece
+                &_title
+                    height: 30px
+                span
+                    font-family: "Roboto"
+                    font-weight: 300
+                    color: #939393
+                    font-size: 10px
+                img
+                    max-width: 100%
+                    margin-bottom: 5px
+
+
+
+    .constructor_media
+        width: 100%
+        height: 55px
+        display: flex
+        align-items: center
+        border-bottom: 2px solid #dcdfe6
+        margin-bottom: 20px
+        .img
+            img
+                margin-right: 21px
+        .title
+            color: #1e2741
+            font-family: "Gotham Pro"
+            font-size: 18px
+            font-weight: bold
+            text-transform: uppercase
+
+.notation
+    min-height: 50px
+    position: absolute
+    left: 0px
+    bottom: 0px
+    width: 100%
+    background-color: #1e2741
+    color: #ffffff
+    font-size: 20px
+    line-height: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: "Roboto Condensed"
+    display: none
+    .container
+        text-align: center
+        position: relative
+        padding: 5px 30px
+    .close_notation
+        position: absolute
+        top: 50%
+        right: 5px
+        transform: translate(0px,-50%) 
+        background-color: transparent
+        
+        height: 20px
+        width: 20px
+        font-family: Arial, Helvetica, sans-serif
+        //border: 1px solid green
+        &:hover
+            cursor: url('../img/cursor_pointer.png'), pointer
+        span
+            color: #fff
+            font-size: 30px
+            line-height: 0px
+            display: block
+            transform: translate(-5px,-5px) rotate(45deg)

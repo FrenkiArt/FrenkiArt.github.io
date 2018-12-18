@@ -1,0 +1,87 @@
+.storefront
+    margin-bottom: 55px
+    .container
+        max-width: 1200px
+        margin-top: -45px
+    .block_item
+        display: flex
+        background-color: #fff
+        justify-content: space-between
+        //box-shadow: 0px 0px 25px -17px rgba(0,0,0, 0.8)
+        box-shadow: -1px 3px 9px rgba(0, 0, 0, 0.14)
+        //border: 1px solid transparent
+        width: 100%
+        height: 420px
+        margin-bottom: 17px
+        &:hover
+            box-shadow: -2px 7px 21px rgba(0, 0, 0, 0.09)
+            // border: 1px solid #b09867
+            outline: 1px solid #b09867
+            .content
+                .hr
+                    background-color: #b09867
+                .title
+                    color: #b09867
+                .btn_create_halat
+                    opacity: 1
+        .img_halat
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            width: 50%
+            height: 100%
+        .content
+            width: 50%
+            height: 100%
+            padding-top: 95px
+            padding-left: 13px
+            
+            .img_material
+                margin-bottom: 36px
+            .hr
+                width: 73px
+                height: 1px
+                background-color: #a5a7ae
+                margin-bottom: 20px
+            .title
+                width: 194px
+                color: #1e2741
+                font-family: Roboto
+                font-size: 24px
+                line-height: 30px
+                font-weight: bold
+                text-transform: uppercase
+                letter-spacing: 3.1px
+                margin-bottom: 12px
+            .btn_create_halat
+                opacity: 0
+                //transition: opacity 0.3s
+                text-decoration: none
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 180px
+                height: 44px
+                border: 2px solid #b09867
+                background-color: #ffffff
+                color: #b09867
+                font-family: Roboto
+                font-size: 18px
+                font-weight: 500
+                transition: background-color 0.3s, color 0.3s, box-shadow 0.3s
+                box-shadow: 0px 0px 15px 3px rgba(176,152,103, 0.5)
+                &:hover
+                    background-color: #b09867
+                    color: #ffffff
+                    box-shadow: 0px 4px 5px 0px rgba(176,152,103, 0.7)
+    .js_show_up_opacity
+        &:nth-of-type(1)
+        &:nth-of-type(2)
+            //transition-delay: 0.7s
+        &:nth-of-type(3)
+            //transition-delay: 0.2s
+        &:nth-of-type(4)
+            //transition-delay: 0.7s
+        &.visible
+    
+            

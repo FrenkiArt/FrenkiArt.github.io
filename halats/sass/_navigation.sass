@@ -1,0 +1,120 @@
+.navigation
+    display: flex
+    padding-top: 13px
+    padding-left: 45px
+    &_ul
+        //border: 1px solid white
+        list-style-type: none
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: space-between
+        min-width: 530px
+        height: 100%
+        transition: top 0.5s
+        li:nth-of-type(1)
+            width: 120px
+        li:nth-of-type(2)
+            width: 120px
+        li:nth-of-type(3)
+            width: 150px
+        li:nth-of-type(4)
+            width: 80px
+        &_li, li, .menu-item
+            display: inline-block
+            text-align: center
+            &:hover
+            &_a, a
+                display: flex
+                color: #ffffff
+                font-family: Roboto
+                font-size: 17px
+                font-weight: bold
+                font-family: "Roboto"
+                font-weight: 500
+                width: 100%
+                height: 100%
+                white-space: nowrap
+                padding-top: 5px
+                padding-bottom: 5px
+                text-align: center
+                border-top: 2px solid transparent
+                .active
+                    color: #b09867
+                    font-family: "Roboto"
+                    font-weight: 500
+                    text-decoration: none
+                &:hover
+                    color: #b09867
+                    font-family: "Roboto"
+                    font-weight: 500
+                    text-decoration: none
+                    border-top: 2px solid #b09867
+        &.nav_action
+            display: flex
+            display: none
+            z-index: 6
+            background: rgba(255, 255, 255, 0.9)
+            width: 100%
+            //height: 100%
+            top: 0
+            left: 0
+            //transition: all 1s
+            transition: top 0.5s
+            position: fixed
+            justify-content: center
+            
+       
+
+    
+.nav_circle
+    width: 40px
+    height: 40px
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: fixed
+    top: 30px
+    right: 2px
+    background-color: transparent
+    border-radius: 50%
+    z-index: 9
+    //box-shadow: 0px 0px 3px 2px rgba(176, 152,103, 0.8)
+    &:hover
+        cursor: pointer
+    &.active
+        .nav_circle_img
+            background-color: transparent
+            &:after
+                top: 0px
+                transform: rotate(45deg)
+            &:before
+                top: 0px
+                transform: rotate(-45deg)
+    &_img
+        width: 40px
+        height: 3px
+        background-color: rgba(176, 152,103, 0.8)
+        background-color: #fff
+        display: block
+        position: relative
+        transition: background-color 0.35s
+        background-color: transparent
+        &:after
+            top: 5px
+            left: 0px
+        &:before
+            top: -5px
+            left: 0px
+        &:after, &:before
+            content: ""
+            display: block
+            position: absolute
+            width: 40px
+            height: 2px
+            background-color: rgba(176, 152,103, 0.8)
+            background-color: #fff
+            transition: top 0.25s, transform 0.35s
+
+            

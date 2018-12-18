@@ -1,0 +1,151 @@
+.footer
+    background-color: #dde1e0
+    padding-top: 50px
+
+    .container
+        max-width: 1200px
+    .row
+        height: 150px
+    &_logo
+        display: flex
+        .img
+            margin-top: -8px
+            width: 41px
+            height: 37px
+            background-image: url("../img/footer_logo_img.png")
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            margin-right: 12px
+        .text
+    &_nav
+        list-style-type: none
+        margin: 0px
+        padding: 0px
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        max-width: 260px
+        height: 80px
+        margin-left: 48px
+        margin-top: -4px
+        //border: 1px solid green
+        li
+            //width: 125px
+            //height: 27px
+            margin-right: 30px
+            display: flex
+            a
+                white-space: nowrap
+                color: #7b7a7a
+                font-family: Roboto
+                font-size: 14px
+                font-weight: bold
+                line-height: 27px
+                //border-bottom: 1px solid #b09867
+                &:hover
+                    text-decoration: none
+                    color: #000000
+                    font-weight: bold
+                    border-bottom: 1px solid #b09867
+            
+                    
+    &_list
+        display: flex
+        flex-direction: column
+        margin-left: 100px
+        .title
+            color: #595959
+            font-family: Roboto
+            font-size: 16px
+            line-height: 22px
+            font-weight: 400
+            white-space: nowrap
+        .list
+            list-style-type: none
+            margin: 0px
+            padding: 0px
+            display: flex
+            flex-direction: column
+            margin-top: 7px
+            
+            li
+                color: #6c6c6c
+                font-family: Roboto
+                font-size: 14px
+                line-height: 28px
+                font-weight: 300
+                position: relative
+                padding-left: 22px
+                &:last-of-type
+                    text-decoration: underline
+                img
+                    position: absolute
+                    left: -1px
+                    top: 3px
+                .phone
+                    text-decoration: none
+                    color: #6c6c6c
+                .mail
+                    color: #6c6c6c
+
+            li:nth-of-type(2)
+                img
+                    left: 0px
+                    top: 4px
+            li:nth-of-type(3)
+                img
+                    left: -2px
+                    top: 8px
+        .soc_list
+            list-style-type: none
+            margin: 0px
+            padding: 0px
+            display: flex
+            width: 120px
+            justify-content: space-between
+            margin-top: 6px
+            li:nth-of-type(2)
+                margin-left: -5px
+            li
+                a
+                    svg
+                        fill: #939393
+.footer_policy
+    background-color: #cacfce
+    .container
+        max-width: 1200px
+    .row
+        display: flex
+        height: 41px
+        
+        align-items: center
+        .copyright
+            width: 50%
+            color: #939393
+            font-family: Roboto
+            font-size: 14px
+            font-weight: 400
+            padding-left: 30px
+        .policy_wrapper
+            width: 50%
+            padding-left: 120px
+        .offer
+            opacity: 0.52
+            color: #7b7a7a
+            font-family: Roboto
+            font-size: 14px
+            font-weight: 400
+            text-decoration: underline
+            margin-right: 138px
+            &:hover
+                opacity: 1
+        .policy_conf
+            opacity: 0.52
+            color: #7b7a7a
+            font-family: Roboto
+            font-size: 14px
+            font-weight: 400
+            text-decoration: underline
+            &:hover
+                opacity: 1
