@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            funcCheckColor();
+            //funcCheckColor();
         };
         var halat_velur_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -700,7 +700,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            funcCheckColor();
+            //funcCheckColor();
         };
         var halat_child_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -732,7 +732,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "flex";
 
             color_halat_block.classList.add("hide");
-            funcCheckColor();
+            //funcCheckColor();
         };
         var halat_polotence_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ПОЛОТЕНЦА";
@@ -770,7 +770,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            funcCheckColor();
+            //funcCheckColor();
         };
 
 
@@ -904,7 +904,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     
     /* функция которая проверяет какой цвет выбран и вешает его обертке .active, а у других снимает .active */
-    var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box'");
+    /* var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box'");
         for (var i = 0; i < input_radio_color_box.length; i++) {
             if (input_radio_color_box[i].checked == true) {
                 input_radio_color_box[i].closest(".color_box_label").classList.add("active");
@@ -920,7 +920,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         color_box_label[i].addEventListener("click", function(){
             
         });
-    }
+    } */
 
 
 });
