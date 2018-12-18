@@ -912,7 +912,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 input_radio_color_box[i].closest(".color_box_label").classList.remove("active");
             }
         }
-    var funcCheckColor = function () {
+    function funcCheckColor() {
         
     };
     var color_box_label = document.querySelectorAll(".color_box_label");
