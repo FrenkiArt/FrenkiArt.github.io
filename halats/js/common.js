@@ -653,7 +653,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
 
             /* наличие в превью картинки блока с инициалами */
-            document.querySelector(".for_name_on_chest").style.display = "flex";
+            /* document.querySelector(".for_name_on_chest").style.display = "flex"; */
 
             halat_mahr.classList.add("active");
             halat_velur.classList.remove("active");
@@ -691,7 +691,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
 
             /* наличие в превью картинки блока с инициалами */
-            document.querySelector(".for_name_on_chest").style.display = "flex";
+            /* document.querySelector(".for_name_on_chest").style.display = "flex"; */
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.add("active");
@@ -723,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[4].checked = true;
 
             /* наличие в превью картинки блока с инициалами */
-            document.querySelector(".for_name_on_chest").style.display = "flex";
+            /* document.querySelector(".for_name_on_chest").style.display = "flex"; */
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.remove("active");
@@ -761,7 +761,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
 
             /* наличие в превью картинки блока с инициалами */
-            document.querySelector(".for_name_on_chest").style.display = "none";
+            /* document.querySelector(".for_name_on_chest").style.display = "none"; */
 
             halat_mahr.classList.remove("active");
             halat_velur.classList.remove("active");
@@ -871,8 +871,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var input_name_on_chest = document.querySelector(".input_name_on_chest");
         var input_name_on_chest_text = document.querySelector("#text_for_name_on_chest");
         var for_name_on_chest = document.querySelector(".for_name_on_chest");
+        var for_name_on_chest_close_btn = document.querySelector(".for_name_on_chest_close_btn");
 
         input_name_on_chest.addEventListener("input", function () {
+            for_name_on_chest.style.display = "flex";
             input_name_on_chest_text.innerHTML = this.value;
         });
         var input_frame_on_chest = document.querySelectorAll("input[name='frame_on_chest']");
@@ -880,9 +882,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
             input_frame_on_chest[i].addEventListener("click", function () {
                 var imgSrc = this.previousElementSibling.getAttribute("src");
                 for_name_on_chest.style.backgroundImage = "url('./" + imgSrc + "')";
+                document.querySelector(".for_name_on_chest").style.display = "flex";
             });
 
         }
+
+        for_name_on_chest_close_btn.addEventListener("click", function(){
+            this.closest(".for_name_on_chest").style.display = "none";
+            input_name_on_chest.value = "";
+            for_name_on_chest.style.backgroundImage = "";
+            for (var i = 0; i < input_frame_on_chest.length; i++) {
+                input_frame_on_chest[i].checked = false;
+            }
+        });
     }
     /* конец для if (document.querySelector(".constructor")) */
 
@@ -924,3 +936,87 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 });
+
+/* 
+var  objectMain = {
+  "type": ["halat", "polotence"],
+  "Тип ткани": [
+    махровый велюровый
+  ],
+  "Цвет ткани": [
+    белый
+    синий
+  ],
+  "Если халат то ": {
+    "размер": "",
+    "рост": ""
+  },
+  "Если полотенце то ": {
+    "размер": ""
+  },
+  "тип лекала": {
+    мужское,
+    Женское,
+    унисекс
+  },
+  
+  Область нанесения на спине
+    размер зоны,
+  
+  Зоны нанесения
+    зона верхняя
+    зона средняя
+    зона нижняя
+  
+  Назначение зоны
+    для рисунка верхнего,
+    для рисунка нижнего,
+    для текста
+  
+
+  
+  "верний рисунок": "",
+  текст
+    размер
+      размер букв сантиметров на вышвивке
+      количество букв на вышивке
+  
+      размер шрифта на ползунке
+        1, 2, 3
+      относительный размер на рисунке в px
+    
+    Содержание (строка текста)
+    
+    Шрифт
+      ....
+  
+  нижний рисунок
+  инициалы
+    текст инициалов (строка)
+    рамка инициалов
+  сторона изделия
+    передняя
+    задняя
+ 
+ Нитки
+ 
+ Тип ниток
+    металлизированный
+    неметализированный
+ 
+ Цвет ниток
+    цвет .....
+  
+ Имя заказчика
+
+Телефон заказчика
+ 
+ Заказ
+    комментарий
+ 
+ адрес доставки
+  
+ дата совершения заказа
+ 
+  
+} */
