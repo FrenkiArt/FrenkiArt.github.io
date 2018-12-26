@@ -448,48 +448,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
         for (var i = 0; i < input_color_halat_checkbox.length; i++) {
             input_color_halat_checkbox[i].addEventListener("click", function (e) {
                 if (e.target.value == "white") {
+                    constructorData.fabricColor = "white";
                     if (halat_mahr.classList.contains("active")) {
                         img_preview_for_halat.src = "img/halat_mahrovi_white.png";
-                        constructorData.properFabricColor = "mahraWhite";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
                     if (halat_velur.classList.contains("active")) {
                         img_preview_for_halat.src = "img/halat_velur_white.png";
-                        constructorData.properFabricColor = "velurWhite";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
-                    /* if (halat_child_mahr.classList.contains("active")) {
-                        img_preview_for_halat.src= "img/constuctor_img_preview_vzroslii_halat_white.png";
-                    } */
+
                     if (halat_polotence.classList.contains("active")) {
                         img_preview_for_halat.src = "img/constuctor_img_preview_polotence_white.png";
-                        constructorData.properFabricColor = "mahraWhite";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
-                    constructorData.fabricColor = "white";
-                    console.log("constructorData.fabricColor ", constructorData.fabricColor);
+
                 }
                 if (e.target.value == "blue") {
+                    constructorData.fabricColor = "blue";
                     if (halat_mahr.classList.contains("active")) {
                         img_preview_for_halat.src = "img/halat_mahrovi_blue.png";
-                        constructorData.properFabricColor = "mahraBlue";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
                     if (halat_velur.classList.contains("active")) {
                         img_preview_for_halat.src = "img/halat_velur_blue.png";
-                        constructorData.properFabricColor = "velurBlue";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
-                    /* if (halat_child_mahr.classList.contains("active")) {
-                        img_preview_for_halat.src= "img/constuctor_img_preview_vzroslii_halat_blue.png";
-                    } */
                     if (halat_polotence.classList.contains("active")) {
                         img_preview_for_halat.src = "img/constuctor_img_preview_polotence_blue.png";
-                        constructorData.properFabricColor = "mahraBlue";
-                        console.log("constructorData.properFabricColor", constructorData.properFabricColor);
+                        constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+                        funcOutputInConsole();
                     }
-                    constructorData.fabricColor = "blue";
-                    console.log("constructorData.fabricColor ", constructorData.fabricColor);
+
                 }
             });
         }
@@ -509,15 +504,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
         for (var i = 0; i < input_size_halat_checkbox.length; i++) {
             input_size_halat_checkbox[i].addEventListener("click", function (e) {
                 trashSize.innerHTML = e.target.value;
-                if(constructorData.goodType=="polotence"){
+                if (constructorData.goodType == "polotence") {
                     constructorData.halatSize = "notApplicable";
                 }
-                if(constructorData.goodType=="halat"){
+                if (constructorData.goodType == "halat") {
                     constructorData.polotenceSize = "notApplicable";
                 }
-                
+
             });
         }
+
+        /* заносим в constructorData halatSize */
+        var arr_size_halat_checkbox_adult_mahra = document.querySelectorAll("input[name = 'size_halat_checkbox_adult_mahra']");
+        for (var i = 0; i < arr_size_halat_checkbox_adult_mahra.length; i++) {
+            arr_size_halat_checkbox_adult_mahra[i].addEventListener("click", function (e) {
+                constructorData.halatSize = e.target.value;
+                console.log("constructorData.halatSize ", constructorData.halatSize);
+            });
+        }
+        var arr_size_halat_checkbox_adult_velur = document.querySelectorAll("input[name = 'size_halat_checkbox_adult_velur']");
+        for (var i = 0; i < arr_size_halat_checkbox_adult_velur.length; i++) {
+            arr_size_halat_checkbox_adult_velur[i].addEventListener("click", function (e) {
+                constructorData.halatSize = e.target.value;
+                console.log("constructorData.halatSize ", constructorData.halatSize);
+            });
+        }
+        var arr_size_halat_checkbox = document.querySelectorAll("input[name = 'size_halat_checkbox']");
+        for (var i = 0; i < arr_size_halat_checkbox.length; i++) {
+            arr_size_halat_checkbox[i].addEventListener("click", function (e) {
+                constructorData.halatSize = e.target.value;
+                console.log("constructorData.halatSize ", constructorData.halatSize);
+            });
+        }
+        var arr_size_halat_checkbox_polotence = document.querySelectorAll("input[name = 'size_halat_checkbox_polotence']");
+        for (var i = 0; i < arr_size_halat_checkbox_polotence.length; i++) {
+            arr_size_halat_checkbox_polotence[i].addEventListener("click", function (e) {
+                constructorData.halatSize = e.target.value;
+                console.log("constructorData.halatSize ", constructorData.halatSize);
+            });
+        }
+
 
         /* поведение поля "текст на полотенце" */
         var text_on_halat = document.querySelector("textarea[name = 'text_on_halat']");
@@ -529,6 +555,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         text_on_halat.addEventListener("input", function () {
             textOnImg.innerText = this.value;
+            constructorData.embroideryText = this.value;
+            funcOutputInConsole();
         });
 
         /* выбор шрифта для надписи */
@@ -586,6 +614,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         break;
                 }
                 textOnImg.style.fontFamily = this.innerHTML;
+                constructorData.font = this.innerHTML;
+                funcOutputInConsole();
             });
         }
 
@@ -624,12 +654,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
             textOnImg.style.transform = "scale(" + this.value / 100 + ")";
             /* заполнения ползунка цветом #b09867 */
             myRangeLabel.style.width = (this.value - 50) + "%";
+            constructorData.sliderFontSize = this.value;
+            funcOutputInConsole();
         };
 
         var fontRange = document.getElementById("myRange");
         var myRangeLabel = document.querySelector('#myRangeLabel');
         fontRange.addEventListener("input", resizeTextOnImg);
 
+        /* события при выборе цвета нити */
+        var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box'");
+        for (var i = 0; i < input_radio_color_box.length; i++) {
+            input_radio_color_box[i].addEventListener("click", function (e) {
+                constructorData.threadType = e.target.getAttribute("data-threadType");
+                constructorData.threadColor = e.target.getAttribute("data-threadColor");
+                constructorData.properThreadColor = e.target.getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = e.target.getAttribute("data-threadColorRus");
+                funcOutputInConsole();
+            });
+        }
+
+        /* события формы */
+        var form_input_name = document.querySelector(".form_input_name");
+        form_input_name.addEventListener("input", function () {
+            constructorData.orderName = this.value;
+            funcOutputInConsole();
+        });
+        var form_input_phone = document.querySelector(".form_input_phone");
+        form_input_phone.addEventListener("input", function () {
+            constructorData.orderPhone = this.value;
+            funcOutputInConsole();
+        });
+        var form_input_textarea = document.querySelector(".form_input_textarea");
+        form_input_textarea.addEventListener("input", function () {
+            constructorData.orderAddressComment = this.value;
+            funcOutputInConsole();
+        });
+
+        /* действия при удалении пользователем текста*/
+        document.addEventListener("keydown", KeyCheck);
+
+        function KeyCheck(event) {
+            var KeyID = event.keyCode;
+            switch (KeyID) {
+                case 8:
+                    constructorData.deletedText += event.target.value + " | ";
+                    funcOutputInConsole();
+                    break;
+                case 46:
+                    constructorData.deletedText += event.target.value + " | ";
+                    break;
+                default:
+                    break;
+            }
+        }
 
 
 
@@ -643,6 +721,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var changeTitleColor = document.querySelector(".color_halat .constructor_media .title");
         var changeTitleTextOn = document.querySelector(".text_on_halat .constructor_media .title");
         var color_halat_block = document.querySelector(".color_halat");
+        var input_color_halat_block = color_halat_block.querySelectorAll("input");
 
         var halat_mahrovi_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -654,12 +733,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (document.querySelector("#color_halat_checkbox_white").checked) {
                     img_preview_for_halat.src = "img/halat_mahrovi_white.png";
                     constructorData.fabricColor = "white";
-                    constructorData.properFabricColor = "mahraWhite";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
                 if (document.querySelector("#color_halat_checkbox_blue").checked) {
                     img_preview_for_halat.src = "img/halat_mahrovi_blue.png";
                     constructorData.fabricColor = "blue";
-                    constructorData.properFabricColor = "mahraBlue";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
             }
             block_size_polotence.classList.add("hide");
@@ -685,18 +764,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            //funcCheckColor();
+
 
             /* работа с объектом */
-            console.clear();
+
             constructorData.goodType = "halat";
-            console.log("constructorData.goodType ", constructorData.goodType);
             constructorData.fabricType = "mahra";
-            console.log("constructorData.fabricType ", constructorData.fabricType);
             constructorData.modelAgeType = "adult";
-            console.log("constructorData.modelAgeType ", constructorData.modelAgeType);
             constructorData.polotenceSize = "notApplicable";
-            console.log("constructorData.polotenceSize ", constructorData.polotenceSize);
+            constructorData.halatSize = "size48";
+            constructorData.fabricColor = funcCheckedFabricColor();
+            constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+            constructorData.initialsOnChest = false;
+            constructorData.ifInitialOnChestTrueText = "";
+            constructorData.ifInitialOnChestTrueImg = "";
+
+            funcOutputInConsole();
         };
         var halat_velur_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -708,12 +791,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (document.querySelector("#color_halat_checkbox_white").checked) {
                     img_preview_for_halat.src = "img/halat_velur_white.png";
                     constructorData.fabricColor = "white";
-                    constructorData.properFabricColor = "velurWhite";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
                 if (document.querySelector("#color_halat_checkbox_blue").checked) {
                     img_preview_for_halat.src = "img/halat_velur_blue.png";
                     constructorData.fabricColor = "Blue";
-                    constructorData.properFabricColor = "velurBlue";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
             }
             block_size_polotence.classList.add("hide");
@@ -739,18 +822,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            //funcCheckColor();
+
 
             /* работа с объектом */
             console.clear();
             constructorData.goodType = "halat";
-            console.log("constructorData.goodType ", constructorData.goodType);
             constructorData.fabricType = "velur";
-            console.log("constructorData.fabricType ", constructorData.fabricType);
             constructorData.modelAgeType = "adult";
-            console.log("constructorData.modelAgeType ", constructorData.modelAgeType);
             constructorData.polotenceSize = "notApplicable";
-            console.log("constructorData.polotenceSize ", constructorData.polotenceSize);
+            constructorData.halatSize = "size52";
+            constructorData.fabricColor = funcCheckedFabricColor();
+            constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+            constructorData.initialsOnChest = false;
+            constructorData.ifInitialOnChestTrueText = "";
+            constructorData.ifInitialOnChestTrueImg = "";
+
+            funcOutputInConsole();
         };
         var halat_child_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ХАЛАТА";
@@ -783,22 +870,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "flex";
 
             color_halat_block.classList.add("hide");
-            //funcCheckColor();
+
+
 
             /* работа с объектом */
-            console.clear();
+
             constructorData.goodType = "halat";
-            console.log("constructorData.goodType ", constructorData.goodType);
             constructorData.fabricType = "mahra";
-            console.log("constructorData.fabricType ", constructorData.fabricType);
             constructorData.fabricColor = "white";
-            console.log("constructorData.fabricColor ", constructorData.fabricColor);
             constructorData.modelAgeType = "child";
-            console.log("constructorData.modelAgeType ", constructorData.modelAgeType);
-            constructorData.properFabricColor = "mahraWhite";
-            console.log("constructorData.properFabricColor", constructorData.properFabricColor);
             constructorData.polotenceSize = "notApplicable";
-            console.log("constructorData.polotenceSize ", constructorData.polotenceSize);
+            constructorData.halatSize = "size30";
+            constructorData.fabricColor = "white";
+            constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+            constructorData.initialsOnChest = false;
+            constructorData.ifInitialOnChestTrueText = "";
+            constructorData.ifInitialOnChestTrueImg = "";
+
+            funcOutputInConsole();
         };
         var halat_polotence_func = function () {
             changeTitle.innerHTML = "РАЗМЕР ПОЛОТЕНЦА";
@@ -810,12 +899,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (document.querySelector("#color_halat_checkbox_white").checked) {
                     img_preview_for_halat.src = "img/constuctor_img_preview_polotence_white.png";
                     constructorData.fabricColor = "white";
-                    constructorData.properFabricColor = "mahraWhite";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
                 if (document.querySelector("#color_halat_checkbox_blue").checked) {
                     img_preview_for_halat.src = "img/constuctor_img_preview_polotence_blue.png";
                     constructorData.fabricColor = "blue";
-                    constructorData.properFabricColor = "mahraBlue";
+                    constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
                 }
             }
             block_size_polotence.classList.remove("hide");
@@ -841,21 +930,49 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
-            //funcCheckColor();
+
 
             /* работа с объектом */
-            console.clear();
             constructorData.goodType = "polotence";
-            console.log("constructorData.goodType ", constructorData.goodType);
             constructorData.fabricType = "mahra";
-            console.log("constructorData.fabricType ", constructorData.fabricType);
             constructorData.modelAgeType = "notApplicable";
-            console.log("constructorData.modelAgeType ", constructorData.modelAgeType);
             constructorData.halatSize = "notApplicable";
-            console.log("constructorData.halatSize ", constructorData.halatSize);
-            
+            constructorData.polotenceSize = "size70Х140";
+            constructorData.fabricColor = funcCheckedFabricColor();
+            constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
+            constructorData.initialsOnChest = false;
+            constructorData.ifInitialOnChestTrueText = "Not applicable";
+            constructorData.ifInitialOnChestTrueImg = "Not applicable";
+
+            funcOutputInConsole();
         };
 
+        /* функция очищает консоль и выводит текущую структуру объекта данных */
+        function funcOutputInConsole() {
+            console.clear();
+            console.log("constructorData.goodType ", constructorData.goodType);
+            console.log("constructorData.fabricType ", constructorData.fabricType);
+            console.log("constructorData.modelAgeType ", constructorData.modelAgeType);
+            console.log("constructorData.halatSize ", constructorData.halatSize);
+            console.log("constructorData.polotenceSize ", constructorData.polotenceSize);
+            console.log("constructorData.fabricColor ", constructorData.fabricColor);
+            console.log("properFabricColor ", constructorData.properFabricColor);
+            console.log("constructorData.initialsOnChest ", constructorData.initialsOnChest);
+            console.log("constructorData.ifInitialOnChestTrueText ", constructorData.ifInitialOnChestTrueText);
+            console.log("constructorData.ifInitialOnChestTrueImg ", constructorData.ifInitialOnChestTrueImg);
+            console.log("constructorData.threadType ", constructorData.threadType);
+            console.log("constructorData.threadColor ", constructorData.threadColor);
+            console.log("constructorData.properThreadColor ", constructorData.properThreadColor);
+            console.log("constructorData.threadColorRus ", constructorData.threadColorRus);
+            console.log("constructorData.sliderFontSize ", constructorData.sliderFontSize);
+            console.log("constructorData.font ", constructorData.font);
+            console.log("constructorData.embroideryText ", constructorData.embroideryText);
+            console.log("constructorData.orderName ", constructorData.orderName);
+            console.log("constructorData.orderPhone ", constructorData.orderPhone);
+            console.log("constructorData.orderAddressComment ", constructorData.orderAddressComment);
+            console.log("constructorData.deletedText", constructorData.deletedText);
+
+        }
 
 
         /* события при выборе вида халата */
@@ -901,14 +1018,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
             halat_polotence_func();
         });
 
+        /* функция проверяет какой цвет сейчас checked и возвращает его в объект */
+
+        function funcCheckedFabricColor() {
+            for (var i = 0; i < input_color_halat_block.length; i++) {
+                if (input_color_halat_block[i].checked) {
+                    //constructorData.fabricColor = input_color_halat_block[i].value;
+                    return input_color_halat_block[i].value;
+                }
+            }
+        }
 
 
-        
 
         /* события нотификации в окне просмотра халата */
         document.querySelector(".close_notation").addEventListener("click", function () {
             this.closest(".notation").style.display = "none";
         });
+
+        /* зачистка некоторых input-ов при загрузке страницы */
+        function clearInputFrame_on_chest() {
+            if (document.querySelector("#input_name_on_chest") != null) {
+                document.querySelector("#input_name_on_chest").value = "";
+            }
+            if (document.querySelector("input[name='frame_on_chest']") != null) {
+                for (var i = 0; i < document.querySelectorAll("input[name='frame_on_chest']").length; i++) {
+                    document.querySelectorAll("input[name='frame_on_chest']")[i].checked = false;
+                }
+            }
+        }
+        clearInputFrame_on_chest();
+
 
         /* события для вышивки инициалов на груди */
         var input_name_on_chest = document.querySelector(".input_name_on_chest");
@@ -916,9 +1056,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var for_name_on_chest = document.querySelector(".for_name_on_chest");
         var for_name_on_chest_close_btn = document.querySelector(".for_name_on_chest_close_btn");
 
+
         input_name_on_chest.addEventListener("input", function () {
             for_name_on_chest.style.display = "flex";
             input_name_on_chest_text.innerHTML = this.value;
+            constructorData.initialsOnChest = true;
+            constructorData.ifInitialOnChestTrueText = this.value;
+
+            //console.log(document.querySelector(".for_name_on_chest").style.backgroundImage);
+            for (var i = 0; i < input_frame_on_chest.length; i++) {
+                if (input_frame_on_chest[i].checked) {
+                    constructorData.ifInitialOnChestTrueImg = input_frame_on_chest[i].previousElementSibling.getAttribute("src");
+                }
+            }
+            funcOutputInConsole();
         });
         var input_frame_on_chest = document.querySelectorAll("input[name='frame_on_chest']");
         for (var i = 0; i < input_frame_on_chest.length; i++) {
@@ -926,18 +1077,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var imgSrc = this.previousElementSibling.getAttribute("src");
                 for_name_on_chest.style.backgroundImage = "url('./" + imgSrc + "')";
                 document.querySelector(".for_name_on_chest").style.display = "flex";
+                constructorData.ifInitialOnChestTrueImg = imgSrc;
+                funcOutputInConsole();
             });
 
         }
 
-        for_name_on_chest_close_btn.addEventListener("click", function(){
+        for_name_on_chest_close_btn.addEventListener("click", function () {
             this.closest(".for_name_on_chest").style.display = "none";
             input_name_on_chest.value = "";
             for_name_on_chest.style.backgroundImage = "";
             for (var i = 0; i < input_frame_on_chest.length; i++) {
                 input_frame_on_chest[i].checked = false;
             }
+            constructorData.initialsOnChest = false;
+            constructorData.ifInitialOnChestTrueText = "";
+            constructorData.ifInitialOnChestTrueImg = "";
+            funcOutputInConsole();
         });
+
+        console.log(constructorData);
     }
     /* конец для if (document.querySelector(".constructor")) */
 
@@ -996,6 +1155,76 @@ document.addEventListener("DOMContentLoaded", function (event) {
             "notApplicable",
             "70*140",
         } */
+        "initialsOnChest": false,
+        /* {
+            "",
+            "",
+        } */
+        "ifInitialOnChestTrueText": "Not applicable",
+        /* {
+            "",
+            "",
+        } */
+        "ifInitialOnChestTrueImg": "Not applicable",
+        /* {
+            "",
+            "",
+        } */
+        "threadType": "",
+        /* {
+            "",
+            "",
+        } */
+        "threadColor": "",
+        /* {
+            "",
+            "",
+        } */
+        "properThreadColor": "",
+        /* {
+            "",
+            "",
+        } */
+        "threadColorRus": "",
+        /* {
+            "",
+            "",
+        } */
+        "sliderFontSize": "",
+        /* {
+            "",
+            "",
+        } */
+        "font": "",
+        /* {
+            "",
+            "",
+        } */
+        "embroideryText": "",
+        /* {
+            "",
+            "",
+        } */
+        "orderName": "",
+        /* {
+            "",
+            "",
+        } */
+        "orderPhone": "",
+        /* {
+            "",
+            "",
+        } */
+        "orderAddressComment": "",
+        /* {
+            "",
+            "",
+        } */
+        "deletedText": "",
+        /* {
+            "",
+            "",
+        } */
         "": "",
         /* {
             "",
@@ -1007,6 +1236,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     halat_mahrovi_func();
 
 });
+
 
 /* 
 var  objectMain = {
@@ -1088,6 +1318,17 @@ var  objectMain = {
  адрес доставки
   
  дата совершения заказа
+
+ Инициалы
+    если фалсe
+        инициалы.текс="Not applicable";
+        инициалы.картинка ="Not applicable";
+    если тру 
+        инициалы.текс="строка 2 символа || либо пустая строка";
+        инициалы.картинка =null || либо .value картинки;
+        : string(2)
+инициалы.текс
+инициалы.картинка
  
   
 } */
