@@ -223,13 +223,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                for (var i = 0; i < preview_img.children.length; i++) {
+                /* for (var i = 0; i < preview_img.children.length; i++) {
                     if (preview_img.children[i].classList.contains("picture_top_in_preview")) {
                         preview_img.children[i].remove();
                     }
+                } */
+                for (var i = 0; i < document.querySelector(".area_top_img").children.length; i++) {
+                    if (document.querySelector(".area_top_img").children[i].classList.contains("picture_top_in_preview")) {
+                        document.querySelector(".area_top_img").children[i].remove();
+                    }
                 }
-                preview_img.appendChild(newTopImg);
+                /* preview_img.appendChild(newTopImg); */
+                document.querySelector(".area_top_img").appendChild(newTopImg);
+                constructorData.topPicture = this.previousElementSibling.getAttribute("src");
+                constructorData.threadType = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadType");
+                constructorData.threadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColor");
+                constructorData.properThreadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColorRus");
 
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
 
@@ -239,12 +252,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var newTopImgBottom = this.previousElementSibling.cloneNode(true);
                 newTopImgBottom.classList.add("picture_bottom_in_preview");
 
-                for (var i = 0; i < preview_img.children.length; i++) {
+                /* for (var i = 0; i < preview_img.children.length; i++) {
                     if (preview_img.children[i].classList.contains("picture_bottom_in_preview")) {
                         preview_img.children[i].remove();
                     }
+                } */
+                for (var i = 0; i < document.querySelector(".area_bottom_img").children.length; i++) {
+                    if (document.querySelector(".area_bottom_img").children[i].classList.contains("picture_bottom_in_preview")) {
+                        document.querySelector(".area_bottom_img").children[i].remove();
+                    }
                 }
-                preview_img.appendChild(newTopImgBottom);
+                /* preview_img.appendChild(newTopImgBottom); */
+                document.querySelector(".area_bottom_img").appendChild(newTopImgBottom);
+                constructorData.bottomPicture = this.previousElementSibling.getAttribute("src");
+                constructorData.threadType = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadType");
+                constructorData.threadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColor");
+                constructorData.properThreadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColorRus");
+
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
 
@@ -277,6 +304,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         e.classList.add("big");
                     });
                 }
+                constructorData.pictureSize = this.value;
+                funcOutputInConsole();
             });
         }
 
@@ -344,57 +373,91 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 /* для нижних рисунков */
                 if (e.target.innerHTML == "Без рисунка") {
                     removeBottomImg();
+                    constructorData.bottomPictureGroup = e.target.innerHTML;
+                    constructorData.bottomPicture = null;
+
+                    if (constructorData.topPictureGroup === "Нет" || constructorData.topPictureGroup === null) {
+                        if (constructorData.ifInitialOnChestTrueText === null && constructorData.ifInitialOnChestTrueImg === null) {
+                            constructorData.threadType = null;
+                            constructorData.threadColor = null;
+                            constructorData.properThreadColor = null;
+                            constructorData.threadColorRus = null;
+                        }
+
+                    }
                 }
                 if (e.target.innerHTML == "Вензеля") {
                     document.querySelector(".picture_bottom_images__block.venzelja").style.display = "block";
+                    constructorData.bottomPictureGroup = e.target.innerHTML;
                 }
                 /* конец для верхних рисунков */
                 if (e.target.innerHTML == "Нет") {
                     removeTopImg();
-
+                    constructorData.topPictureGroup = e.target.innerHTML;
+                    constructorData.topPicture = null;
+                    if (constructorData.bottomPictureGroup === "Без рисунка" || constructorData.bottomPictureGroup === null) {
+                        if (constructorData.ifInitialOnChestTrueText === null && constructorData.ifInitialOnChestTrueImg === null) {
+                            constructorData.threadType = null;
+                            constructorData.threadColor = null;
+                            constructorData.properThreadColor = null;
+                            constructorData.threadColorRus = null;
+                        }
+                    }
                 }
                 if (e.target.innerHTML == "Короны") {
                     document.querySelector(".picture_top_images__block.korona").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Животные") {
                     document.querySelector(".picture_top_images__block.animal").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Популярное") {
                     document.querySelector(".picture_top_images__block.popular").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Профессии") {
                     document.querySelector(".picture_top_images__block.profession").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Разное") {
                     document.querySelector(".picture_top_images__block.raznoe").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Рамки") {
                     document.querySelector(".picture_top_images__block.frame_and_name").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Рамки на грудь") {
                     document.querySelector(".picture_top_images__block.frame_on_chest").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
 
 
                 if (e.target.innerHTML == "Розы") {
                     document.querySelector(".picture_top_images__block.roses").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /*  funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Спорт") {
                     document.querySelector(".picture_top_images__block.sport").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /*  funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
                 if (e.target.innerHTML == "Вензиля") {
                     document.querySelector(".picture_top_images__block.venzilja").style.display = "block";
-                    funcSetMiddleSizeTopImg();
+                    /* funcSetMiddleSizeTopImg(); */
+                    constructorData.topPictureGroup = e.target.innerHTML;
                 }
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
 
@@ -439,9 +502,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         /* js для конструктора */
 
         if (document.querySelector(".preview_img") != null) {
-            var preview_img = document.querySelector(".preview_img");
-            var img_preview_for_halat = document.querySelector("#img_preview_for_halat");
+
         }
+        var preview_img = document.querySelector(".preview_img");
+        var img_preview_for_halat = document.querySelector("#img_preview_for_halat");
 
 
         var input_color_halat_checkbox = document.querySelectorAll("input[name='color_halat_checkbox'");
@@ -514,33 +578,85 @@ document.addEventListener("DOMContentLoaded", function (event) {
             });
         }
 
+        /* функция которая настраивает constructorData.totalEmbroideryZone */
+        function funcSetTotalEmbroideryZone(){
+            var clearHalatSize = constructorData.halatSize.slice(4);
+            if(54<=clearHalatSize && clearHalatSize<=60){
+                constructorData.totalEmbroideryZone = {
+                    "width": "32",
+                    "height": "32",
+                    "order": "1"
+                };
+            }
+            if(48<=clearHalatSize && clearHalatSize<=52){
+                constructorData.totalEmbroideryZone = {
+                    "width": "30",
+                    "height": "30",
+                    "order": "1"
+                };;
+            }
+            if(44<=clearHalatSize && clearHalatSize<=46){
+                constructorData.totalEmbroideryZone = {
+                    "width": "28",
+                    "height": "28",
+                    "order": "1"
+                };;
+            }
+            if(24<=clearHalatSize && clearHalatSize<=36){
+                constructorData.totalEmbroideryZone = {
+                    "width": "18",
+                    "height": "18",
+                    "order": "1"
+                };
+            }
+            if(document.querySelector(".halat_polotence").classList.contains("active")){
+                constructorData.totalEmbroideryZone = {
+                    "width": "32",
+                    "height": "32",
+                    "order": "1"
+                };
+            }
+        }
+
         /* заносим в constructorData halatSize */
         var arr_size_halat_checkbox_adult_mahra = document.querySelectorAll("input[name = 'size_halat_checkbox_adult_mahra']");
         for (var i = 0; i < arr_size_halat_checkbox_adult_mahra.length; i++) {
             arr_size_halat_checkbox_adult_mahra[i].addEventListener("click", function (e) {
                 constructorData.halatSize = e.target.value;
-                console.log("constructorData.halatSize ", constructorData.halatSize);
+                funcSetTotalEmbroideryZone();
+                funcTotalEmbroideryOnChestZone();
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
         var arr_size_halat_checkbox_adult_velur = document.querySelectorAll("input[name = 'size_halat_checkbox_adult_velur']");
         for (var i = 0; i < arr_size_halat_checkbox_adult_velur.length; i++) {
             arr_size_halat_checkbox_adult_velur[i].addEventListener("click", function (e) {
                 constructorData.halatSize = e.target.value;
-                console.log("constructorData.halatSize ", constructorData.halatSize);
+                funcSetTotalEmbroideryZone();
+                funcTotalEmbroideryOnChestZone();
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
         var arr_size_halat_checkbox = document.querySelectorAll("input[name = 'size_halat_checkbox']");
         for (var i = 0; i < arr_size_halat_checkbox.length; i++) {
             arr_size_halat_checkbox[i].addEventListener("click", function (e) {
                 constructorData.halatSize = e.target.value;
-                console.log("constructorData.halatSize ", constructorData.halatSize);
+                funcSetTotalEmbroideryZone();
+                funcTotalEmbroideryOnChestZone();
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
         var arr_size_halat_checkbox_polotence = document.querySelectorAll("input[name = 'size_halat_checkbox_polotence']");
         for (var i = 0; i < arr_size_halat_checkbox_polotence.length; i++) {
             arr_size_halat_checkbox_polotence[i].addEventListener("click", function (e) {
                 constructorData.halatSize = e.target.value;
-                console.log("constructorData.halatSize ", constructorData.halatSize);
+                funcSetTotalEmbroideryZone();
+                funcTotalEmbroideryOnChestZone();
+                funcCalculateSizeAndChangeOrder();
+                funcOutputInConsole();
             });
         }
 
@@ -550,13 +666,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var textOnImg = document.createElement("div");
         textOnImg.classList.add("text_on_img");
         if (preview_img != null) {
-            preview_img.appendChild(textOnImg);
+            /* preview_img.appendChild(textOnImg); */
+            document.querySelector(".area_text").appendChild(textOnImg);
         }
 
         text_on_halat.addEventListener("input", function () {
             textOnImg.innerText = this.value;
             constructorData.embroideryText = this.value;
             funcOutputInConsole();
+            if (constructorData.embroideryText.length > 0) {
+                constructorData.threadType = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadType");
+                constructorData.threadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColor");
+                constructorData.properThreadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColorRus");
+                constructorData.sliderFontSize = document.querySelector("#myRange").value;
+
+                constructorData.font = "Arial";
+                funcOutputInConsole();
+            } else {
+                constructorData.threadType = null;
+                constructorData.threadColor = null;
+                constructorData.properThreadColor = null;
+                constructorData.threadColorRus = null;
+                constructorData.sliderFontSize = null;
+
+                constructorData.font = null;
+                funcOutputInConsole();
+            }
+            funcCalculateSizeAndChangeOrder();
         });
 
         /* выбор шрифта для надписи */
@@ -640,12 +777,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         /* функция выбора среднего размера верхнего рисунка */
 
         var funcSetMiddleSizeTopImg = function () {
-            for (var i = 0; i < picture_top_check.length; i++) {
+            /* for (var i = 0; i < picture_top_check.length; i++) {
                 picture_top_check[i].checked = false;
-                picture_top_check[i].closest(".picture_top_checkbox").classList.remove("active");
+                picture_top_check[i].closest(".picture_top_check").classList.remove("active");
                 picture_top_check[1].checked = true;
-                picture_top_check[1].closest(".picture_top_checkbox").classList.add("active");
-            }
+                picture_top_check[1].closest(".picture_top_check").classList.add("active");
+            } */
         }
 
         /* функция изменения размера шрифта надписи */
@@ -654,7 +791,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             textOnImg.style.transform = "scale(" + this.value / 100 + ")";
             /* заполнения ползунка цветом #b09867 */
             myRangeLabel.style.width = (this.value - 50) + "%";
-            constructorData.sliderFontSize = this.value;
+            if (constructorData.embroideryText !== null) {
+                constructorData.sliderFontSize = this.value;
+            }
+
             funcOutputInConsole();
         };
 
@@ -663,7 +803,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fontRange.addEventListener("input", resizeTextOnImg);
 
         /* события при выборе цвета нити */
-        var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box'");
+        var input_radio_color_box = document.querySelectorAll("input[name='input_radio_color_box']");
         for (var i = 0; i < input_radio_color_box.length; i++) {
             input_radio_color_box[i].addEventListener("click", function (e) {
                 constructorData.threadType = e.target.getAttribute("data-threadType");
@@ -709,6 +849,76 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
 
+        /* генератор номера */
+
+        function funcGeneratorNumberOrder() {
+            var emptyString = "";
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
+            emptyString += alphabet[Math.floor(Math.random() * alphabet.length)];
+            emptyString += Math.floor(Math.random() * 1000);
+            /* while (emptyString.length < 4) {
+                emptyString += alphabet[Math.floor(Math.random() * alphabet.length)];
+                emptyString += Math.floor(Math.random() * 100);
+              }  */
+            return emptyString;
+        }
+        /* конец генератор номера */
+
+        /* события при отправке формы */
+        document.querySelector('#form_for_order').addEventListener("submit", function (e) {
+            e.preventDefault();
+            constructorData.rundomNumberOrder = funcGeneratorNumberOrder();
+
+            document.querySelector(".message_thanks").innerHTML = "Ваш заказ №" + constructorData.rundomNumberOrder + " отправлен";
+            document.querySelector(".submit_order").value = "Сделать ещё один заказ";
+            funcClearConstructorData();
+
+            if (document.querySelector(".halat.halat_mahr.active")) {
+                halat_mahrovi_func();
+            }
+            if (document.querySelector(".halat.halat_velur.active")) {
+                halat_velur_func();
+            }
+            if (document.querySelector(".halat.halat_child_mahr.active")) {
+                halat_child_func();
+            }
+            if (document.querySelector(".halat.halat_polotence.active")) {
+                halat_polotence_func();
+            }
+            funcOutputInConsole();
+        });
+        /* конец события при отправке формы */
+
+
+        /* функция очищения всех полей */
+
+        function funcClearConstructorData() {
+            constructorData.goodType = "";
+            constructorData.fabricType = "";
+            constructorData.modelAgeType = "";
+            constructorData.halatSize = "";
+            constructorData.polotenceSize = "";
+            constructorData.fabricColor = "";
+            constructorData.properFabricColor = "";
+            constructorData.initialsOnChest = "";
+            constructorData.ifInitialOnChestTrueText = "";
+            constructorData.ifInitialOnChestTrueImg = "";
+            constructorData.threadType = "";
+            constructorData.threadColor = "";
+            constructorData.properThreadColor = "";
+            constructorData.threadColorRus = "";
+            constructorData.sliderFontSize = "";
+            constructorData.font = "";
+            constructorData.embroideryText = "";
+            constructorData.orderName = "";
+            constructorData.orderPhone = "";
+            constructorData.orderAddressComment = "";
+            constructorData.deletedText = "";
+            constructorData.rundomNumberOrder = "";
+        }
+
+        /* конец функции очищения всех полей */
+
 
 
         /* функция инициализации халатов */
@@ -751,20 +961,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
-            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            //document.querySelector(".block_picture_top_size").children[2].checked = true;
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
-
-            /* наличие в превью картинки блока с инициалами */
-            /* document.querySelector(".for_name_on_chest").style.display = "flex"; */
 
             halat_mahr.classList.add("active");
             halat_velur.classList.remove("active");
             halat_child_mahr.classList.remove("active");
             halat_polotence.classList.remove("active");
+
             document.querySelector(".notation").style.display = "none";
 
             color_halat_block.classList.remove("hide");
 
+            /* свойства по умолчанию */
+            document.querySelector("#size50").checked = true;
+            document.querySelector("#color_halat_checkbox_white").checked = true;
+            document.querySelector("#picture_top_checkbox_medium").checked = true;
+            document.querySelector("#input_name_on_chest").value = "";
+            for (var i = 0; i < document.querySelectorAll("input[name='frame_on_chest'").length; i++) {
+                document.querySelectorAll("input[name='frame_on_chest'")[i].checked = false;
+            }
+            document.querySelector(".text_on_halat textarea").value = "";
+            /* for (var i = 0; i < document.querySelectorAll("input[name='input_radio_color_box'").length; i++) {
+                document.querySelectorAll("input[name='input_radio_color_box'")[i].checked = false;
+            } */
+            document.querySelector("#myRange").value = 100;
 
             /* работа с объектом */
 
@@ -775,9 +996,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             constructorData.halatSize = "size48";
             constructorData.fabricColor = funcCheckedFabricColor();
             constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
-            constructorData.initialsOnChest = false;
-            constructorData.ifInitialOnChestTrueText = "";
-            constructorData.ifInitialOnChestTrueImg = "";
+            constructorData.threadType = null;
+            constructorData.threadColor = null;
+            constructorData.properThreadColor = null;
+            constructorData.threadColorRus = null;
+            constructorData.sliderFontSize = null;
+            constructorData.font = null;
+            constructorData.embroideryText = null;
+            constructorData.orderName = null;
+            constructorData.orderPhone = null;
+            constructorData.orderAddressComment = null;
+            funcCommonIfInitialOnChestStartNull();
+            funcCommonPictureStartNull();
+            funcSetTotalEmbroideryZone();
+            funcCommonEmbroideryStartNull();
+            funcTotalEmbroideryOnChestZone();
+            funcCalculateSizeAndChangeOrder();
 
             funcOutputInConsole();
         };
@@ -809,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
-            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            //document.querySelector(".block_picture_top_size").children[2].checked = true;
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
 
             /* наличие в превью картинки блока с инициалами */
@@ -823,9 +1057,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             color_halat_block.classList.remove("hide");
 
+            /* свойства по умолчанию */
+            document.querySelector("#size50").checked = true;
+            document.querySelector("#color_halat_checkbox_white").checked = true;
+            document.querySelector("#picture_top_checkbox_medium").checked = true;
+            document.querySelector("#input_name_on_chest").value = "";
+            for (var i = 0; i < document.querySelectorAll("input[name='frame_on_chest'").length; i++) {
+                document.querySelectorAll("input[name='frame_on_chest'")[i].checked = false;
+            }
+            document.querySelector(".text_on_halat textarea").value = "";
+            /* for (var i = 0; i < document.querySelectorAll("input[name='input_radio_color_box'").length; i++) {
+                document.querySelectorAll("input[name='input_radio_color_box'")[i].checked = false;
+            } */
+            document.querySelector("#myRange").value = 100;
 
             /* работа с объектом */
-            console.clear();
+            
             constructorData.goodType = "halat";
             constructorData.fabricType = "velur";
             constructorData.modelAgeType = "adult";
@@ -833,9 +1080,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             constructorData.halatSize = "size52";
             constructorData.fabricColor = funcCheckedFabricColor();
             constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
-            constructorData.initialsOnChest = false;
-            constructorData.ifInitialOnChestTrueText = "";
-            constructorData.ifInitialOnChestTrueImg = "";
+            funcCommonThreadTypeColorStartNull();
+            constructorData.sliderFontSize = null;
+            constructorData.font = null;
+            constructorData.embroideryText = null;
+            funcCommonIfInitialOnChestStartNull();
+            funcCommonPictureStartNull();
+            funcSetTotalEmbroideryZone();
+            funcCommonEmbroideryStartNull();
+            funcTotalEmbroideryOnChestZone();
+            funcCalculateSizeAndChangeOrder();
 
             funcOutputInConsole();
         };
@@ -858,7 +1112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[1].style.display = "none";
             document.querySelector(".block_picture_top_size").children[2].style.display = "none";
             document.querySelector(".block_picture_top_size").children[3].style.display = "none";
-            document.querySelector(".block_picture_top_size").children[4].checked = true;
+            //document.querySelector(".block_picture_top_size").children[4].checked = true;
 
             /* наличие в превью картинки блока с инициалами */
             /* document.querySelector(".for_name_on_chest").style.display = "flex"; */
@@ -871,7 +1125,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             color_halat_block.classList.add("hide");
 
-
+            /* свойства по умолчанию */
+            document.querySelector("#size28").checked = true;
+            //document.querySelector("#color_halat_checkbox_white").checked = true;
+            document.querySelector("#picture_top_checkbox_small").checked = true;
+            document.querySelector("#input_name_on_chest").value = "";
+            for (var i = 0; i < document.querySelectorAll("input[name='frame_on_chest'").length; i++) {
+                document.querySelectorAll("input[name='frame_on_chest'")[i].checked = false;
+            }
+            document.querySelector(".text_on_halat textarea").value = "";
+            /* for (var i = 0; i < document.querySelectorAll("input[name='input_radio_color_box'").length; i++) {
+                document.querySelectorAll("input[name='input_radio_color_box'")[i].checked = false;
+            } */
+            document.querySelector("#myRange").value = 100;
 
             /* работа с объектом */
 
@@ -880,12 +1146,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
             constructorData.fabricColor = "white";
             constructorData.modelAgeType = "child";
             constructorData.polotenceSize = "notApplicable";
-            constructorData.halatSize = "size30";
+            constructorData.halatSize = "size28";
             constructorData.fabricColor = "white";
             constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
-            constructorData.initialsOnChest = false;
-            constructorData.ifInitialOnChestTrueText = "";
-            constructorData.ifInitialOnChestTrueImg = "";
+            funcCommonThreadTypeColorStartNull();
+            constructorData.sliderFontSize = null;
+            constructorData.font = null;
+            constructorData.embroideryText = null;
+            funcCommonIfInitialOnChestStartNull();
+            funcCommonPictureStartNull();
+            funcSetTotalEmbroideryZone();
+            funcCommonEmbroideryStartNull();
+            funcTotalEmbroideryOnChestZone();
+            funcCalculateSizeAndChangeOrder();
 
             funcOutputInConsole();
         };
@@ -917,7 +1190,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.querySelector(".block_picture_top_size").children[0].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[1].style.display = "inline-block";
             document.querySelector(".block_picture_top_size").children[2].style.display = "inline-block";
-            document.querySelector(".block_picture_top_size").children[2].checked = true;
+            //document.querySelector(".block_picture_top_size").children[2].checked = true;
             document.querySelector(".block_picture_top_size").children[3].style.display = "inline-block";
 
             /* наличие в превью картинки блока с инициалами */
@@ -931,6 +1204,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             color_halat_block.classList.remove("hide");
 
+            /* свойства по умолчанию */
+            document.querySelector("#size70Х140").checked = true;
+            document.querySelector("#color_halat_checkbox_white").checked = true;
+            document.querySelector("#picture_top_checkbox_medium").checked = true;
+            //document.querySelector("#input_name_on_chest").value = "";
+            //for (var i = 0; i < document.querySelectorAll("input[name='frame_on_chest'").length; i++) {
+            //    document.querySelectorAll("input[name='frame_on_chest'")[i].checked = false;
+            //}
+            document.querySelector(".text_on_halat textarea").value = "";
+            /* for (var i = 0; i < document.querySelectorAll("input[name='input_radio_color_box'").length; i++) {
+                document.querySelectorAll("input[name='input_radio_color_box'")[i].checked = false;
+            } */
+            document.querySelectorAll("input[name='input_radio_color_box'")[0].checked = false;
+            document.querySelectorAll("input[name='input_radio_color_box'")[2].checked = true;
+            document.querySelector("#myRange").value = 100;
 
             /* работа с объектом */
             constructorData.goodType = "polotence";
@@ -940,12 +1228,90 @@ document.addEventListener("DOMContentLoaded", function (event) {
             constructorData.polotenceSize = "size70Х140";
             constructorData.fabricColor = funcCheckedFabricColor();
             constructorData.properFabricColor = constructorData.fabricType + constructorData.fabricColor;
-            constructorData.initialsOnChest = false;
-            constructorData.ifInitialOnChestTrueText = "Not applicable";
-            constructorData.ifInitialOnChestTrueImg = "Not applicable";
-
+            funcCommonThreadTypeColorStartNull();
+            constructorData.sliderFontSize = null;
+            constructorData.font = null;
+            constructorData.embroideryText = null;
+            funcCommonIfInitialOnChestStartNull();
+            funcCommonPictureStartNull();
+            funcSetTotalEmbroideryZone();
+            funcCommonEmbroideryStartNull();
+            funcTotalEmbroideryOnChestZone();
+            funcCalculateSizeAndChangeOrder();
             funcOutputInConsole();
         };
+
+        function funcTotalEmbroideryOnChestZone(){
+            if(document.querySelector(".halat.halat_polotence.active")){
+                constructorData.totalEmbroideryOnChestZone = "Not applicable";
+            }
+            if(document.querySelector(".halat.halat_child_mahr.active")){
+                var clearHalatSize = constructorData.halatSize.slice(4);
+                
+                if(24<=clearHalatSize && clearHalatSize<=26){
+                    constructorData.totalEmbroideryOnChestZone = "4x4";
+                }
+                if(28<=clearHalatSize && clearHalatSize<=30){
+                    constructorData.totalEmbroideryOnChestZone = "6x6";
+                }
+                if(32<=clearHalatSize && clearHalatSize<=34){
+                    constructorData.totalEmbroideryOnChestZone = "8x8";
+                }
+            }
+            else{
+                if(constructorData.initialsOnChest){
+                    var clearHalatSize = constructorData.halatSize.slice(4);
+                    if(44<=clearHalatSize && clearHalatSize<=46){
+                        constructorData.totalEmbroideryOnChestZone = "4x4";
+                    }
+                    if(48<=clearHalatSize && clearHalatSize<=52){
+                        constructorData.totalEmbroideryOnChestZone = "8x8";
+                    }
+                    if(54<=clearHalatSize && clearHalatSize<=60){
+                        constructorData.totalEmbroideryOnChestZone = "12x12";
+                    }
+                }else{
+                    constructorData.totalEmbroideryOnChestZone = null;
+                }
+            }
+        }
+
+        function funcCommonThreadTypeColorStartNull(){
+            constructorData.threadType = null;
+            constructorData.threadColor = null;
+            constructorData.properThreadColor = null;
+            constructorData.threadColorRus = null;
+        }
+
+        function funcCommonIfInitialOnChestStartNull(){
+            //constructorData.initialsOnChest = false;
+            if(document.querySelector(".halat.halat_polotence.active")){
+                constructorData.ifInitialOnChestTrueText = "Not applicable";
+                constructorData.ifInitialOnChestTrueImg = "Not applicable";
+            }else{
+                constructorData.ifInitialOnChestTrueText = null;
+                constructorData.ifInitialOnChestTrueImg = null;
+            }
+            if(constructorData.ifInitialOnChestTrueText === null && constructorData.ifInitialOnChestTrueImg === null){
+                constructorData.initialsOnChest = false;
+            }else{
+                constructorData.initialsOnChest = true;
+            }
+        }
+
+        function funcCommonPictureStartNull(){
+            constructorData.pictureSize = null;
+            constructorData.topPictureGroup = null;
+            constructorData.topPicture = null;
+            constructorData.bottomPictureGroup = null;
+            constructorData.bottomPicture = null;
+        }
+
+        function funcCommonEmbroideryStartNull(){
+            constructorData.topPictureEmbroideryZone = {"height": null, "width": null, "order": null, "frame": false};
+            constructorData.bottomPictureEmbroideryZone = {"height": null, "width": null, "order": null};
+            constructorData.textEmbroideryZone = {"height": null, "width": null, "order": null};
+        }
 
         /* функция очищает консоль и выводит текущую структуру объекта данных */
         function funcOutputInConsole() {
@@ -971,6 +1337,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             console.log("constructorData.orderPhone ", constructorData.orderPhone);
             console.log("constructorData.orderAddressComment ", constructorData.orderAddressComment);
             console.log("constructorData.deletedText", constructorData.deletedText);
+            console.log("constructorData.rundomNumberOrder", constructorData.rundomNumberOrder);
+            console.log("constructorData.pictureSize", constructorData.pictureSize);
+            console.log("constructorData.topPictureGroup", constructorData.topPictureGroup);
+            console.log("constructorData.topPicture", constructorData.topPicture);
+            console.log("constructorData.bottomPictureGroup", constructorData.bottomPictureGroup);
+            console.log("constructorData.bottomPicture", constructorData.bottomPicture);
+            console.log("constructorData.padding-top", constructorData.padding-top);
+            console.log("constructorData.totalEmbroideryZone", constructorData.totalEmbroideryZone);
+            console.log("constructorData.topPictureEmbroideryZone", constructorData.topPictureEmbroideryZone);
+            console.log("constructorData.bottomPictureEmbroideryZone", constructorData.bottomPictureEmbroideryZone);
+            console.log("constructorData.textEmbroideryZone", constructorData.textEmbroideryZone);
+            console.log("constructorData.totalEmbroideryOnChestZone", constructorData.totalEmbroideryOnChestZone);
 
         }
 
@@ -1061,7 +1439,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
             for_name_on_chest.style.display = "flex";
             input_name_on_chest_text.innerHTML = this.value;
             constructorData.initialsOnChest = true;
-            constructorData.ifInitialOnChestTrueText = this.value;
+            if (this.value.length < 1) {
+                constructorData.ifInitialOnChestTrueText = null;
+
+                if (constructorData.topPictureGroup === "Нет" || constructorData.topPictureGroup === null && constructorData.bottomPictureGroup === "Нет" || constructorData.bottomPictureGroup === null && constructorData.ifInitialOnChestTrueImg===null) {
+                    if (constructorData.ifInitialOnChestTrueText === null && constructorData.ifInitialOnChestTrueImg === null) {
+                        constructorData.threadType = null;
+                        constructorData.threadColor = null;
+                        constructorData.properThreadColor = null;
+                        constructorData.threadColorRus = null;
+                    }
+
+                }
+            } else {
+                constructorData.ifInitialOnChestTrueText = this.value;
+
+                constructorData.threadType = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadType");
+                constructorData.threadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColor");
+                constructorData.properThreadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColorRus");
+            }
+
 
             //console.log(document.querySelector(".for_name_on_chest").style.backgroundImage);
             for (var i = 0; i < input_frame_on_chest.length; i++) {
@@ -1069,6 +1467,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     constructorData.ifInitialOnChestTrueImg = input_frame_on_chest[i].previousElementSibling.getAttribute("src");
                 }
             }
+
+            funcTotalEmbroideryOnChestZone();
             funcOutputInConsole();
         });
         var input_frame_on_chest = document.querySelectorAll("input[name='frame_on_chest']");
@@ -1078,6 +1478,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 for_name_on_chest.style.backgroundImage = "url('./" + imgSrc + "')";
                 document.querySelector(".for_name_on_chest").style.display = "flex";
                 constructorData.ifInitialOnChestTrueImg = imgSrc;
+
+                constructorData.threadType = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadType");
+                constructorData.threadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColor");
+                constructorData.properThreadColor = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-properThreadColor");
+                constructorData.threadColorRus = document.querySelector("input[name='input_radio_color_box']:checked").getAttribute("data-threadColorRus");
+
+                constructorData.initialsOnChest = true;
+
+                funcTotalEmbroideryOnChestZone();
                 funcOutputInConsole();
             });
 
@@ -1091,12 +1500,75 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 input_frame_on_chest[i].checked = false;
             }
             constructorData.initialsOnChest = false;
-            constructorData.ifInitialOnChestTrueText = "";
-            constructorData.ifInitialOnChestTrueImg = "";
+            constructorData.ifInitialOnChestTrueText = null;
+            constructorData.ifInitialOnChestTrueImg = null;
+            if (constructorData.topPictureGroup === "Нет" || constructorData.topPictureGroup === null && constructorData.bottomPictureGroup === "Нет" || constructorData.bottomPictureGroup === null) {
+                if (constructorData.ifInitialOnChestTrueText === null && constructorData.ifInitialOnChestTrueImg === null) {
+                    constructorData.threadType = null;
+                    constructorData.threadColor = null;
+                    constructorData.properThreadColor = null;
+                    constructorData.threadColorRus = null;
+                }
+
+            }
+
+            funcTotalEmbroideryOnChestZone();
             funcOutputInConsole();
         });
 
         console.log(constructorData);
+
+        var color_box_label = document.querySelectorAll(".color_box_label");
+        for (var i = 0; i < color_box_label.length; i++) {
+            color_box_label[i].addEventListener("mouseover", function () {
+                document.querySelector(".ancor_to_top").style.zIndex = 2;
+            });
+            color_box_label[i].addEventListener("mouseleave", function () {
+                document.querySelector(".ancor_to_top").style.zIndex = 6;
+            });
+        }
+
+        /* расчёт размера и порядка в области отрисовки */
+        function funcCalculateSizeAndChangeOrder(){
+            if(constructorData.topPictureGroup === "Рамки"){
+                document.querySelector(".area_top_img").classList.add("frame");
+                constructorData.topPictureEmbroideryZone.frame = true;
+            }else{
+                document.querySelector(".area_top_img").classList.remove("frame");
+                constructorData.topPictureEmbroideryZone.frame = false;
+            }
+            if(constructorData.topPicture!==null){
+                if(constructorData.topPictureEmbroideryZone.frame){
+                    constructorData.topPictureEmbroideryZone .height=constructorData.totalEmbroideryZone.height*0.75;
+                } else{
+                    constructorData.topPictureEmbroideryZone .height=constructorData.totalEmbroideryZone.height*0.5;
+                }
+                document.querySelector(".area_top_img").classList.remove("null");
+            }else{
+                
+                document.querySelector(".area_top_img").classList.add("null");
+            }
+            
+            if(constructorData.bottomPicture!==null){
+                constructorData.bottomPictureEmbroideryZone.height=constructorData.totalEmbroideryZone.height*0.25;
+                document.querySelector(".area_bottom_img").classList.remove("null");
+            }else{
+                constructorData.bottomPictureEmbroideryZone.height=null;
+                document.querySelector(".area_bottom_img").classList.add("null");
+            }
+            
+            if(constructorData.embroideryText !== null){
+                constructorData.textEmbroideryZone.height=constructorData.totalEmbroideryZone.height*0.25;
+                document.querySelector(".area_text").classList.remove("null");
+            }else{
+                document.querySelector(".area_text").classList.add("null");
+            }
+            
+            
+
+            funcOutputInConsole();
+        }
+
     }
     /* конец для if (document.querySelector(".constructor")) */
 
@@ -1114,6 +1586,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             wrap_for_map.classList.toggle("hidden");
         });
     }
+
+    
 
 
     var constructorData = {
@@ -1221,6 +1695,68 @@ document.addEventListener("DOMContentLoaded", function (event) {
             "",
         } */
         "deletedText": "",
+        /* {
+            "",
+            "",
+        } */
+        "rundomNumberOrder": "",
+        /* {
+            "",
+            "",
+        } */
+        "pictureSize": "",
+        /* {
+            "",
+            "",
+        } */
+        "topPictureGroup": "",
+        /* {
+            "",
+            "",
+        } */
+        "topPicture": "",
+        /* {
+            "",
+            "",
+        } */
+        "bottomPictureGroup": "",
+        /* {
+            "",
+            "",
+        } */
+        "bottomPicture": "",
+        /* {
+            "",
+            "",
+        } */
+        "padding-top": "7",
+        /* {
+            "",
+            "",
+        } */
+        "totalEmbroideryZone": {
+            "width": "",
+            "height": "",
+            "order": "0"
+        },
+        "topPictureEmbroideryZone": {
+            "width": "",
+            "height": "",
+            "order": "",
+            "frame": false
+        },
+
+        "bottomPictureEmbroideryZone": {
+            "width": "",
+            "height": "",
+            "order": ""
+        },
+        "textEmbroideryZone": {
+            "width": "",
+            "height": "",
+            "order": ""
+        },
+        "totalEmbroideryOnChestZone": "",
         /* {
             "",
             "",

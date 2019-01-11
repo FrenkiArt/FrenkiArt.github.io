@@ -123,6 +123,12 @@
                 <div class="col-12 col-md-5">
                     <div class="preview_img polotence">
                         <img id="img_preview_for_halat" src="img/constuctor_img_preview_polotence_white.png" alt="image">
+                        
+                        <div class="area_application">
+                            <div class="area_top_img"></div>
+                            <div class="area_text"></div>
+                            <div class="area_bottom_img"></div>
+                        </div>
 
                         <section class="notation">
                             <div class="container">
@@ -148,12 +154,13 @@
                         <h3 class="constructor_form_title ">
                             Оформить заказ
                         </h3>
-                        <form action="#" class="form" id="polotence">
+                        <form action="#" class="form" id="form_for_order">
                             <input type="text" placeholder="Имя*" required class="form_input_name">
                             <input type="text" placeholder="Телефон*" required class="form_input_phone">
                             <textarea name="#" cols="30" rows="10" placeholder="Адрес доставки               /комментарий к заказу*"
                                 required  class="form_input_textarea"></textarea>
-                            <input type="submit" value="Отправить заказ">
+                            <div class="message_thanks"></div>
+                            <input type="submit" value="Отправить заказ" class="submit_order">
                         </form>
                     </div>
                 </div>
@@ -331,7 +338,7 @@
                             </div>
                             <div class="custom-select">
                                 <select form="polotence" name="picture_top" class="select_picture_top">
-                                    <option value="Нет">Нет</option>
+                                    <option selected value="Нет">Нет</option>
                                     <option value="Нет">Нет</option>
                                     <option value="Короны">Короны</option>
                                     <option value="Животные">Животные</option>
@@ -662,7 +669,7 @@
                             </div>
                             <div class="custom-select">
                                 <select form="polotence" name="picture_bottom" class="select_picture_bottom">
-                                    <option value="Без рисунка" checked>Без рисунка</option>
+                                    <option selected value="Без рисунка">Без рисунка</option>
                                     <option value="Без рисунка">Без рисунка</option>
                                     <option value="Вензеля">Вензеля</option>
                                 </select>
@@ -787,7 +794,7 @@
                         <div class="color_box">
                             <div class="color_box_label_wrap">
                                 <label class="color_box_label">
-                                    <input type="radio" name="input_radio_color_box" data-threadType="metalic" data-threadColor="gold" data-properThreadColor="metalic gold" data-threadColorRus="Золотые металлизированные">
+                                    <input type="radio" name="input_radio_color_box" data-threadType="metalic" data-threadColor="gold" data-properThreadColor="metalic gold" data-threadColorRus="Золотые металлизированные" checked>
                                     <div class="box box_1">
 
                                     </div>
@@ -1016,20 +1023,29 @@
                                      <span> </span>
                                 </div>
                             </div>
-
+                            <div class="wpap_slidecontainer">
+                                <div class="slidecontainer">
+                                    <label id="myRangeLabel" for="myRange"></label>
+                                    <input type="range" min="50" max="150" value="100" class="slider" id="myRange" step="50">
+                                    <div class="title">
+                                        Размер шрифта
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="slidecontainer">
+                    <!-- <div class="slidecontainer">
                         <label id="myRangeLabel" for="myRange"></label>
                         <input type="range" min="50" max="150" value="100" class="slider" id="myRange" step="50">
                         <div class="title">
                             Размер шрифта
                         </div>
-                        <!-- <input type="text" id="custom_range" name="custom_range" value="" /> -->
-                    </div>
+                       
+                    </div> -->
                     
                 </div>
+                
             </div>
         </div>
     </section>
